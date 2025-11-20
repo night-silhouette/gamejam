@@ -6,8 +6,9 @@
 custom_minimum_size = Vector2(180, 260)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 60.0
-offset_bottom = 100.0
+offset_right = 180.0
+offset_bottom = 260.0
+pivot_offset = Vector2(90, 130)
 script = ExtResource("1_inydn")
 metadata/_custom_type_script = "uid://dtiy8502t4cqb"
 
