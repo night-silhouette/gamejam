@@ -10,14 +10,20 @@ extends Control
 var card_in_hard=[]
 var viewport_x
 var viewport_y
-
+func callback_all(callback,arg_list):
+	card_in_hard=get_children().filter(func(item):return item.is_in_group("card_in_hard"))
+	for i in card_in_hard:
+		var callable=Callable(i,callback)
+		callable.callv(arg_list)
 
 func _ready() -> void:
 	viewport_x=get_viewport_rect().size.x
 	viewport_y=get_viewport_rect().size.y
 	card_in_hard=get_children().filter(func(item):return item.is_in_group("card_in_hard"))
 	tranform_card()
-
+	callback_all("set_process",[true])
+	callback_all("init",[])
+	
 	$"../Button".pressed.connect(func():tranform_card())
 func tranform_card():
 	if self.is_node_ready():
@@ -29,6 +35,9 @@ func tranform_card():
 			card_in_hard[i].global_position=Vector2(-viewport_x/2*max_width_percent+i*px_temp,viewport_y/2-base_y_offset-y_bios* Util.u_sequence(card_num)[i])
 			card_in_hard[i].rotation=Util.zero_cross_sequence(card_num)[i]*r_temp
 			card_in_hard[i].z_index=-Util.u_sequence(card_num)[i]
+			
+			
+			
 
 
 

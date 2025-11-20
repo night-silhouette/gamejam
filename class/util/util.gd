@@ -25,13 +25,17 @@ func zero_cross_sequence(total):#-2,-1,0,1,2
 	
 		
 	
+func tween_fast_to_slow(obj,prop,value,time,callback=func():):
+	var tween=create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)	
+	tween.tween_property(obj,prop, value,time)
+	tween.finished.connect(callback)
+	return tween
 	
 	
+func set_time(time,callback):
+	get_tree().create_timer(time).timeout.connect(callback,CONNECT_ONE_SHOT)
 	
-	
-	
-	
-	
-	
-	
+
 	
