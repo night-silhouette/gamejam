@@ -11,5 +11,17 @@ config_version=5
 [application]
 
 config/name="gamejam"
+run/main_scene="uid://clj41ktobb2y"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+
+[autoload]
+
+Util="*res://class/util/util.gd"
+
+[display]
+
+window/size/mode=3
+
+[global_group]
+
+card_in_hard=""

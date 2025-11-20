@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://clj41ktobb2y"]
+
+[ext_resource type="PackedScene" uid="uid://bn84ltnokpuvb" path="res://scene/card_on_hard/Card_on_hard.tscn" id="1_8xedm"]
+[ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="hard_container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -568.0
+offset_top = 57.0
+offset_right = -528.0
+offset_bottom = 97.0
+script = ExtResource("1_pw1yp")
+base_y_offset = 350.0
+y_bios = 11
+
+[node name="card_in_hard" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard2" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard3" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard4" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard5" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard6" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard7" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard8" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard9" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard10" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard11" parent="hard_container" instance=ExtResource("1_8xedm")]
+
+[node name="card_in_hard12" parent="hard_container" instance=ExtResource("1_8xedm")]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 181.0
+offset_bottom = 261.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 753.0
+offset_top = -595.0
+offset_right = 801.0
+offset_bottom = -564.0
+scale = Vector2(3.22993, 2.64425)
+text = "reset
+"
