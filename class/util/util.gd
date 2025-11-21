@@ -7,8 +7,8 @@ func u_sequence(total:int):#2,1,0,1,2
 		res.append_array(Array(range(middle-1,-1,-1)))
 		res.append_array(Array(range(0,middle)))
 	else :
-		res.append_array(Array(range(middle,1,-1)))
-		res.append_array(Array(range(1,middle+1)))
+		res.append_array(Array(range(middle+1,1,-1)))
+		res.append_array(Array(range(1,middle+2)))
 		
 	return res
 

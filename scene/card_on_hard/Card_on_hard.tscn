@@ -3,18 +3,17 @@
 [ext_resource type="Script" uid="uid://dtiy8502t4cqb" path="res://class/card_on_hard/card_on_hard.gd" id="1_inydn"]
 
 [node name="card_in_hard" type="Control" groups=["card_in_hard"]]
-custom_minimum_size = Vector2(180, 260)
+custom_minimum_size = Vector2(90, 130)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 180.0
-offset_bottom = 260.0
-pivot_offset = Vector2(90, 130)
+offset_right = 90.0
+offset_bottom = 130.0
 script = ExtResource("1_inydn")
 metadata/_custom_type_script = "uid://dtiy8502t4cqb"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(180, 260)
+custom_minimum_size = Vector2(90, 130)
 layout_mode = 0
-offset_right = 52.0
-offset_bottom = 92.0
+offset_right = 90.0
+offset_bottom = 130.0
 mouse_filter = 1

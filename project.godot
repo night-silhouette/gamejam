@@ -21,7 +21,12 @@ Util="*res://class/util/util.gd"
 [display]
 
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [global_group]
 
 card_in_hard=""
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=3

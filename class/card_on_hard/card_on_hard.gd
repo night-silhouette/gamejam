@@ -4,7 +4,7 @@ extends Control
 	
 	
 @export var transform_speed=1100	
-@export var hover_transform_time=0.3
+@export var hover_transform_time=0.1
 	
 var half_size = get_rect().size / 2.0
 func update_card_to_mouse_center(mouse_position):
@@ -24,7 +24,8 @@ var hover_lock:bool=true
 var hover_start_tween
 var hover_end_tween
 func _ready() -> void:
-
+	
+	pivot_offset=size/2
 	set_process(false)
 	mouse_entered.connect(func():
 		
@@ -56,14 +57,16 @@ func _gui_input(event):
 		if event is InputEventMouseButton :
 			if event.pressed:
 				is_draged=true
-				print(global_position)
-				#orignal_position=global_position
+				
+			
 			else:
 				is_draged=false
 				drag_lock=false
-				Util.tween_fast_to_slow(self,"global_position",orignal_position,global_position.distance_to(orignal_position)/transform_speed,func():drag_lock=true)			
+				Util.tween_fast_to_slow(self,"global_position",orignal_position,global_position.distance_to(orignal_position)/transform_speed,func():
+					drag_lock=true)			
 				mouse_exited.emit()
 		elif event is InputEventMouseMotion:
+			
 			if is_draged:
 				update_card_to_mouse_center(event.position)
 
@@ -76,7 +79,6 @@ func init():
 
 
 func _process(delta: float) -> void:	
-	
 	pass
 	
 	
