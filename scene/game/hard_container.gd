@@ -5,7 +5,7 @@ extends Control
 @export var base_y_offset: float = 100.0   
 @export var card_arc_angle: float = 0.5    
 @export var y_bios=20
-
+@export var transform_time=0.3
 var card_in_hard=[]
 var viewport_x
 var viewport_y
@@ -15,10 +15,21 @@ func callback_all(callback,arg_list):
 		var callable=Callable(i,callback)
 		callable.callv(arg_list)
 
+var reback_flag=true
 func _ready() -> void:
 	
 	
-	
+	$"../牌堆".pressed.connect(func():
+		if reback_flag:
+			reback()
+			reback_flag=false
+		else:
+			tranform_card()
+			reback_flag=true
+			
+			
+			
+			)
 	
 	
 	viewport_x=get_viewport_rect().size.x
@@ -35,25 +46,41 @@ func _ready() -> void:
 	
 	for item in card_in_hard:
 		item.change_is_on_hard.connect(tranform_card)
+
+
+var transform_tween:Tween
 func tranform_card():
 	card_in_hard=get_children().filter(func(item):return item.is_on_hard )
 	if self.is_node_ready():
 		var card_num=card_in_hard.size()
-
-		
-
 		var r_temp=card_arc_angle/card_num
-
+		
+		transform_tween=create_tween()
+		transform_tween.set_ease(Tween.EASE_OUT)
+		transform_tween.set_trans(Tween.TRANS_CUBIC)	
+		transform_tween.set_parallel(true)
 		for i in range(card_num):
-			
 
-				
+
 			var card_size=card_in_hard[i].size
 			var diagonal=Vector2(card_size.x/2,card_size.y/2).length()
 			var rota=Util.zero_cross_sequence(card_num)[i]*r_temp
 			var pivot_bios=Vector2(diagonal*sin(rota),diagonal*cos(rota))
 			card_in_hard[i].rotation=rota
-			card_in_hard[i].global_position=pivot_bios+Vector2(Util.zero_cross_sequence(card_num)[i]*x_span,viewport_y/2-base_y_offset-y_bios* Util.u_sequence(card_num)[i])
+			var object_position=pivot_bios+Vector2(Util.zero_cross_sequence(card_num)[i]*x_span,viewport_y/2-base_y_offset-y_bios* Util.u_sequence(card_num)[i])
+			transform_tween.tween_property(card_in_hard[i],"global_position",object_position,transform_time)
+			
+var reback_tween:Tween			
+func reback():
+		reback_tween=create_tween()
+		reback_tween.set_ease(Tween.EASE_OUT)
+		reback_tween.set_trans(Tween.TRANS_CUBIC)	
+		reback_tween.set_parallel(true)
+		var back_position=Vector2(-450,220)	
+		card_in_hard=get_children().filter(func(item):return item.is_on_hard )
+		for items in card_in_hard:
+			items.rotation=0
+			reback_tween.tween_property(items,"global_position",back_position,transform_time)
 			
 			
 			

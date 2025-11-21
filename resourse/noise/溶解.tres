@@ -3,7 +3,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_d4bfj"]
 noise_type = 0
 seed = 20
-frequency = 0.15
+frequency = 0.072
 
 [resource]
 noise = SubResource("FastNoiseLite_d4bfj")
