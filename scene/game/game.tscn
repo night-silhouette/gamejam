@@ -10,6 +10,7 @@ size = Vector2(437, 147)
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(37, -2)
 
 [node name="hard_container" type="Control" parent="."]
 layout_mode = 3
@@ -101,10 +102,10 @@ offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
-offset_left = 380.0
-offset_top = -285.0
-offset_right = 428.0
-offset_bottom = -254.0
+offset_left = 313.0
+offset_top = -227.0
+offset_right = 361.0
+offset_bottom = -196.0
 scale = Vector2(3.22993, 2.64425)
 text = "reset
 "

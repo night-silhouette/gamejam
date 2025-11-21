@@ -12,12 +12,15 @@ func u_sequence(total:int):#2,1,0,1,2
 		
 	return res
 
-func zero_cross_sequence(total):#-2,-1,0,1,2
+func zero_cross_sequence(total):#-1.5，-0.5，0.5，1.5
 	var middle=int(total/2)
 	var res:Array=[]
 	if total%2==0:
-		res.append_array(Array(range(-middle+1,1)))
-		res.append_array(Array(range(0,middle)))
+		var i=-middle+0.5
+		while (i<=middle-0.5):
+			res.push_back(i)
+			i+=1
+		
 	else:
 		res.append_array(Array(range(-middle,0)))
 		res.append_array(Array(range(0,middle+1)))
