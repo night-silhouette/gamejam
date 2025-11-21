@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn84ltnokpuvb"]
+[gd_scene load_steps=3 format=3 uid="uid://bn84ltnokpuvb"]
 
 [ext_resource type="Script" uid="uid://dtiy8502t4cqb" path="res://class/card_on_hard/card_on_hard.gd" id="1_inydn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywej"]
+size = Vector2(90, 130)
 
 [node name="card_in_hard" type="Control" groups=["card_in_hard"]]
 custom_minimum_size = Vector2(90, 130)
@@ -9,6 +12,8 @@ anchors_preset = 0
 offset_right = 90.0
 offset_bottom = 130.0
 script = ExtResource("1_inydn")
+hover_transform_time = 0.2
+scale_value = Vector2(1.8, 1.8)
 metadata/_custom_type_script = "uid://dtiy8502t4cqb"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -17,3 +22,9 @@ layout_mode = 0
 offset_right = 90.0
 offset_bottom = 130.0
 mouse_filter = 1
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(45, 65)
+shape = SubResource("RectangleShape2D_6ywej")

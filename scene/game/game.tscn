@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=5 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="PackedScene" uid="uid://bn84ltnokpuvb" path="res://scene/card_on_hard/Card_on_hard.tscn" id="1_8xedm"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
+[ext_resource type="Script" uid="uid://c2aqpvcyji0sc" path="res://scene/game/出牌区.gd" id="3_l2vx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
+size = Vector2(437, 147)
 
 [node name="Game" type="Node2D"]
 
@@ -15,7 +19,7 @@ offset_top = 171.0
 offset_right = -373.0
 offset_bottom = 211.0
 script = ExtResource("1_pw1yp")
-base_y_offset = 200.0
+base_y_offset = 250.0
 y_bios = 7
 metadata/_edit_use_anchors_ = true
 
@@ -104,3 +108,10 @@ offset_bottom = -254.0
 scale = Vector2(3.22993, 2.64425)
 text = "reset
 "
+
+[node name="出牌区" type="Area2D" parent="." groups=["出牌区"]]
+script = ExtResource("3_l2vx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="出牌区"]
+position = Vector2(-0.5, -192.5)
+shape = SubResource("RectangleShape2D_pw1yp")

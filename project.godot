@@ -26,6 +26,7 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 card_in_hard=""
+"出牌区"=""
 
 [rendering]
 
