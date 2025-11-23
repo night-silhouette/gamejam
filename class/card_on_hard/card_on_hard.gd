@@ -108,40 +108,46 @@ func _ready() -> void:
 signal reback_start()
 
 var drag_lock:bool=true
+var flip_lock:bool=true
 func _gui_input(event):
-	if drag_lock:
+	print(event)
+	if drag_lock:#拖动逻辑
 		if event is InputEventMouseButton :
-			print(event)
-			if event.pressed:
-				is_draged=true
+			if event.button_index==1:#左键逻辑
+				if event.pressed:
+					is_draged=true
+					
 				
-			
-			else:
-				is_draged=false
-				drag_lock=false
-				var flag=false
-				for item in area.get_overlapping_areas():
-					if item.is_in_group("出牌区"):
-						flag=true
-						if is_front:
-							flip()
-				if flag:
-					is_on_hard=false
 				else:
-					Util.tween_fast_to_slow(self,"global_position",orignal_position,global_position.distance_to(orignal_position)/transform_speed,func():
-						drag_lock=true
-						change_is_on_hard.emit()
-					)			
-					mouse_exited.emit()
+					is_draged=false
+					drag_lock=false
+					var flag=false
+					for item in area.get_overlapping_areas():
+						if item.is_in_group("出牌区"):
+							flag=true
+							if is_front:
+								flip()
+					if flag:
+						is_on_hard=false
+					else:
+						Util.tween_fast_to_slow(self,"global_position",orignal_position,global_position.distance_to(orignal_position)/transform_speed,func():
+							drag_lock=true
+							change_is_on_hard.emit()
+						)			
+						mouse_exited.emit()
 				
-
 		elif event is InputEventMouseMotion:
 			
 			if is_draged:
 				update_card_to_mouse_center(event.position)
-				
-				
-				
+	
+	
+	if event is InputEventMouseButton and event.button_index==2:			
+		if flip_lock:
+			flip()
+			flip_lock=false
+			Util.set_time(2*flip_time,func():flip_lock=true)			
+					
 				
 				
 				
