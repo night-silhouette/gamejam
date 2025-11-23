@@ -1,14 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=20 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="PackedScene" uid="uid://bn84ltnokpuvb" path="res://scene/card_on_hard/Card_on_hard.tscn" id="1_8xedm"]
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
 [ext_resource type="Script" uid="uid://c2aqpvcyji0sc" path="res://scene/game/出牌区.gd" id="3_l2vx3"]
+[ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/空右手.png" id="6_0tn4t"]
+[ext_resource type="Texture2D" uid="uid://bqic60jj3gv1" path="res://asset/环境素材/空左手.png" id="6_5nn1g"]
+[ext_resource type="Script" uid="uid://2k20tsi2fqek" path="res://scene/game/空右手.gd" id="7_5nn1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
 size = Vector2(437, 147)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7fbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u7u6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4hye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yv2ml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rwqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o100e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okn60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oixtr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
+
 [node name="Game" type="Node2D"]
+position = Vector2(542, 327)
 script = ExtResource("1_82mss")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -17,12 +43,12 @@ position = Vector2(37, -2)
 [node name="hard_container" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -413.0
-offset_top = 171.0
-offset_right = -373.0
-offset_bottom = 211.0
+offset_left = 298.0
+offset_top = 63.0
+offset_right = 338.0
+offset_bottom = 103.0
 script = ExtResource("1_pw1yp")
-base_y_offset = 250.0
+base_y_offset = -80.0
 y_bios = 7
 metadata/_edit_use_anchors_ = true
 
@@ -103,15 +129,6 @@ offset_right = -2.0
 offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="."]
-offset_left = 313.0
-offset_top = -227.0
-offset_right = 361.0
-offset_bottom = -196.0
-scale = Vector2(3.22993, 2.64425)
-text = "reset
-"
-
 [node name="出牌区" type="Area2D" parent="." groups=["出牌区"]]
 script = ExtResource("3_l2vx3")
 
@@ -120,9 +137,30 @@ position = Vector2(-0.5, -192.5)
 shape = SubResource("RectangleShape2D_pw1yp")
 
 [node name="牌堆" type="Button" parent="."]
-offset_left = -503.0
-offset_top = 183.0
-offset_right = -417.0
-offset_bottom = 267.0
-text = "牌堆
+offset_left = -460.0
+offset_top = 145.0
+offset_right = 824.0
+offset_bottom = 2289.0
+scale = Vector2(0.100758, 0.0795975)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cirq1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7d2hf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c7fbu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8u7u6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4hye")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yv2ml")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2rwqa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_o100e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_okn60")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oixtr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5wlrd")
+text = "
 "
+icon = ExtResource("6_5nn1g")
+metadata/_edit_use_anchors_ = true
+
+[node name="空右手" type="Sprite2D" parent="."]
+z_index = 4096
+position = Vector2(418.484, 61.1167)
+scale = Vector2(0.060228, 0.0773649)
+texture = ExtResource("6_0tn4t")
+script = ExtResource("7_5nn1g")

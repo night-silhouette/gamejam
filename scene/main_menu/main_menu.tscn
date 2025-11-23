@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://duyv3wqe6k8r4"]
+
+[ext_resource type="Script" uid="uid://gk40m51ggufg" path="res://scene/main_menu/main_menu.gd" id="1_o25w2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.163
+anchor_bottom = 0.219
+offset_right = -187.776
+offset_bottom = -141.912
+script = ExtResource("1_o25w2")
+
+[node name="host" type="Button" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 288.0
+offset_right = 417.0
+offset_bottom = 351.0
+text = "host"
+
+[node name="Client" type="Button" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 289.0
+offset_right = 738.0
+offset_bottom = 347.0
+text = "Client"

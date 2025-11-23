@@ -110,12 +110,13 @@ signal reback_start()
 var drag_lock:bool=true
 var flip_lock:bool=true
 func _gui_input(event):
-	print(event)
+	#print(event)
 	if drag_lock:#拖动逻辑
 		if event is InputEventMouseButton :
 			if event.button_index==1:#左键逻辑
 				if event.pressed:
 					is_draged=true
+					orignal_position=global_position
 					
 				
 				else:
@@ -147,10 +148,10 @@ func _gui_input(event):
 			flip()
 			flip_lock=false
 			Util.set_time(2*flip_time,func():flip_lock=true)			
-					
-				
-				
-				
+			
+			
+			
+			
 var original_z_index
 func init():
 	
