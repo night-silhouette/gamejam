@@ -6,8 +6,9 @@ extends Control
 @export var transform_speed=1100	
 @export var hover_transform_time=0.1
 @export var scale_value:Vector2=Vector2(1.5,1.5)	
-	
-	
+@export var flip_time=0.5
+@export var perspective=0.1
+
 @onready var area=$Area
 var half_size = get_rect().size / 2.0
 func update_card_to_mouse_center(mouse_position):
@@ -32,7 +33,48 @@ var is_on_hard:bool=true:
 		is_on_hard=value
 		change_is_on_hard.emit()
 signal change_is_on_hard()
+@onready var card_front = $卡面 
+@onready var card_back = $普通卡卡背
+var f_card_material : ShaderMaterial
+var b_card_material : ShaderMaterial
+
+var is_front:
+	set(value):
+		is_front=value
+		card_front.visible=is_front
+		card_back.visible=!is_front
+func flip():
+		var tween=create_tween()
+		tween.set_ease(Tween.EASE_OUT)
+		tween.set_trans(Tween.TRANS_CUBIC)	
+		var call_f=Callable(self,"_update_progress").bind(f_card_material)
+		var call_b=Callable(self,"_update_progress").bind(b_card_material)
+		var temp=1 if is_front else 0
+		if is_front:
+			tween.tween_method(call_f,1000*(1-temp),1000*temp,flip_time)
+			tween.tween_property(self,"is_front",!is_front,0)		
+			tween.tween_method(call_b,1000*temp,1000*(1-temp),flip_time)
+		else :
+			tween.tween_method(call_b,1000*temp,1000*(1-temp),flip_time)
+			tween.tween_property(self,"is_front",!is_front,0)		
+			tween.tween_method(call_f,1000*(1-temp),1000*temp,flip_time)
+func _update_progress(progress,obj):
+	obj.set_shader_parameter("flip_progress", progress/1000.0)
+	
+	
 func _ready() -> void:
+	is_front=true
+	f_card_material = card_front.material
+	b_card_material = card_back.material
+	f_card_material.set_shader_parameter("perspective_strength",perspective)
+	b_card_material.set_shader_parameter("perspective_strength",perspective)
+	
+	
+	
+	
+	
+	
+	
 	
 	pivot_offset=size/2
 	set_process(false)
@@ -69,6 +111,7 @@ var drag_lock:bool=true
 func _gui_input(event):
 	if drag_lock:
 		if event is InputEventMouseButton :
+			print(event)
 			if event.pressed:
 				is_draged=true
 				
@@ -80,6 +123,8 @@ func _gui_input(event):
 				for item in area.get_overlapping_areas():
 					if item.is_in_group("出牌区"):
 						flag=true
+						if is_front:
+							flip()
 				if flag:
 					is_on_hard=false
 				else:
@@ -94,6 +139,12 @@ func _gui_input(event):
 			
 			if is_draged:
 				update_card_to_mouse_center(event.position)
+				
+				
+				
+				
+				
+				
 var original_z_index
 func init():
 	
@@ -102,6 +153,8 @@ func init():
 	orignal_rotation=rotation
 	orignal_position=global_position
 	original_z_index=z_index
+
+
 
 func _process(delta: float) -> void:	
 	pass
