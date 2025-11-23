@@ -1,19 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn84ltnokpuvb"]
+[gd_scene load_steps=4 format=3 uid="uid://bn84ltnokpuvb"]
 
 [ext_resource type="Script" uid="uid://dtiy8502t4cqb" path="res://class/card_on_hard/card_on_hard.gd" id="1_inydn"]
-[ext_resource type="Shader" uid="uid://4cfitcwl2bvt" path="res://resourse/shader/溶解.gdshader" id="2_nbf67"]
-[ext_resource type="Texture2D" uid="uid://c5ruiwx4ifnwv" path="res://asset/1.png" id="2_wx8jp"]
-[ext_resource type="Texture2D" uid="uid://ryw1dqccy47m" path="res://resourse/noise/溶解.tres" id="3_80k56"]
+[ext_resource type="Texture2D" uid="uid://jmhfojmo2b2w" path="res://asset/d89cd350b09c5d353d162a788935b0e4.png" id="2_wx8jp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywej"]
 size = Vector2(90, 130)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3r5at"]
-shader = ExtResource("2_nbf67")
-shader_parameter/dissolve_amount = 0.0
-shader_parameter/noise_texture = ExtResource("3_80k56")
-shader_parameter/burn_color = Color(0, 0, 0, 1)
-shader_parameter/burn_size = 0.02
 
 [node name="card_in_hard" type="Control" groups=["card_in_hard"]]
 custom_minimum_size = Vector2(90, 130)
@@ -34,8 +25,7 @@ visible = false
 position = Vector2(45, 65)
 shape = SubResource("RectangleShape2D_6ywej")
 
-[node name="1" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_3r5at")
-position = Vector2(45.0674, 65.1191)
-scale = Vector2(0.0112416, 0.00966064)
+[node name="D89Cd350b09c5d353d162a788935b0e4" type="Sprite2D" parent="."]
+position = Vector2(47.8281, 79.4184)
+scale = Vector2(0.0155546, 0.015572)
 texture = ExtResource("2_wx8jp")

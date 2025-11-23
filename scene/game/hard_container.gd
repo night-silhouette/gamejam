@@ -69,7 +69,7 @@ func tranform_card():
 			card_in_hard[i].rotation=rota
 			var object_position=pivot_bios+Vector2(Util.zero_cross_sequence(card_num)[i]*x_span,viewport_y/2-base_y_offset-y_bios* Util.u_sequence(card_num)[i])
 			transform_tween.tween_property(card_in_hard[i],"global_position",object_position,transform_time)
-			
+			card_in_hard[i].z_index=5*i
 var reback_tween:Tween			
 func reback():
 		reback_tween=create_tween()

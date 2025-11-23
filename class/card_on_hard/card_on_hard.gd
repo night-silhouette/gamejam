@@ -50,7 +50,7 @@ func _ready() -> void:
 		)
 		
 	mouse_exited.connect(func():
-		self.z_index=0
+		self.z_index=original_z_index
 		if hover_start_tween and hover_start_tween.is_running():
 			hover_start_tween.custom_step(hover_transform_time)
 		hover_end_tween=create_tween()
@@ -94,18 +94,17 @@ func _gui_input(event):
 			
 			if is_draged:
 				update_card_to_mouse_center(event.position)
-
+var original_z_index
 func init():
 	
 	#var center_point: Vector2 = self.size / 2.0
 	#self.pivot_offset = center_point
 	orignal_rotation=rotation
 	orignal_position=global_position
-
+	original_z_index=z_index
 
 func _process(delta: float) -> void:	
 	pass
-	
 
 	
 	
