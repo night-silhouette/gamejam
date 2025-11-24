@@ -79,6 +79,7 @@ func _ready() -> void:
 	pivot_offset=size/2
 	set_process(false)
 	mouse_entered.connect(func():
+		$"../../空右手".change_texture(false)
 		self.z_index=100
 		if hover_end_tween and hover_end_tween.is_running():
 			hover_end_tween.custom_step(hover_transform_time)
@@ -92,6 +93,7 @@ func _ready() -> void:
 		)
 		
 	mouse_exited.connect(func():
+		$"../../空右手".change_texture(true)
 		self.z_index=original_z_index
 		if hover_start_tween and hover_start_tween.is_running():
 			hover_start_tween.custom_step(hover_transform_time)
