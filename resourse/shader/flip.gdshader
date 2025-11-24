@@ -1,31 +1,37 @@
-shader_type canvas_item; 
+shader_type canvas_item;
 
+// 原有的 uniform 变量，用于控制翻转效果 (不改动，保留原有功能)
 uniform float flip_progress : hint_range(0.0, 1.0) = 0.0;
 uniform float card_width = 200.0;
 uniform float perspective_strength = 0.05;
 
+// 【新增】用于下层/修补图像的 uniform 变量
+uniform sampler2D back_texture;
+
 void vertex() {
+	// 保持原有的顶点着色器逻辑不变
     float x = VERTEX.x;
     float center_x = card_width * 0.5;
 
     float d_x = x - center_x;
 
-    // 计算压缩因子：当 progress 接近 0.5 时，cos(PI * progress) 接近 -1
-    // 当 progress 接近 0 或 1 时，cos(PI * progress) 接近 1
-    // 这个因子会从 1.0 变化到接近 0.0，再变回 1.0
     float compress_factor = (1.0 + cos(flip_progress * 3.14159265)) / 2.0;
 
     VERTEX.x = center_x + d_x * compress_factor;
 
-
     float y_stretch = 1.0 + (1.0 - compress_factor) * perspective_strength;
     VERTEX.y *= y_stretch;
 
-    // 确保中心点在 Y 轴保持不动 (如果卡牌不是居中对齐，需要更复杂的逻辑)
-    // VERTEX.y -= (y_stretch - 1.0) * center_y;
 }
 
-// 片段着色器保持简单，只需要渲染纹理
 void fragment() {
-    COLOR = texture(TEXTURE, UV);
+	
+	//  主纹理 (卡面) 的颜色
+    vec4 front_color = texture(TEXTURE, UV);
+	
+	// 下层纹理颜色
+	vec4 back_color = texture(back_texture, UV);
+
+
+    COLOR = mix(back_color, front_color, front_color.a);
 }

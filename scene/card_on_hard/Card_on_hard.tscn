@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn84ltnokpuvb"]
+[gd_scene load_steps=9 format=3 uid="uid://bn84ltnokpuvb"]
 
 [ext_resource type="Script" uid="uid://dtiy8502t4cqb" path="res://class/card_on_hard/card_on_hard.gd" id="1_inydn"]
 [ext_resource type="Shader" uid="uid://bvl6lxm7df3r3" path="res://resourse/shader/flip.gdshader" id="2_nbf67"]
-[ext_resource type="Texture2D" uid="uid://jmhfojmo2b2w" path="res://asset/card_in_hard/法术牌1.png" id="2_wx8jp"]
+[ext_resource type="Texture2D" uid="uid://cuhhttc75qpan" path="res://asset/card_in_hard/卡框.png" id="3_80k56"]
 [ext_resource type="Texture2D" uid="uid://cyg01cpx5p7ek" path="res://asset/card_in_hard/普通卡卡背.png" id="3_wrkfp"]
+[ext_resource type="Texture2D" uid="uid://4fwxa83a8u6x" path="res://asset/card_in_hard/战斗牌11.png" id="4_3r5at"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywej"]
 size = Vector2(90, 130)
@@ -14,6 +15,7 @@ shader = ExtResource("2_nbf67")
 shader_parameter/flip_progress = 0.0
 shader_parameter/card_width = 200.0
 shader_parameter/perspective_strength = 0.05
+shader_parameter/back_texture = ExtResource("3_80k56")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3r5at"]
 resource_local_to_scene = true
@@ -21,6 +23,7 @@ shader = ExtResource("2_nbf67")
 shader_parameter/flip_progress = 0.0
 shader_parameter/card_width = 200.0
 shader_parameter/perspective_strength = 0.05
+shader_parameter/back_texture = ExtResource("3_80k56")
 
 [node name="card_in_hard" type="Control" groups=["card_in_hard"]]
 custom_minimum_size = Vector2(90, 130)
@@ -45,12 +48,12 @@ shape = SubResource("RectangleShape2D_6ywej")
 [node name="卡面" type="Sprite2D" parent="."]
 z_index = 1
 material = SubResource("ShaderMaterial_80k56")
-position = Vector2(47.3282, 76.9184)
+position = Vector2(44, 39)
 scale = Vector2(0.0154295, 0.0151998)
-texture = ExtResource("2_wx8jp")
+texture = ExtResource("4_3r5at")
 
 [node name="普通卡卡背" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3r5at")
-position = Vector2(45.125, 74.9063)
+position = Vector2(415, -38)
 scale = Vector2(0.0154804, 0.0152016)
 texture = ExtResource("3_wrkfp")
