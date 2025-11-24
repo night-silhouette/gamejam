@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn84ltnokpuvb"]
+[gd_scene load_steps=7 format=3 uid="uid://bn84ltnokpuvb"]
 
 [ext_resource type="Script" uid="uid://dtiy8502t4cqb" path="res://class/card_on_hard/card_on_hard.gd" id="1_inydn"]
 [ext_resource type="Shader" uid="uid://bvl6lxm7df3r3" path="res://resourse/shader/flip.gdshader" id="2_nbf67"]
-[ext_resource type="Texture2D" uid="uid://cyg01cpx5p7ek" path="res://asset/card_in_hard/普通卡卡背.png" id="3_wrkfp"]
-[ext_resource type="Texture2D" uid="uid://4fwxa83a8u6x" path="res://asset/card_in_hard/战斗牌11.png" id="4_3r5at"]
+[ext_resource type="Resource" uid="uid://cl2bimtxlh3u8" path="res://resourse/card/source/母卡_战斗卡5.tres" id="2_wrkfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywej"]
 size = Vector2(90, 130)
@@ -29,6 +28,7 @@ anchors_preset = 0
 offset_right = 90.0
 offset_bottom = 130.0
 script = ExtResource("1_inydn")
+card_source = ExtResource("2_wrkfp")
 hover_transform_time = 0.2
 scale_value = Vector2(1.8, 1.8)
 perspective = 0.07
@@ -47,10 +47,8 @@ z_index = 1
 material = SubResource("ShaderMaterial_80k56")
 position = Vector2(46, 78)
 scale = Vector2(0.0994335, 0.0944661)
-texture = ExtResource("4_3r5at")
 
 [node name="普通卡卡背" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nbf67")
 position = Vector2(45.6717, 78.0818)
 scale = Vector2(0.0154804, 0.0152016)
-texture = ExtResource("3_wrkfp")

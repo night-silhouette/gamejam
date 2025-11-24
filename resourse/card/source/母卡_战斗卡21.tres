@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://04j0pl582p2o"]
+
+[ext_resource type="Script" uid="uid://jdneibbc207o" path="res://resourse/card/source/母卡_战斗卡21.gd" id="1_4togg"]
+
+[resource]
+script = ExtResource("1_4togg")
+is_parent_card = true
+metadata/_custom_type_script = "uid://bspgioegar6p6"

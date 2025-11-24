@@ -2,6 +2,8 @@ class_name card_on_hard
 extends Control
 
 	
+@export var card_source:Card	
+	
 @export_category("特效参数")
 @export var transform_speed=1100	
 @export var hover_transform_time=0.1
@@ -61,8 +63,17 @@ func flip():
 func _update_progress(progress,obj):
 	obj.set_shader_parameter("flip_progress", progress/1000.0)
 	
-	
+const parent_card_back_texture = preload("res://asset/card_in_hard/普通卡卡背.png")
+const child_card_back_texture = preload("res://asset/card_in_hard/对局卡卡背.png")
+
 func _ready() -> void:
+	card_front.texture=card_source.card_face
+	if card_source.is_parent_card:
+		card_back.texture=parent_card_back_texture
+	else:
+		card_back.texture=child_card_back_texture
+	
+	
 	is_front=true
 	f_card_material = card_front.material
 	b_card_material = card_back.material

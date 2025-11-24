@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cl2bimtxlh3u8"]
+
+[ext_resource type="Texture2D" uid="uid://bys1h316l3m1t" path="res://asset/card_in_hard/战斗牌5.png" id="1_kfx6v"]
+[ext_resource type="Script" uid="uid://bspgioegar6p6" path="res://resourse/card/class/Card.gd" id="1_vcb5k"]
+
+[resource]
+script = ExtResource("1_vcb5k")
+card_face = ExtResource("1_kfx6v")
+is_parent_card = true
+metadata/_custom_type_script = "uid://bspgioegar6p6"

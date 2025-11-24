@@ -1,12 +1,34 @@
-[gd_scene load_steps=20 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=42 format=3 uid="uid://clj41ktobb2y"]
 
-[ext_resource type="PackedScene" uid="uid://bn84ltnokpuvb" path="res://scene/card_on_hard/Card_on_hard.tscn" id="1_8xedm"]
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
+[ext_resource type="Resource" uid="uid://cl2bimtxlh3u8" path="res://resourse/card/source/母卡_战斗卡5.tres" id="2_4r5hn"]
 [ext_resource type="Script" uid="uid://c2aqpvcyji0sc" path="res://scene/game/出牌区.gd" id="3_l2vx3"]
+[ext_resource type="Resource" uid="uid://c7aask474sp0m" path="res://resourse/card/source/母卡_战斗卡6.tres" id="3_x0v8v"]
+[ext_resource type="Resource" uid="uid://cg5aj38rgnc10" path="res://resourse/card/source/母卡_战斗卡7.tres" id="4_req8m"]
+[ext_resource type="Resource" uid="uid://bh2a34558siwv" path="res://resourse/card/source/母卡_战斗卡8.tres" id="5_4auim"]
 [ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/空右手.png" id="6_0tn4t"]
 [ext_resource type="Texture2D" uid="uid://bqic60jj3gv1" path="res://asset/环境素材/空左手.png" id="6_5nn1g"]
+[ext_resource type="Resource" uid="uid://60g50626w4sm" path="res://resourse/card/source/母卡_战斗卡9.tres" id="6_vbxc3"]
+[ext_resource type="Resource" uid="uid://cnvmok38mvnxj" path="res://resourse/card/source/母卡_战斗卡10.tres" id="7_2k6mr"]
 [ext_resource type="Script" uid="uid://2k20tsi2fqek" path="res://scene/game/空右手.gd" id="7_5nn1g"]
+[ext_resource type="Resource" uid="uid://bnwtc03c06wfo" path="res://resourse/card/source/母卡_战斗卡11.tres" id="8_tyrbm"]
+[ext_resource type="Resource" uid="uid://jypc1xnve0xi" path="res://resourse/card/source/母卡_战斗卡12.tres" id="9_extmi"]
+[ext_resource type="Resource" uid="uid://dren8mrxqqstu" path="res://resourse/card/source/母卡_战斗卡13.tres" id="10_ey85o"]
+[ext_resource type="Resource" uid="uid://lseauxshab6p" path="res://resourse/card/source/母卡_战斗卡14.tres" id="11_d5h2i"]
+[ext_resource type="Resource" uid="uid://sfr5wtttwp5x" path="res://resourse/card/source/母卡_战斗卡15.tres" id="12_t35ln"]
+[ext_resource type="Resource" uid="uid://d0psas4n3lsjo" path="res://resourse/card/source/母卡_战斗卡16.tres" id="13_efkk3"]
+[ext_resource type="Resource" uid="uid://b5gkoafuuhik2" path="res://resourse/card/source/母卡_战斗卡17.tres" id="14_7yvv2"]
+[ext_resource type="Resource" uid="uid://nhubjslh7pbn" path="res://resourse/card/source/母卡_战斗卡18.tres" id="15_0nkex"]
+[ext_resource type="Resource" uid="uid://by5j7724bu4jh" path="res://resourse/card/source/母卡_战斗卡19.tres" id="16_ersld"]
+[ext_resource type="Resource" uid="uid://bukyfkvgoewpg" path="res://resourse/card/source/母卡_战斗卡20.tres" id="17_34hgw"]
+[ext_resource type="Resource" uid="uid://04j0pl582p2o" path="res://resourse/card/source/母卡_战斗卡21.tres" id="18_hddrd"]
+[ext_resource type="Resource" uid="uid://cs0x3eb7aytkd" path="res://resourse/card/source/母卡_法术卡5.tres" id="19_267do"]
+[ext_resource type="Resource" uid="uid://dp37myy72so8e" path="res://resourse/card/source/母卡_法术卡6.tres" id="20_4q42n"]
+[ext_resource type="Resource" uid="uid://dku02d8eeeunw" path="res://resourse/card/source/母卡_法术卡7.tres" id="21_mmq3w"]
+[ext_resource type="Resource" uid="uid://78vqumnmaj3f" path="res://resourse/card/source/母卡_法术卡8.tres" id="22_fgo0e"]
+[ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="23_2h8y6"]
+[ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
 size = Vector2(437, 147)
@@ -36,6 +58,7 @@ size = Vector2(437, 147)
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
 script = ExtResource("1_82mss")
+parent_card_list = Array[Resource]([ExtResource("2_4r5hn"), ExtResource("3_x0v8v"), ExtResource("4_req8m"), ExtResource("5_4auim"), ExtResource("6_vbxc3"), ExtResource("7_2k6mr"), ExtResource("8_tyrbm"), ExtResource("9_extmi"), ExtResource("10_ey85o"), ExtResource("11_d5h2i"), ExtResource("12_t35ln"), ExtResource("13_efkk3"), ExtResource("14_7yvv2"), ExtResource("15_0nkex"), ExtResource("16_ersld"), ExtResource("17_34hgw"), ExtResource("18_hddrd"), ExtResource("19_267do"), ExtResource("20_4q42n"), ExtResource("21_mmq3w"), ExtResource("22_fgo0e"), ExtResource("23_2h8y6"), ExtResource("24_cl4qa")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, -2)
@@ -50,83 +73,6 @@ offset_bottom = 103.0
 script = ExtResource("1_pw1yp")
 base_y_offset = -80.0
 y_bios = 7
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard2" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard3" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard4" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard5" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard6" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard7" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard8" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard9" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard10" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="card_in_hard11" parent="hard_container" instance=ExtResource("1_8xedm")]
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -2.0
-offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
 
 [node name="出牌区" type="Area2D" parent="." groups=["出牌区"]]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://by5j7724bu4jh"]
+
+[ext_resource type="Script" uid="uid://boagohxtdstne" path="res://resourse/card/source/母卡_战斗卡19.gd" id="1_dfggi"]
+[ext_resource type="Texture2D" uid="uid://c83j8diarqcsv" path="res://asset/card_in_hard/战斗牌19.png" id="1_i3bac"]
+
+[resource]
+script = ExtResource("1_dfggi")
+card_face = ExtResource("1_i3bac")
+is_parent_card = true
+metadata/_custom_type_script = "uid://bspgioegar6p6"

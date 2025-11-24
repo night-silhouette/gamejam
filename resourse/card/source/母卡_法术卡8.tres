@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://78vqumnmaj3f"]
+
+[ext_resource type="Texture2D" uid="uid://b0nn7trdx4l2u" path="res://asset/card_in_hard/法术牌8.png" id="1_yajuo"]
+[ext_resource type="Script" uid="uid://ct7lug78yi173" path="res://resourse/card/source/母卡_法术卡8.gd" id="2_dw71y"]
+
+[resource]
+script = ExtResource("2_dw71y")
+card_face = ExtResource("1_yajuo")
+is_parent_card = true
+metadata/_custom_type_script = "uid://bspgioegar6p6"
