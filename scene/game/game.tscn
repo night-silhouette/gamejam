@@ -33,27 +33,27 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
 size = Vector2(437, 147)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2hf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7fbu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u7u6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4hye"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yv2ml"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rwqa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o100e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okn60"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oixtr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okn60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o100e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rwqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yv2ml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4hye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u7u6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7fbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
@@ -88,17 +88,17 @@ offset_top = 145.0
 offset_right = 824.0
 offset_bottom = 2289.0
 scale = Vector2(0.100758, 0.0795975)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_cirq1")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7d2hf")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_c7fbu")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8u7u6")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4hye")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yv2ml")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_2rwqa")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_o100e")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_okn60")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oixtr")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5wlrd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oixtr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_okn60")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_o100e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2rwqa")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yv2ml")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4hye")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8u7u6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c7fbu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7d2hf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cirq1")
 text = "
 "
 icon = ExtResource("6_5nn1g")

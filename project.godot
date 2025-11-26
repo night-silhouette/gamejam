@@ -12,11 +12,17 @@ config_version=5
 
 config/name="gamejam"
 run/main_scene="uid://clj41ktobb2y"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 
 [autoload]
 
 Util="*res://class/util/util.gd"
+GameX="*res://scene/gane_statemachine/game_x.gd"
+GameStateMachine="*res://scene/gane_statemachine/game_state_machine.gd"
 
 [display]
 

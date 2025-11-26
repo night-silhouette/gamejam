@@ -34,27 +34,22 @@ func change_left_hard_state():
 			
 			
 			
-			
-
+func container_init():		
+	viewport_x=get_viewport_rect().size.x
+	viewport_y=get_viewport_rect().size.y
+	card_in_hard=get_children()
+	callback_all("set_process",[true])
+	tranform_card()
+	callback_all("init",[])
+	for item in card_in_hard:
+		item.change_is_on_hard.connect(tranform_card)
 func _ready() -> void:
 	
 	
 	$"../牌堆".pressed.connect(change_left_hard_state)
 	
 	
-	viewport_x=get_viewport_rect().size.x
-	viewport_y=get_viewport_rect().size.y
-	card_in_hard=get_children()
-	callback_all("set_process",[true])
-	tranform_card()
 
-	callback_all("init",[])
-	
-
-	
-	
-	for item in card_in_hard:
-		item.change_is_on_hard.connect(tranform_card)
 
 
 var transform_tween:Tween

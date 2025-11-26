@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi4e4hnhws1hd"
-path="res://.godot/imported/战斗牌10.png-a272de24f454fb1f2b0a2a1310ec81b1.ctex"
+uid="uid://c80ao08yu7da"
+path="res://.godot/imported/loading动画.png-8e8ef532904cd04075c2a2937dd8f9aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/card_in_hard/战斗牌10.png"
-dest_files=["res://.godot/imported/战斗牌10.png-a272de24f454fb1f2b0a2a1310ec81b1.ctex"]
+source_file="res://asset/loading/loading动画.png"
+dest_files=["res://.godot/imported/loading动画.png-8e8ef532904cd04075c2a2937dd8f9aa.ctex"]
 
 [params]
 

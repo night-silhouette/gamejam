@@ -28,7 +28,7 @@ func zero_cross_sequence(total):#-1.5，-0.5，0.5，1.5
 	
 		
 	
-func tween_fast_to_slow(obj,prop,value,time,callback=func():):
+func tween_fast_to_slow(obj,prop,value,time,callback=func():pass):
 	var tween=create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)	
