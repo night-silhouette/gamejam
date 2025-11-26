@@ -1,4 +1,4 @@
 extends State
 
 func enter():
-	pass
+	get_tree().change_scene_to_packed(Loading.main_game)

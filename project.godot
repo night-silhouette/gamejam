@@ -22,6 +22,7 @@ boot_splash/use_filter=false
 
 Util="*res://class/util/util.gd"
 GameX="*res://scene/gane_statemachine/game_x.gd"
+MainMenu="*res://scene/gane_statemachine/main_menu.gd"
 Loading="*res://scene/gane_statemachine/Loading.gd"
 GameStateMachine="*res://scene/gane_statemachine/game_state_machine.gd"
 

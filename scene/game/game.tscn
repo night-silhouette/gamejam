@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=45 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -30,9 +30,10 @@
 [ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="23_2h8y6"]
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
 [ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式桌面.png" id="30_x0v8v"]
+[ext_resource type="Texture2D" uid="uid://ds372il43hl15" path="res://asset/环境素材/对手小人.png" id="31_req8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
-size = Vector2(437, 147)
+size = Vector2(337.75, 16.75)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
 
@@ -55,6 +56,11 @@ size = Vector2(437, 147)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2hf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_req8m"]
+properties/0/path = NodePath(".:list")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
@@ -80,7 +86,8 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("3_l2vx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="出牌区"]
-position = Vector2(-0.5, -192.5)
+z_index = 1
+position = Vector2(52, 57)
 shape = SubResource("RectangleShape2D_pw1yp")
 
 [node name="牌堆" type="Button" parent="."]
@@ -116,3 +123,12 @@ script = ExtResource("7_5nn1g")
 position = Vector2(42.999996, 61.000008)
 scale = Vector2(0.50283426, 0.50283426)
 texture = ExtResource("30_x0v8v")
+metadata/_edit_lock_ = true
+
+[node name="对手小人" type="Sprite2D" parent="."]
+position = Vector2(-197, -180)
+scale = Vector2(0.18251786, 0.17409961)
+texture = ExtResource("31_req8m")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_req8m")
