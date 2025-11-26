@@ -14,7 +14,16 @@ var gameInputControl:GameInputControl;
 ##[param obj]:CharacterBody2D[br]
 ##[param animation_player]:AnimationPlayer[br]
 ##[param gameInputControl]:GameInputControl[br]
-func init(obj: CharacterBody2D, animation_player:AnimationPlayer=null, gameInputControl: GameInputControl = null) -> void:
+func init2():
+	for index in state_map:
+		state_map[index].finished.connect(func(next_state_name):
+				change_state(next_state_name))
+	var start_state = state_map.get(init_state.to_lower())
+	if(start_state):
+		start_state.enter()
+		current_state = start_state	
+
+func init1(obj: CharacterBody2D, animation_player:AnimationPlayer=null, gameInputControl: GameInputControl = null) -> void:
 	if is_debug:	
 		state_changed.connect(func(pre,cur):
 			print("%s->%s"%[pre.name,cur.name]))
@@ -23,8 +32,8 @@ func init(obj: CharacterBody2D, animation_player:AnimationPlayer=null, gameInput
 	if gameInputControl:
 		gameInputControl.obj=obj
 	set_all_children_init(get_children(), obj, animation_player,gameInputControl)
-	
 	var start_state = state_map.get(init_state.to_lower())
+	
 	if(start_state):
 		start_state.enter()
 		current_state = start_state

@@ -1,1 +1,4 @@
-extends Node
+extends State
+
+func enter():
+	pass
