@@ -10,19 +10,21 @@ var current_seed:int
 var id
 
 @export var player_card={}
-@onready var 桌面视角转化: Node2D = $桌面视角转化
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("查看手牌"):
 		hard_container.change_left_hard_state()
 	if Input.is_action_just_pressed("转化视角"):
-		桌面视角转化.visible=true
-		桌面视角转化.play()
+		animation_player.play("leave")
+		animation_player.animation_finished.connect(func(_t):GameX.finished.emit("gamey"))
+		
 		
 
 func _ready() -> void:
-	桌面视角转化.has_stop.connect(func():GameX.finished.emit("gamey"))
+	animation_player.play("enter")
 	id = multiplayer.get_unique_id()
 	player_card[id]=[]
 	

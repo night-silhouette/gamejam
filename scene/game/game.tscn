@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=49 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -31,7 +31,6 @@
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
 [ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式桌面.png" id="30_x0v8v"]
 [ext_resource type="Texture2D" uid="uid://ds372il43hl15" path="res://asset/环境素材/对手小人.png" id="31_req8m"]
-[ext_resource type="PackedScene" uid="uid://sks0bo2qqv4w" path="res://scene/game/桌面视角转化.tscn" id="32_4auim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
 size = Vector2(337.75, 16.75)
@@ -59,6 +58,60 @@ size = Vector2(337.75, 16.75)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_req8m"]
+
+[sub_resource type="Animation" id="Animation_req8m"]
+resource_name = "leave"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4auim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vbxc3"]
+resource_name = "enter"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2k6mr"]
+_data = {
+&"RESET": SubResource("Animation_4auim"),
+&"enter": SubResource("Animation_vbxc3"),
+&"leave": SubResource("Animation_req8m")
+}
 
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
@@ -131,8 +184,9 @@ texture = ExtResource("31_req8m")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_req8m")
 
-[node name="桌面视角转化" parent="." instance=ExtResource("32_4auim")]
-visible = false
-z_index = 1200
-position = Vector2(-672.00006, -349.00003)
-scale = Vector2(1.2134243, 0.9376154)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2k6mr")
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
