@@ -1,8 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://04j0pl582p2o"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://04j0pl582p2o"]
 
 [ext_resource type="Script" uid="uid://jdneibbc207o" path="res://resourse/card/source/母卡_战斗卡21.gd" id="1_4togg"]
+[ext_resource type="Texture2D" uid="uid://dpbi1rbm0uxht" path="res://asset/card_in_hard/战斗牌21.png" id="1_7fcmh"]
 
 [resource]
 script = ExtResource("1_4togg")
+card_face = ExtResource("1_7fcmh")
 is_parent_card = true
 metadata/_custom_type_script = "uid://bspgioegar6p6"

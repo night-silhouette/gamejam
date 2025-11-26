@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dcu1g8vo62x60"]
 
-[ext_resource type="Texture2D" uid="uid://rb2ay16tnpam" path="res://asset/card_in_hard/法术牌9.png" id="1_xb20m"]
+[ext_resource type="Texture2D" uid="uid://bktobubif5lcx" path="res://asset/card_in_hard/法术牌9.png" id="1_xb20m"]
 [ext_resource type="Script" uid="uid://delaw1tnqpdfo" path="res://resourse/card/source/母卡_法术卡9.gd" id="2_umfw1"]
 
 [resource]

@@ -29,6 +29,7 @@ func _ready() -> void:
 	
 	parent_card_list.shuffle()
 	for i in range(11):
+		
 		var src=parent_card_list[i]
 		var card=CARD_ON_HARD.instantiate()
 		card.card_source=src

@@ -6,5 +6,5 @@ func _ready() -> void:
 	animation_player.play("loading")
 	animation_player.animation_finished.connect(func(_t):
 		Loading.lock2=true)
-
+	
 	

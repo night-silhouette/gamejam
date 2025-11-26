@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=43 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -29,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://78vqumnmaj3f" path="res://resourse/card/source/母卡_法术卡8.tres" id="22_fgo0e"]
 [ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="23_2h8y6"]
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
+[ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式桌面.png" id="30_x0v8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
 size = Vector2(437, 147)
@@ -110,3 +111,8 @@ position = Vector2(418.484, 61.1167)
 scale = Vector2(0.060228, 0.0773649)
 texture = ExtResource("6_0tn4t")
 script = ExtResource("7_5nn1g")
+
+[node name="侧式桌面" type="Sprite2D" parent="."]
+position = Vector2(42.999996, 61.000008)
+scale = Vector2(0.50283426, 0.50283426)
+texture = ExtResource("30_x0v8v")
