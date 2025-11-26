@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=46 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://cg5aj38rgnc10" path="res://resourse/card/source/母卡_战斗卡7.tres" id="4_req8m"]
 [ext_resource type="Resource" uid="uid://bh2a34558siwv" path="res://resourse/card/source/母卡_战斗卡8.tres" id="5_4auim"]
 [ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/空右手.png" id="6_0tn4t"]
-[ext_resource type="Texture2D" uid="uid://bqic60jj3gv1" path="res://asset/环境素材/空左手.png" id="6_5nn1g"]
+[ext_resource type="Texture2D" uid="uid://bc46kfdnel4b6" path="res://asset/环境素材/空左手.png" id="6_5nn1g"]
 [ext_resource type="Resource" uid="uid://60g50626w4sm" path="res://resourse/card/source/母卡_战斗卡9.tres" id="6_vbxc3"]
 [ext_resource type="Resource" uid="uid://cnvmok38mvnxj" path="res://resourse/card/source/母卡_战斗卡10.tres" id="7_2k6mr"]
 [ext_resource type="Script" uid="uid://2k20tsi2fqek" path="res://scene/game/空右手.gd" id="7_5nn1g"]
@@ -31,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
 [ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式桌面.png" id="30_x0v8v"]
 [ext_resource type="Texture2D" uid="uid://ds372il43hl15" path="res://asset/环境素材/对手小人.png" id="31_req8m"]
+[ext_resource type="PackedScene" uid="uid://sks0bo2qqv4w" path="res://scene/game/桌面视角转化.tscn" id="32_4auim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
 size = Vector2(337.75, 16.75)
@@ -58,9 +59,6 @@ size = Vector2(337.75, 16.75)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_req8m"]
-properties/0/path = NodePath(".:list")
-properties/0/spawn = true
-properties/0/replication_mode = 1
 
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
@@ -132,3 +130,9 @@ texture = ExtResource("31_req8m")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_req8m")
+
+[node name="桌面视角转化" parent="." instance=ExtResource("32_4auim")]
+visible = false
+z_index = 1200
+position = Vector2(-672.00006, -349.00003)
+scale = Vector2(1.2134243, 0.9376154)

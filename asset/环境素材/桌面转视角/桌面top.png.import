@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc46kfdnel4b6"
-path="res://.godot/imported/空左手.png-06bfdbb4a229d1573bb9c4b7cd61590c.ctex"
+uid="uid://cq1ex7brvsmrb"
+path="res://.godot/imported/桌面top.png-aa72abcb1fb5b768436078ca938493e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/空左手.png"
-dest_files=["res://.godot/imported/空左手.png-06bfdbb4a229d1573bb9c4b7cd61590c.ctex"]
+source_file="res://asset/环境素材/桌面转视角/桌面top.png"
+dest_files=["res://.godot/imported/桌面top.png-aa72abcb1fb5b768436078ca938493e6.ctex"]
 
 [params]
 

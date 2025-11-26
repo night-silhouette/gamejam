@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://sks0bo2qqv4w"]
+
+[ext_resource type="Script" uid="uid://d3dt6nmcdb5tl" path="res://scene/game/桌面视角转化.gd" id="1_grvnb"]
+[ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_5d6v8"]
+[ext_resource type="Texture2D" uid="uid://b88krh463hs4u" path="res://asset/环境素材/桌面转视角/1.png" id="2_n4y0q"]
+
+[sub_resource type="Animation" id="Animation_weo0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5747041, 0.5747041)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qeg0i"]
+resource_name = "switch"
+length = 0.9
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.09, 0.84),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5747041, 0.5747041), Vector2(1.5, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0033333336),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01, 0.54, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.19793725, 0.19793722, 0.19793722, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfo1a"]
+_data = {
+&"RESET": SubResource("Animation_weo0r"),
+&"switch": SubResource("Animation_qeg0i")
+}
+
+[node name="桌面视角转化" type="Node2D"]
+z_index = 1000
+scale = Vector2(1.3152852, 0.91668445)
+script = ExtResource("1_grvnb")
+
+[node name="桌面top" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(567.9377, 436.35516)
+scale = Vector2(0.4150791, 0.60944813)
+texture = ExtResource("2_5d6v8")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(599.1096, 346.90234)
+scale = Vector2(0.5747041, 0.5747041)
+texture = ExtResource("2_n4y0q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kfo1a")
+}
