@@ -6,6 +6,7 @@ const CARD_ON_HARD = preload("res://scene/card_on_hard/Card_on_hard.tscn")
 func create_card(src:Resource)->Control:
 	var card = CARD_ON_HARD.instantiate()
 	card.card_source=src
+	
 	return card
 
 var rng = RandomNumberGenerator.new()
@@ -25,16 +26,18 @@ func _process(delta: float) -> void:
 		hard_container.change_left_hard_state()
 	if Input.is_action_just_pressed("转化视角"):
 		animation_player.play("leave")
-		animation_player.animation_finished.connect(func(_t):GameX.finished.emit("gamey"))
+		animation_player.animation_finished.connect(func(_t):
+			GameX.finished.emit("gamey"))
 		
 		
-var is_first_ready=true
+var is_first_ready;
 
 
 @onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 func frist_ready():
+	
 	if is_first_ready:
-		
+		init_seed()#初始化随机数
 		if multiplayer.is_server():
 			deal_card=GameStateMachine.card_in_hard_index
 		#根据deal_card和是否为服务器发牌
@@ -42,41 +45,49 @@ func frist_ready():
 			for i in range(11):
 				var src:Resource=parent_card_list[deal_card[0][i]]
 				GameStateMachine.card_in_hard.push_back(create_card(src))
+				
 		else:
 			for i in range(11):
 				var src:Resource=parent_card_list[deal_card[1][i]]
 				GameStateMachine.card_in_hard.push_back(create_card(src))
-	is_first_ready=false
+		for card in GameStateMachine.card_in_hard:
+			hard_container.add_child(card)	
+		hard_container.container_init()
+	
 	
 func init_seed():
 	rng.randomize()
 	current_seed=rng.seed	
 	seed(current_seed)
 func _ready() -> void:
+	is_first_ready=GameStateMachine.is_first_ready
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)#隐藏鼠标
-	init_seed()#初始化随机数
+	
 	
 	
 	id = multiplayer.get_unique_id()
-	if !multiplayer.is_server():#分端初始化
-		multiplayer_synchronizer.synchronized.connect(func():
+	if is_first_ready:
+		if !multiplayer.is_server():#分端初始化
+			multiplayer_synchronizer.synchronized.connect(func():
+				frist_ready()
+				,CONNECT_ONE_SHOT)
+		else:
 			frist_ready()
-			for card in GameStateMachine.card_in_hard:
-				hard_container.add_child(card)	
-			hard_container.container_init()
-			,CONNECT_ONE_SHOT)
-	else:
-		frist_ready()
+	else:#平时的逻辑
 		for card in GameStateMachine.card_in_hard:
-			hard_container.add_child(card)	
-		hard_container.container_init()
+			hard_container.add_child(card)
+			hard_container.container_init()
+		
 		
 	
 	animation_player.play("enter")
 	
 	
 
-	
+func save_card():
+	for card in GameStateMachine.card_in_hard:
+		hard_container.remove_child(card)
 	
 	
 	

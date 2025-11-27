@@ -120,7 +120,6 @@ _data = {
 position = Vector2(542, 327)
 script = ExtResource("1_82mss")
 parent_card_list = Array[Resource]([ExtResource("2_4r5hn"), ExtResource("3_x0v8v"), ExtResource("4_req8m"), ExtResource("5_4auim"), ExtResource("6_vbxc3"), ExtResource("7_2k6mr"), ExtResource("8_tyrbm"), ExtResource("9_extmi"), ExtResource("10_ey85o"), ExtResource("11_d5h2i"), ExtResource("12_t35ln"), ExtResource("13_efkk3"), ExtResource("14_7yvv2"), ExtResource("15_0nkex"), ExtResource("16_ersld"), ExtResource("17_34hgw"), ExtResource("18_hddrd"), ExtResource("19_267do"), ExtResource("20_4q42n"), ExtResource("21_mmq3w"), ExtResource("22_fgo0e"), ExtResource("23_2h8y6"), ExtResource("24_cl4qa")])
-deal_card = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, -2)

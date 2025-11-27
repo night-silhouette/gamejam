@@ -1,7 +1,7 @@
 extends State_machine
 var card_in_hard_index:Array[Array]=[[],[]]
 var card_in_hard:Array[Control]=[]
-
+var is_first_ready=true
 		
 func randi_deal_card():
 	var temp:Array[int]=[]
@@ -15,7 +15,7 @@ func randi_deal_card():
 
 
 func _ready() -> void:
-	
+
 	
 	if multiplayer.is_server():
 		randi_deal_card()
