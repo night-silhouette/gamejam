@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn84ltnokpuvb"]
+[gd_scene load_steps=8 format=3 uid="uid://bn84ltnokpuvb"]
 
 [ext_resource type="Script" uid="uid://dtiy8502t4cqb" path="res://class/card_on_hard/card_on_hard.gd" id="1_inydn"]
 [ext_resource type="Shader" uid="uid://bvl6lxm7df3r3" path="res://resourse/shader/flip.gdshader" id="2_nbf67"]
 [ext_resource type="Resource" uid="uid://cl2bimtxlh3u8" path="res://resourse/card/source/母卡_战斗卡5.tres" id="2_wrkfp"]
+[ext_resource type="Texture2D" uid="uid://dherxen7cn827" path="res://asset/card_in_hard/战斗牌6.png" id="4_nbf67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywej"]
 size = Vector2(90, 130)
@@ -13,6 +14,7 @@ shader = ExtResource("2_nbf67")
 shader_parameter/flip_progress = 0.0
 shader_parameter/card_width = 100.0
 shader_parameter/perspective_strength = 0.05
+shader_parameter/tilt_amount = 4.7499999933364734e-08
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nbf67"]
 resource_local_to_scene = true
@@ -20,6 +22,7 @@ shader = ExtResource("2_nbf67")
 shader_parameter/flip_progress = 0.0
 shader_parameter/card_width = 100.0
 shader_parameter/perspective_strength = 0.05
+shader_parameter/tilt_amount = 4.7499999933364734e-08
 
 [node name="card_in_hard" type="Control" groups=["card_in_hard"]]
 custom_minimum_size = Vector2(90, 130)
@@ -47,6 +50,7 @@ z_index = 1
 material = SubResource("ShaderMaterial_80k56")
 position = Vector2(46, 78)
 scale = Vector2(0.0994335, 0.0944661)
+texture = ExtResource("4_nbf67")
 
 [node name="普通卡卡背" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nbf67")
