@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://tencedmpvbh3"]
+
+[ext_resource type="Texture2D" uid="uid://d00ad056faxk0" path="res://asset/环境素材/俯视/石头.png" id="1_fb0sh"]
+[ext_resource type="Script" uid="uid://btlqu274a273d" path="res://scene/gamey/hover.gd" id="2_hk2gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b5nr"]
+size = Vector2(3987.6748, 4356.343)
+
+[node name="石头" type="Sprite2D"]
+z_index = -1
+scale = Vector2(0.1478817, 0.16283807)
+texture = ExtResource("1_fb0sh")
+script = ExtResource("2_hk2gh")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(-60.85946, -61.4107)
+shape = SubResource("RectangleShape2D_8b5nr")

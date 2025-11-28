@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqtfl0vxg70ce"]
+
+[ext_resource type="Texture2D" uid="uid://0yiapkt8rtft" path="res://asset/环境素材/俯视/手.png" id="1_u6ja8"]
+[ext_resource type="Texture2D" uid="uid://cgtttv0q0xegq" path="res://asset/环境素材/俯视/状态显示.png" id="2_x64wu"]
+[ext_resource type="Texture2D" uid="uid://cukcgcn6210qc" path="res://asset/数字/4.png" id="3_x64wu"]
+
+[node name="手" type="Sprite2D"]
+scale = Vector2(0.23630632, 0.20233469)
+texture = ExtResource("1_u6ja8")
+metadata/_edit_lock_ = true
+
+[node name="状态显示" type="Sprite2D" parent="."]
+position = Vector2(-677.08716, 98.84619)
+scale = Vector2(0.56619674, 0.564289)
+texture = ExtResource("2_x64wu")
+metadata/_edit_lock_ = true
+
+[node name="4" type="Sprite2D" parent="状态显示"]
+position = Vector2(-37.37036, -289.02954)
+scale = Vector2(0.5627679, 0.7057494)
+texture = ExtResource("3_x64wu")

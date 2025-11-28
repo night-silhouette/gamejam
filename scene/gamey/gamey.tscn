@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=21 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
+[ext_resource type="Texture2D" uid="uid://crp76sqiwuse5" path="res://asset/环境素材/俯视/background.jpg" id="3_g0pox"]
+[ext_resource type="Texture2D" uid="uid://drs7wappjqm4x" path="res://asset/card_in_hard/对局卡卡背.png" id="4_ojiah"]
+[ext_resource type="PackedScene" uid="uid://dqtfl0vxg70ce" path="res://scene/手/手.tscn" id="5_l4h8c"]
+[ext_resource type="Texture2D" uid="uid://0yiapkt8rtft" path="res://asset/环境素材/俯视/手.png" id="6_h31u8"]
+[ext_resource type="Texture2D" uid="uid://cgtttv0q0xegq" path="res://asset/环境素材/俯视/状态显示.png" id="7_2tkj2"]
+[ext_resource type="Texture2D" uid="uid://cukcgcn6210qc" path="res://asset/数字/4.png" id="8_3bv1x"]
+[ext_resource type="Texture2D" uid="uid://ddfcrqcbtxt7u" path="res://asset/环境素材/俯视/小袋子_合.png" id="9_kl76r"]
+[ext_resource type="Script" uid="uid://12suwc8gitlv" path="res://scene/gamey/小袋子合.gd" id="10_8b5nr"]
+[ext_resource type="PackedScene" uid="uid://tencedmpvbh3" path="res://scene/gamey/剪刀石头布.tscn" id="11_h31u8"]
+[ext_resource type="Texture2D" uid="uid://cupketktmf7vp" path="res://asset/环境素材/俯视/布.png" id="12_easol"]
+[ext_resource type="Texture2D" uid="uid://djwchri4bxnix" path="res://asset/环境素材/俯视/剪刀.png" id="13_vt2ku"]
+[ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/侧式/空右手.png" id="14_3bv1x"]
+[ext_resource type="Script" uid="uid://2k20tsi2fqek" path="res://scene/game/空右手.gd" id="15_kl76r"]
+[ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="16_8b5nr"]
+[ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="17_v2w0t"]
 
 [sub_resource type="Animation" id="Animation_g0pox"]
 length = 0.001
@@ -47,11 +62,93 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="桌面top" type="Sprite2D" parent="."]
-position = Vector2(562.00006, 401)
-scale = Vector2(0.5609375, 0.56093746)
+position = Vector2(573, 358)
+scale = Vector2(0.39121094, 0.39121094)
 texture = ExtResource("2_g6k2o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_ojiah")
 }
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(573, 320.49997)
+scale = Vector2(0.43612772, 0.5132812)
+texture = ExtResource("3_g0pox")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4096
+offset_right = 1152.0
+offset_bottom = 649.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="对局卡卡背" type="Sprite2D" parent="."]
+position = Vector2(553.99994, 305)
+rotation = 0.5919482
+scale = Vector2(0.016032713, 0.014375553)
+texture = ExtResource("4_ojiah")
+metadata/_edit_lock_ = true
+
+[node name="手_自己" parent="." instance=ExtResource("5_l4h8c")]
+position = Vector2(866.9219, 451.00003)
+scale = Vector2(0.22481468, 0.20038915)
+
+[node name="手_对方" type="Sprite2D" parent="."]
+position = Vector2(291, 110)
+rotation = -3.1346884
+scale = Vector2(0.22751011, 0.1984436)
+texture = ExtResource("6_h31u8")
+
+[node name="状态显示" type="Sprite2D" parent="手_对方"]
+position = Vector2(-641.41095, 55.47055)
+rotation = 3.1184456
+scale = Vector2(0.56619674, 0.564289)
+texture = ExtResource("7_2tkj2")
+
+[node name="4" type="Sprite2D" parent="手_对方/状态显示"]
+position = Vector2(-37.370605, -289.02954)
+scale = Vector2(0.5627679, 0.70574945)
+texture = ExtResource("8_3bv1x")
+
+[node name="小袋子合" type="Sprite2D" parent="."]
+z_index = 20
+position = Vector2(245.8125, 573.5625)
+scale = Vector2(0.15111262, 0.17288482)
+texture = ExtResource("9_kl76r")
+script = ExtResource("10_8b5nr")
+position_map = Dictionary[int, Vector2]({
+0: Vector2(940, 37),
+1: Vector2(2125, 37),
+2: Vector2(3290, 37)
+})
+
+[node name="石头" parent="小袋子合" instance=ExtResource("11_h31u8")]
+position = Vector2(-18.611938, 37.23571)
+
+[node name="布" parent="小袋子合" instance=ExtResource("11_h31u8")]
+position = Vector2(-18.611938, 37.23571)
+texture = ExtResource("12_easol")
+
+[node name="剪刀" parent="小袋子合" instance=ExtResource("11_h31u8")]
+position = Vector2(-18.611938, 37.23571)
+texture = ExtResource("13_vt2ku")
+
+[node name="空右手" type="Sprite2D" parent="."]
+z_index = 4096
+position = Vector2(418.484, 61.1167)
+scale = Vector2(0.060228, 0.0773649)
+texture = ExtResource("14_3bv1x")
+script = ExtResource("15_kl76r")
+
+[node name="小齿轮" type="Sprite2D" parent="."]
+position = Vector2(1066.8615, 157.85512)
+scale = Vector2(0.033013422, 0.03784436)
+texture = ExtResource("16_8b5nr")
+
+[node name="大齿轮" type="Sprite2D" parent="."]
+position = Vector2(1000.00006, 82)
+scale = Vector2(0.109150074, 0.107229345)
+texture = ExtResource("17_v2w0t")
