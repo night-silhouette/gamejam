@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=22 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://2k20tsi2fqek" path="res://scene/game/空右手.gd" id="15_kl76r"]
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="16_8b5nr"]
 [ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="17_v2w0t"]
+[ext_resource type="PackedScene" uid="uid://b7pl3moajgcv1" path="res://scene/gamey/计数圆盘/回合计数圆盘.tscn" id="18_v2w0t"]
 
 [sub_resource type="Animation" id="Animation_g0pox"]
 length = 0.001
@@ -65,6 +66,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(573, 358)
 scale = Vector2(0.39121094, 0.39121094)
 texture = ExtResource("2_g6k2o")
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -126,13 +128,16 @@ position_map = Dictionary[int, Vector2]({
 })
 
 [node name="石头" parent="小袋子合" instance=ExtResource("11_h31u8")]
+visible = false
 position = Vector2(-18.611938, 37.23571)
 
 [node name="布" parent="小袋子合" instance=ExtResource("11_h31u8")]
+visible = false
 position = Vector2(-18.611938, 37.23571)
 texture = ExtResource("12_easol")
 
 [node name="剪刀" parent="小袋子合" instance=ExtResource("11_h31u8")]
+visible = false
 position = Vector2(-18.611938, 37.23571)
 texture = ExtResource("13_vt2ku")
 
@@ -152,3 +157,6 @@ texture = ExtResource("16_8b5nr")
 position = Vector2(1000.00006, 82)
 scale = Vector2(0.109150074, 0.107229345)
 texture = ExtResource("17_v2w0t")
+
+[node name="回合计数圆盘" parent="." instance=ExtResource("18_v2w0t")]
+position = Vector2(-3, 330.99997)

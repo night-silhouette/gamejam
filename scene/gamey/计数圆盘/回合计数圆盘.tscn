@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7pl3moajgcv1"]
+
+[ext_resource type="Texture2D" uid="uid://bn66gsroib3jc" path="res://asset/环境素材/俯视/回合计数圆盘.png" id="1_s83qp"]
+[ext_resource type="Texture2D" uid="uid://5665qvsvfqe6" path="res://asset/数字/3.png" id="2_k1lkv"]
+[ext_resource type="Texture2D" uid="uid://coal4gmvroyk4" path="res://asset/数字/6.png" id="2_sv2s4"]
+[ext_resource type="Texture2D" uid="uid://cky4oafay08rw" path="res://asset/环境素材/俯视/回合计数指针.png" id="3_sv2s4"]
+[ext_resource type="Texture2D" uid="uid://cukcgcn6210qc" path="res://asset/数字/4.png" id="4_31p1e"]
+
+[node name="回合计数圆盘" type="Sprite2D"]
+scale = Vector2(0.27274728, 0.23638518)
+texture = ExtResource("1_s83qp")
+metadata/_edit_lock_ = true
+
+[node name="十位" type="Sprite2D" parent="."]
+position = Vector2(168.65433, -338.43066)
+rotation = 1.0277997
+scale = Vector2(0.6822617, 1.1514013)
+skew = -0.13385153
+texture = ExtResource("2_sv2s4")
+
+[node name="个位" type="Sprite2D" parent="."]
+position = Vector2(190.65268, 274.9749)
+rotation = -0.8964419
+scale = Vector2(0.66984904, 1.174088)
+skew = 0.1421386
+texture = ExtResource("2_k1lkv")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(293.31183, -211.51913)
+rotation = 0.84034413
+scale = Vector2(0.66984904, 1.174088)
+skew = 0.1421386
+texture = ExtResource("4_31p1e")
+
+[node name="回合计数指针" type="Sprite2D" parent="."]
+position = Vector2(283.37146, 7.4625244)
+rotation = 0.10363454
+scale = Vector2(0.34658962, 0.33759573)
+skew = -0.025669217
+texture = ExtResource("3_sv2s4")
+
+[node name="回合计数指针2" type="Sprite2D" parent="."]
+position = Vector2(283.37146, 7.4625244)
+rotation = 0.10363454
+scale = Vector2(0.34658962, 0.33759573)
+skew = -0.025669217
+texture = ExtResource("3_sv2s4")
