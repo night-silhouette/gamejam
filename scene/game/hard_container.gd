@@ -100,15 +100,25 @@ func reback():
 @onready var blur: Control = $"../蒙层"
 @onready var check: Sprite2D = $"../查看"
 			
-var has_checked=false			
-func on_check():
+var has_checked=false	
+		
+func on_check(hp,damage,tex,state):
 	if !has_checked:
 		blur.visible=true
 		check.visible=true
-		check.hp=10
-		check.damage=4
+		check.tex=tex
+		check.state=state
+		check.hp=hp
+		check.damage=damage
+		has_checked=true
 	
-
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:#左键
+			if has_checked:
+				blur.visible=false
+				check.visible=false
+				has_checked=false
 
 
 

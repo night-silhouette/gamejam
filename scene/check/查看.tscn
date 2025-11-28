@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://ieftlyype1x"]
+[gd_scene load_steps=8 format=3 uid="uid://ieftlyype1x"]
 
-[ext_resource type="Shader" uid="uid://lcmf18l1a6k1" path="res://resourse/shader/查看.gdshader" id="1_7iir1"]
 [ext_resource type="Texture2D" uid="uid://cwx7qrdbeui3t" path="res://asset/环境素材/侧式/查看.png" id="1_mm5be"]
 [ext_resource type="Script" uid="uid://dgu41gisra6pp" path="res://scene/check/查看.gd" id="2_yd0dg"]
 [ext_resource type="Texture2D" uid="uid://cxfcaniygen0i" path="res://asset/数字/10.png" id="3_hator"]
@@ -9,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bys1h316l3m1t" path="res://asset/card_in_hard/战斗牌5.png" id="6_hator"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjlta"]
-shader = ExtResource("1_7iir1")
 
 [node name="查看" type="Sprite2D"]
 z_index = 1000
@@ -32,13 +30,12 @@ scale = Vector2(0.33326602, 0.65405846)
 texture = ExtResource("4_7iir1")
 
 [node name="state" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-382.87546, 480.01416)
-scale = Vector2(0.47004345, 0.4430058)
+position = Vector2(-406.53632, 480.0141)
+scale = Vector2(0.42786866, 0.4231509)
 texture = ExtResource("5_vjlta")
 
 [node name="牌面" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(1548.7097, 246.79974)
-scale = Vector2(0.60052097, 0.50430125)
+position = Vector2(-444.77838, 17.168406)
+scale = Vector2(0.44473156, 0.420566)
 texture = ExtResource("6_hator")

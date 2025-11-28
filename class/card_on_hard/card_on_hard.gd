@@ -160,7 +160,12 @@ func _ready() -> void:
 var drag_lock:bool=true
 var flip_lock:bool=true
 var which_card_area:Area2D
+
+signal on_check(hp,damage,tex,state)
 func _gui_input(event):
+	if event.is_action_pressed("查看"):
+		on_check.emit(card_source.hp,card_source.damage,card_source.card_face,card_source.special_state)
+	
 	#print(event)
 	if drag_lock:#拖动逻辑
 		if event is InputEventMouseButton :
@@ -222,10 +227,8 @@ func init():
 	original_z_index=z_index
 
 
-signal on_check
-func _process(delta: float) -> void:	
-	if Input.is_action_just_pressed("查看"):
-		on_check.emit()
+
+
 
 	
 	

@@ -8,4 +8,6 @@ script = ExtResource("1_h5mgw")
 card_face = ExtResource("1_pm55d")
 is_parent_card = true
 is_character = true
+hp = 5
+damage = 1
 metadata/_custom_type_script = "uid://bspgioegar6p6"

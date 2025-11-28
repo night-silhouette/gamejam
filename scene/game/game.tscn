@@ -122,7 +122,7 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_extmi"]
 resource_local_to_scene = true
 shader = ExtResource("34_tyrbm")
-shader_parameter/blur_amount = 4.3590002070525
+shader_parameter/blur_amount = 5.0
 
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
