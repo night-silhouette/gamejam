@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://ieftlyype1x"]
+
+[ext_resource type="Shader" uid="uid://lcmf18l1a6k1" path="res://resourse/shader/查看.gdshader" id="1_7iir1"]
+[ext_resource type="Texture2D" uid="uid://cwx7qrdbeui3t" path="res://asset/环境素材/侧式/查看.png" id="1_mm5be"]
+[ext_resource type="Script" uid="uid://dgu41gisra6pp" path="res://scene/check/查看.gd" id="2_yd0dg"]
+[ext_resource type="Texture2D" uid="uid://cxfcaniygen0i" path="res://asset/数字/10.png" id="3_hator"]
+[ext_resource type="Texture2D" uid="uid://kjsep4yyjb2u" path="res://asset/数字/8.png" id="4_7iir1"]
+[ext_resource type="Texture2D" uid="uid://bb5n6e2v7j205" path="res://asset/数字/7.png" id="5_vjlta"]
+[ext_resource type="Texture2D" uid="uid://bys1h316l3m1t" path="res://asset/card_in_hard/战斗牌5.png" id="6_hator"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjlta"]
+shader = ExtResource("1_7iir1")
+
+[node name="查看" type="Sprite2D"]
+z_index = 1000
+material = SubResource("ShaderMaterial_vjlta")
+scale = Vector2(0.46490312, 0.44165364)
+texture = ExtResource("1_mm5be")
+script = ExtResource("2_yd0dg")
+metadata/_edit_lock_ = true
+
+[node name="hp" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(419.44223, -206.04381)
+scale = Vector2(0.418223, 0.9752558)
+texture = ExtResource("3_hator")
+
+[node name="damage" type="Sprite2D" parent="."]
+position = Vector2(382.87543, 448.3151)
+rotation = 0.6341232
+scale = Vector2(0.33326602, 0.65405846)
+texture = ExtResource("4_7iir1")
+
+[node name="state" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-382.87546, 480.01416)
+scale = Vector2(0.47004345, 0.4430058)
+texture = ExtResource("5_vjlta")
+
+[node name="牌面" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1548.7097, 246.79974)
+scale = Vector2(0.60052097, 0.50430125)
+texture = ExtResource("6_hator")

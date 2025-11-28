@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhc2fvkcpatjj"
-path="res://.godot/imported/有牌左手.png-b3c591c46a0cf2d5d1295d94dfd69d95.ctex"
+uid="uid://cjrqjvbw1fruy"
+path="res://.godot/imported/1.png-7e7221e75429afe4443d0cfdb9ca3807.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/有牌左手.png"
-dest_files=["res://.godot/imported/有牌左手.png-b3c591c46a0cf2d5d1295d94dfd69d95.ctex"]
+source_file="res://asset/数字/1.png"
+dest_files=["res://.godot/imported/1.png-7e7221e75429afe4443d0cfdb9ca3807.ctex"]
 
 [params]
 

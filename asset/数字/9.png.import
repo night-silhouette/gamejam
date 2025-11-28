@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds372il43hl15"
-path="res://.godot/imported/对手小人.png-18e7f69a6265d785d88e89bce60e9ece.ctex"
+uid="uid://cj2ry54tvhkwm"
+path="res://.godot/imported/9.png-660b8fc370c3cbb380700d489d4c0203.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/对手小人.png"
-dest_files=["res://.godot/imported/对手小人.png-18e7f69a6265d785d88e89bce60e9ece.ctex"]
+source_file="res://asset/数字/9.png"
+dest_files=["res://.godot/imported/9.png-660b8fc370c3cbb380700d489d4c0203.ctex"]
 
 [params]
 

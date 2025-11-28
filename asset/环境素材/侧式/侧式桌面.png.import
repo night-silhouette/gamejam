@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://eeruej8gc6kt"
-path="res://.godot/imported/侧式桌面.png-fe937ad871c17823fbf381b986330734.ctex"
+path="res://.godot/imported/侧式桌面.png-b0472817354cd186f9c130c66c49f90b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/侧式桌面.png"
-dest_files=["res://.godot/imported/侧式桌面.png-fe937ad871c17823fbf381b986330734.ctex"]
+source_file="res://asset/环境素材/侧式/侧式桌面.png"
+dest_files=["res://.godot/imported/侧式桌面.png-b0472817354cd186f9c130c66c49f90b.ctex"]
 
 [params]
 

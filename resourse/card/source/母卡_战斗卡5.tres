@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bspgioegar6p6" path="res://resourse/card/class/Card.gd" id="1_vcb5k"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_vcb5k")
 card_face = ExtResource("1_kfx6v")
 is_parent_card = true
+is_character = true
 metadata/_custom_type_script = "uid://bspgioegar6p6"

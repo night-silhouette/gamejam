@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=53 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -7,8 +7,8 @@
 [ext_resource type="Resource" uid="uid://c7aask474sp0m" path="res://resourse/card/source/母卡_战斗卡6.tres" id="3_x0v8v"]
 [ext_resource type="Resource" uid="uid://cg5aj38rgnc10" path="res://resourse/card/source/母卡_战斗卡7.tres" id="4_req8m"]
 [ext_resource type="Resource" uid="uid://bh2a34558siwv" path="res://resourse/card/source/母卡_战斗卡8.tres" id="5_4auim"]
-[ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/空右手.png" id="6_0tn4t"]
-[ext_resource type="Texture2D" uid="uid://bc46kfdnel4b6" path="res://asset/环境素材/空左手.png" id="6_5nn1g"]
+[ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/侧式/空右手.png" id="6_0tn4t"]
+[ext_resource type="Texture2D" uid="uid://bc46kfdnel4b6" path="res://asset/环境素材/侧式/空左手.png" id="6_5nn1g"]
 [ext_resource type="Resource" uid="uid://60g50626w4sm" path="res://resourse/card/source/母卡_战斗卡9.tres" id="6_vbxc3"]
 [ext_resource type="Resource" uid="uid://cnvmok38mvnxj" path="res://resourse/card/source/母卡_战斗卡10.tres" id="7_2k6mr"]
 [ext_resource type="Script" uid="uid://2k20tsi2fqek" path="res://scene/game/空右手.gd" id="7_5nn1g"]
@@ -29,11 +29,14 @@
 [ext_resource type="Resource" uid="uid://78vqumnmaj3f" path="res://resourse/card/source/母卡_法术卡8.tres" id="22_fgo0e"]
 [ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="23_2h8y6"]
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
-[ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式桌面.png" id="30_x0v8v"]
-[ext_resource type="Texture2D" uid="uid://ds372il43hl15" path="res://asset/环境素材/对手小人.png" id="31_req8m"]
+[ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式/侧式桌面.png" id="30_x0v8v"]
+[ext_resource type="Texture2D" uid="uid://c0qtdmutjdqaj" path="res://asset/环境素材/侧式/对手小人.png" id="31_req8m"]
+[ext_resource type="Texture2D" uid="uid://oggoxotaxswf" path="res://asset/环境素材/侧式/侧式场景图.jpg" id="32_4auim"]
+[ext_resource type="PackedScene" uid="uid://ieftlyype1x" path="res://scene/check/查看.tscn" id="33_2k6mr"]
+[ext_resource type="Shader" uid="uid://b0nyx6ohnfnjp" path="res://resourse/shader/高斯蒙层y.gdshader" id="34_tyrbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
-size = Vector2(337.75, 16.75)
+size = Vector2(53, 40.375)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
 
@@ -95,7 +98,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vbxc3"]
 resource_name = "enter"
-length = 0.9
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -103,10 +106,10 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.8333333),
+"times": PackedFloat32Array(0.033333335, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0.0253638, 0.0253638, 0.025363795, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2k6mr"]
@@ -115,6 +118,11 @@ _data = {
 &"enter": SubResource("Animation_req8m"),
 &"leave": SubResource("Animation_vbxc3")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_extmi"]
+resource_local_to_scene = true
+shader = ExtResource("34_tyrbm")
+shader_parameter/blur_amount = 4.3590002070525
 
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
@@ -132,7 +140,9 @@ offset_top = 63.0
 offset_right = 338.0
 offset_bottom = 103.0
 script = ExtResource("1_pw1yp")
-base_y_offset = -80.0
+x_span = 70.0
+base_y_offset = -100.0
+card_arc_angle = 0.6
 y_bios = 7
 metadata/_edit_use_anchors_ = true
 
@@ -141,7 +151,7 @@ script = ExtResource("3_l2vx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="出牌区"]
 z_index = 1
-position = Vector2(52, 57)
+position = Vector2(-59, 90)
 shape = SubResource("RectangleShape2D_pw1yp")
 
 [node name="牌堆" type="Button" parent="."]
@@ -174,15 +184,16 @@ texture = ExtResource("6_0tn4t")
 script = ExtResource("7_5nn1g")
 
 [node name="侧式桌面" type="Sprite2D" parent="."]
-position = Vector2(42.999996, 61.000008)
-scale = Vector2(0.50283426, 0.50283426)
+position = Vector2(-56, 101)
+scale = Vector2(0.24225166, 0.30827308)
 texture = ExtResource("30_x0v8v")
-metadata/_edit_lock_ = true
 
 [node name="对手小人" type="Sprite2D" parent="."]
-position = Vector2(-197, -180)
-scale = Vector2(0.18251786, 0.17409961)
+z_index = -1
+position = Vector2(-99, -124)
+scale = Vector2(0.18344644, 0.18961392)
 texture = ExtResource("31_req8m")
+metadata/_edit_lock_ = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_req8m")
@@ -201,3 +212,43 @@ offset_right = 614.0
 offset_bottom = 334.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="侧式场景图" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(37.499985, -2.9999866)
+scale = Vector2(0.7654075, 0.5082096)
+texture = ExtResource("32_4auim")
+metadata/_edit_lock_ = true
+
+[node name="查看" parent="." instance=ExtResource("33_2k6mr")]
+visible = false
+position = Vector2(71.999985, -24.000008)
+
+[node name="蒙层" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="高斯蒙层y" type="ColorRect" parent="蒙层"]
+z_index = 500
+material = SubResource("ShaderMaterial_extmi")
+layout_mode = 0
+offset_left = -540.0
+offset_top = -327.0
+offset_right = 614.0
+offset_bottom = 322.0
+pivot_offset = Vector2(322, 292)
+metadata/_edit_lock_ = true
+
+[node name="高斯蒙层x" type="ColorRect" parent="蒙层"]
+z_index = 500
+material = SubResource("ShaderMaterial_extmi")
+layout_mode = 0
+offset_left = -540.0
+offset_top = -327.0
+offset_right = 614.0
+offset_bottom = 322.0
+metadata/_edit_lock_ = true

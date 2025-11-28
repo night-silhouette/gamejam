@@ -16,8 +16,8 @@ func callback_all(callback,arg_list):
 		callable.callv(arg_list)
 
 var reback_flag=true
-var left_hard_has=preload("res://asset/环境素材/有牌左手.png")	
-var left_hard_not_has=preload("res://asset/环境素材/空左手.png")	
+var left_hard_has=preload("res://asset/环境素材/侧式/有牌左手.png")	
+var left_hard_not_has=preload("res://asset/环境素材/侧式/空左手.png")	
 func change_left_hard_state():
 	if reback_flag:
 		if transform_tween and transform_tween.is_running():
@@ -43,6 +43,7 @@ func container_init():
 	callback_all("init",[])
 	for item in card_in_hard:
 		item.change_is_on_hard.connect(tranform_card)
+		item.on_check.connect(on_check)
 func _ready() -> void:
 	
 	
@@ -96,9 +97,17 @@ func reback():
 			reback_tween.tween_property(items,"global_position",back_position,transform_time)
 			reback_tween.finished.connect(func():items.visible=false)
 			
+@onready var blur: Control = $"../蒙层"
+@onready var check: Sprite2D = $"../查看"
 			
-			
-
+var has_checked=false			
+func on_check():
+	if !has_checked:
+		blur.visible=true
+		check.visible=true
+		check.hp=10
+		check.damage=4
+	
 
 
 

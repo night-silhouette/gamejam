@@ -10,6 +10,8 @@ extends Control
 @export var scale_value:Vector2=Vector2(1.5,1.5)	
 @export var flip_time=0.5
 @export var perspective=0.1
+@export var flat_time=0.25
+@export var flat_count=350
 
 @onready var area=$Area
 var half_size = get_rect().size / 2.0
@@ -20,7 +22,7 @@ func update_card_to_mouse_center(mouse_position):
 
 
 	
-	
+
 var is_draged:bool=false
 var orignal_position
 var orignal_rotation
@@ -30,10 +32,22 @@ var hover_lock:bool=true
 var hover_start_tween
 var hover_end_tween
 
+
+
+#战斗相关-------------------------------------------------
 var is_on_hard:bool=true:
 	set(value):
 		is_on_hard=value
-		change_is_on_hard.emit()
+		change_is_on_hard.emit()		
+var is_character:bool	
+		
+		
+		
+#战斗相关-------------------------------------------------
+		
+		
+		
+	
 signal change_is_on_hard()
 @onready var card_front = $卡面 
 @onready var card_back = $普通卡卡背
@@ -64,26 +78,31 @@ func _update_progress(progress,prop,obj):
 	obj.set_shader_parameter(prop, progress/1000.0)
 	
 var is_flat=true#true是可以flat的意思hhh
+var flat_tween:Tween
 func flat():
-		var tween=create_tween()
-		tween.set_ease(Tween.EASE_OUT)
-		tween.set_trans(Tween.TRANS_CUBIC)	
-		var call_f=Callable(self,"_update_progress").bind(f_card_material).bind("tilt_amount")
-		var call_b=Callable(self,"_update_progress").bind(b_card_material).bind("tilt_amount")
-		
-		if is_flat:
-			tween.tween_method(call_f,0,-350,flip_time)
-			tween.tween_property(self,"is_flat",!is_flat,0)		
-			tween.tween_method(call_b,0,-350,flip_time)
-		else :
-			tween.tween_method(call_b,-350,0,flip_time)
-			tween.tween_property(self,"is_flat",!is_flat,0)		
-			tween.tween_method(call_f,-350,0,flip_time)
+	if flat_tween and flat_tween.is_running():
+		flat_tween.custom_step(100)
+	flat_tween=create_tween()
+	flat_tween.set_ease(Tween.EASE_OUT)
+	flat_tween.set_trans(Tween.TRANS_CUBIC)	
+	var call_f=Callable(self,"_update_progress").bind(f_card_material).bind("tilt_amount")
+	var call_b=Callable(self,"_update_progress").bind(b_card_material).bind("tilt_amount")
+	
+	if is_flat:
+		flat_tween.tween_method(call_f,0,-flat_count,flat_time)
+		flat_tween.tween_property(self,"is_flat",!is_flat,0)		
+		flat_tween.tween_method(call_b,0,-flat_count,flat_time)
+	else :
+		flat_tween.tween_method(call_b,-flat_count,0,flat_time)
+		flat_tween.tween_property(self,"is_flat",!is_flat,0)		
+		flat_tween.tween_method(call_f,-flat_count,0,flat_time)
 			
 const parent_card_back_texture = preload("res://asset/card_in_hard/普通卡卡背.png")
 const child_card_back_texture = preload("res://asset/card_in_hard/对局卡卡背.png")
 
 func _ready() -> void:
+	is_character=card_source.is_character
+	
 	card_front.texture=card_source.card_face
 	if card_source.is_parent_card:
 		card_back.texture=parent_card_back_texture
@@ -130,15 +149,17 @@ func _ready() -> void:
 		hover_end_tween.set_trans(Tween.TRANS_CUBIC)	
 		hover_end_tween.set_parallel(true)
 		hover_end_tween.tween_property(self,"scale",Vector2(1,1),hover_transform_time)
-		hover_end_tween.tween_property(self,"rotation",orignal_rotation,0.5*hover_transform_time)
+		var object_rotation=orignal_rotation if is_on_hard else Vector2(0,0)
+		
+		hover_end_tween.tween_property(self,"rotation",object_rotation,0.5*hover_transform_time)
 
 		)
 
 
-signal reback_start()
 
 var drag_lock:bool=true
 var flip_lock:bool=true
+var which_card_area:Area2D
 func _gui_input(event):
 	#print(event)
 	if drag_lock:#拖动逻辑
@@ -147,26 +168,31 @@ func _gui_input(event):
 				if event.pressed:
 					is_draged=true
 					orignal_position=global_position
-					
-				
-				else:
+					if !is_flat : flat()
+					if !is_on_hard:
+						reset_card_area()
+						is_draged=false
+						is_on_hard=true
+				elif is_draged:#松手的时候
 					is_draged=false
-					drag_lock=false
-					var flag=false
-					for item in area.get_overlapping_areas():
-						if item.is_in_group("出牌区"):
-							flag=true
-							flat()
-							drag_lock=true
-
-					if flag:
-						is_on_hard=false
+					
+					var is_has_out=false
+					if is_character:#战斗牌才可出牌
+						for item in area.get_overlapping_areas():#检测是否出牌了
+							if item.is_in_group("出牌区"):
+								is_on_hard=false
+								is_has_out=true
+								item.has_card=true
+								which_card_area=item
+								break
+					
+					if is_has_out:
+						flat()
 					else:
-						Util.tween_fast_to_slow(self,"global_position",orignal_position,global_position.distance_to(orignal_position)/transform_speed,func():
-							drag_lock=true
-							change_is_on_hard.emit()
-						)			
-						mouse_exited.emit()
+						reset_card_area()
+						is_on_hard=true
+						#change_is_on_hard.emit()	
+					mouse_exited.emit()		
 				
 		elif event is InputEventMouseMotion:
 			
@@ -181,7 +207,10 @@ func _gui_input(event):
 			Util.set_time(2*flip_time,func():flip_lock=true)			
 			
 			
-			
+func reset_card_area():
+	if 	which_card_area:
+		which_card_area.has_card=false
+		which_card_area=null	
 			
 var original_z_index
 func init():
@@ -193,9 +222,10 @@ func init():
 	original_z_index=z_index
 
 
-
+signal on_check
 func _process(delta: float) -> void:	
-	pass
+	if Input.is_action_just_pressed("查看"):
+		on_check.emit()
 
 	
 	

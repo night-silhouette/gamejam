@@ -7,4 +7,5 @@
 script = ExtResource("2_k0iyv")
 card_face = ExtResource("1_niul0")
 is_parent_card = true
+is_character = true
 metadata/_custom_type_script = "uid://bspgioegar6p6"

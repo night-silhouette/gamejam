@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc46kfdnel4b6"
-path="res://.godot/imported/空左手.png-06bfdbb4a229d1573bb9c4b7cd61590c.ctex"
+uid="uid://c0qtdmutjdqaj"
+path="res://.godot/imported/对手小人.png-a155adcb22c2f434a114bfe0f4e760a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/空左手.png"
-dest_files=["res://.godot/imported/空左手.png-06bfdbb4a229d1573bb9c4b7cd61590c.ctex"]
+source_file="res://asset/环境素材/侧式/对手小人.png"
+dest_files=["res://.godot/imported/对手小人.png-a155adcb22c2f434a114bfe0f4e760a6.ctex"]
 
 [params]
 
