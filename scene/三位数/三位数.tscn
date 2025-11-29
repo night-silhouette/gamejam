@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://mtmpmnrqqnpv"]
+
+[ext_resource type="Script" uid="uid://dh4hr6us0rsgs" path="res://scene/三位数/三位数.gd" id="1_8sj5p"]
+[ext_resource type="Texture2D" uid="uid://dhfa0daxoty2f" path="res://asset/数字/5.png" id="1_alrox"]
+
+[node name="三位数" type="Node2D"]
+position = Vector2(100, 2)
+script = ExtResource("1_8sj5p")
+
+[node name="left" type="Sprite2D" parent="."]
+position = Vector2(-188, -2)
+scale = Vector2(0.4769585, 0.8201856)
+texture = ExtResource("1_alrox")
+
+[node name="middle" type="Sprite2D" parent="."]
+position = Vector2(-98, 0)
+scale = Vector2(0.4769585, 0.8201856)
+texture = ExtResource("1_alrox")
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(-7, -1)
+scale = Vector2(0.4769585, 0.8201856)
+texture = ExtResource("1_alrox")

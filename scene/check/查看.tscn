@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ieftlyype1x"]
+[gd_scene load_steps=9 format=3 uid="uid://ieftlyype1x"]
 
 [ext_resource type="Texture2D" uid="uid://cwx7qrdbeui3t" path="res://asset/环境素材/侧式/查看.png" id="1_mm5be"]
 [ext_resource type="Script" uid="uid://dgu41gisra6pp" path="res://scene/check/查看.gd" id="2_yd0dg"]
-[ext_resource type="Texture2D" uid="uid://cxfcaniygen0i" path="res://asset/数字/10.png" id="3_hator"]
+[ext_resource type="Texture2D" uid="uid://cukcgcn6210qc" path="res://asset/数字/4.png" id="3_7iir1"]
 [ext_resource type="Texture2D" uid="uid://kjsep4yyjb2u" path="res://asset/数字/8.png" id="4_7iir1"]
 [ext_resource type="Texture2D" uid="uid://bb5n6e2v7j205" path="res://asset/数字/7.png" id="5_vjlta"]
 [ext_resource type="Texture2D" uid="uid://bys1h316l3m1t" path="res://asset/card_in_hard/战斗牌5.png" id="6_hator"]
+[ext_resource type="Texture2D" uid="uid://c8knx4uvl3th0" path="res://asset/数字/the_number_hard.png" id="7_vjlta"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjlta"]
 
@@ -18,18 +19,20 @@ script = ExtResource("2_yd0dg")
 metadata/_edit_lock_ = true
 
 [node name="hp" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(419.44223, -206.04381)
-scale = Vector2(0.418223, 0.9752558)
-texture = ExtResource("3_hator")
+z_index = 2
+position = Vector2(434.4991, -196.98695)
+scale = Vector2(0.25444114, 0.4981802)
+texture = ExtResource("3_7iir1")
 
 [node name="damage" type="Sprite2D" parent="."]
-position = Vector2(382.87543, 448.3151)
-rotation = 0.6341232
-scale = Vector2(0.33326602, 0.65405846)
+z_index = 2
+position = Vector2(447.40512, 409.8234)
+rotation = -0.021212697
+scale = Vector2(0.29394615, 0.54009795)
 texture = ExtResource("4_7iir1")
 
 [node name="state" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(-406.53632, 480.0141)
 scale = Vector2(0.42786866, 0.4231509)
 texture = ExtResource("5_vjlta")
@@ -39,3 +42,22 @@ z_index = -1
 position = Vector2(-444.77838, 17.168406)
 scale = Vector2(0.44473156, 0.420566)
 texture = ExtResource("6_hator")
+
+[node name="TheNumberHard" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(423.02515, -201.89511)
+scale = Vector2(0.1602096, 0.24351765)
+texture = ExtResource("7_vjlta")
+
+[node name="TheNumberHard3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-412.27325, 462.09027)
+scale = Vector2(0.16480477, 0.25442782)
+texture = ExtResource("7_vjlta")
+
+[node name="TheNumberHard2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(442.9476, 388.7684)
+rotation = -0.018887281
+scale = Vector2(0.16397862, 0.24611957)
+texture = ExtResource("7_vjlta")

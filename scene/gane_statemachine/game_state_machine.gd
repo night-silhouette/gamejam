@@ -2,7 +2,8 @@ extends State_machine
 var card_in_hard_index:Array[Array]=[[],[]]
 var card_in_hard:Array[Control]=[]
 var is_first_ready=true
-		
+
+
 func randi_deal_card():
 	var temp:Array[int]=[]
 	for i in range(23):

@@ -203,15 +203,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_2k6mr")
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 4096
-offset_left = -540.0
-offset_top = -329.0
-offset_right = 614.0
-offset_bottom = 334.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
 [node name="侧式场景图" type="Sprite2D" parent="."]
 z_index = -1000
 position = Vector2(37.499985, -2.9999866)
@@ -251,3 +242,12 @@ offset_top = -327.0
 offset_right = 614.0
 offset_bottom = 322.0
 metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4096
+offset_left = -540.0
+offset_top = -329.0
+offset_right = 614.0
+offset_bottom = 334.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
