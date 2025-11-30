@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://4r5bmf6r1kdi"]
+
+[ext_resource type="Shader" uid="uid://b0nyx6ohnfnjp" path="res://resourse/shader/高斯蒙层y.gdshader" id="1_5y0n6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_extmi"]
+resource_local_to_scene = true
+shader = ExtResource("1_5y0n6")
+shader_parameter/blur_amount = 5.0
+
+[node name="蒙层" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="高斯蒙层y" type="ColorRect" parent="."]
+z_index = 500
+material = SubResource("ShaderMaterial_extmi")
+layout_mode = 0
+offset_left = -540.0
+offset_top = -327.0
+offset_right = 614.0
+offset_bottom = 322.0
+pivot_offset = Vector2(322, 292)
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="高斯蒙层x" type="ColorRect" parent="."]
+z_index = 500
+material = SubResource("ShaderMaterial_extmi")
+layout_mode = 0
+offset_left = -540.0
+offset_top = -327.0
+offset_right = 614.0
+offset_bottom = 322.0
+mouse_filter = 2
+metadata/_edit_lock_ = true

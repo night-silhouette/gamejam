@@ -88,8 +88,15 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="对局卡卡背" type="Sprite2D" parent="."]
-position = Vector2(553.99994, 305)
+position = Vector2(564.07574, 301.8762)
 rotation = 0.5919482
+scale = Vector2(0.016032713, 0.014375553)
+texture = ExtResource("4_ojiah")
+metadata/_edit_lock_ = true
+
+[node name="对局卡卡背2" type="Sprite2D" parent="."]
+position = Vector2(564.07574, 301.8762)
+rotation = 0.8082045
 scale = Vector2(0.016032713, 0.014375553)
 texture = ExtResource("4_ojiah")
 metadata/_edit_lock_ = true

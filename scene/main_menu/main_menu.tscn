@@ -25,3 +25,19 @@ offset_top = 289.0
 offset_right = 738.0
 offset_bottom = 347.0
 text = "Client"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 372.0
+offset_right = 889.0
+offset_bottom = 419.0
+placeholder_text = "客户端请输入房主ip,回车结束"
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 432.0
+offset_right = 889.0
+offset_bottom = 479.0
+placeholder_text = "port"

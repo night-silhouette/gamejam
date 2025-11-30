@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4mqmqbwf0meh"]
+
+[ext_resource type="Texture2D" uid="uid://bimkpc50h24sh" path="res://asset/GUI/弹窗.png" id="1_mhob8"]
+[ext_resource type="Script" uid="uid://twhjcbwd2a4h" path="res://scene/弹窗/弹窗.gd" id="1_pm507"]
+[ext_resource type="Texture2D" uid="uid://ca5pphhmvebfn" path="res://asset/GUI/弹窗关闭2.png" id="3_0daxp"]
+[ext_resource type="PackedScene" uid="uid://4r5bmf6r1kdi" path="res://scene/高斯蒙层/蒙层.tscn" id="3_47d3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm507"]
+size = Vector2(32.5, 33)
+
+[node name="弹窗" type="Node2D"]
+z_index = 4000
+script = ExtResource("1_pm507")
+
+[node name="弹窗" type="Sprite2D" parent="."]
+position = Vector2(-33.999996, 0.4999981)
+scale = Vector2(0.21917363, 0.14921874)
+texture = ExtResource("1_mhob8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -146.0
+offset_top = -50.0
+offset_right = 147.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="close" type="Area2D" parent="."]
+z_index = 1
+
+[node name="弹窗关闭" type="Sprite2D" parent="close"]
+position = Vector2(141, -50.999996)
+scale = Vector2(0.025826447, 0.033789087)
+texture = ExtResource("3_0daxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="close"]
+visible = false
+position = Vector2(137, -53)
+shape = SubResource("RectangleShape2D_pm507")
+
+[node name="蒙层" parent="." instance=ExtResource("3_47d3k")]
+z_index = 1000
+z_as_relative = false
+mouse_filter = 2

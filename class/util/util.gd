@@ -1,5 +1,12 @@
 extends Node
+const alert_scene = preload("uid://c4mqmqbwf0meh")
 
+
+func alert(_text):
+	var _alert=alert_scene.instantiate()
+	_alert.text=_text
+	get_tree().current_scene.add_child(_alert)
+	return _alert
 func u_sequence(total:int):#2,1,0,1,2
 	var middle=int(total/2)
 	var res:Array=[]
