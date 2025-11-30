@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_q3b1x")
+id = 4
 card_face = ExtResource("1_grfmq")
 is_parent_card = true
 is_character = true

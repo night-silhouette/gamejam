@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=26 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="16_8b5nr"]
 [ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="17_v2w0t"]
 [ext_resource type="PackedScene" uid="uid://b7pl3moajgcv1" path="res://scene/gamey/计数圆盘/回合计数圆盘.tscn" id="18_v2w0t"]
+[ext_resource type="PackedScene" uid="uid://bcb0xdhxtphdm" path="res://scene/gamey/the_card.tscn" id="19_55lua"]
+[ext_resource type="PackedScene" uid="uid://ieftlyype1x" path="res://scene/check/查看.tscn" id="20_j7pq8"]
+[ext_resource type="PackedScene" uid="uid://4r5bmf6r1kdi" path="res://scene/高斯蒙层/蒙层.tscn" id="21_medkg"]
 
 [sub_resource type="Animation" id="Animation_g0pox"]
 length = 0.001
@@ -62,6 +65,7 @@ size = Vector2(487.5113, 454.48077)
 script = ExtResource("1_rkk0s")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="桌面top" type="Sprite2D" parent="."]
@@ -178,10 +182,21 @@ texture = ExtResource("17_v2w0t")
 position = Vector2(-28, 366.00003)
 scale = Vector2(0.324943, 0.28162226)
 
-[node name="Button" type="Button" parent="."]
-offset_left = 961.0
-offset_top = 242.0
-offset_right = 1024.0
-offset_bottom = 299.0
-text = "test
-"
+[node name="self_fight" parent="." instance=ExtResource("19_55lua")]
+visible = false
+position = Vector2(573.00006, 459)
+
+[node name="enemy_fight" parent="." instance=ExtResource("19_55lua")]
+visible = false
+position = Vector2(562, 135)
+rotation = 3.129299
+
+[node name="查看" parent="." instance=ExtResource("20_j7pq8")]
+visible = false
+position = Vector2(590, 304.00003)
+
+[node name="蒙层" parent="." instance=ExtResource("21_medkg")]
+offset_left = 535.0
+offset_top = 326.0
+offset_right = 575.0
+offset_bottom = 366.0

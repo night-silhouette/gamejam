@@ -1,15 +1,38 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var debug: Button = $Button
+
 const alert = preload("uid://c4mqmqbwf0meh")
+
+@onready var self_fight: Sprite2D = $self_fight
+@onready var enemy_fight: Sprite2D = $enemy_fight
+
+@onready var check: Sprite2D = $查看
+@onready var blur: Control = $蒙层
+
+
 
 
 func _ready() -> void:
-	animation_player.play("ready")
-	debug.pressed.connect(func():
-		$"回合计数圆盘".round+=1
-		)
+	self_fight.on_check.connect(on_check)
+	enemy_fight.on_check.connect(on_check)
 	
+	animation_player.play("ready")
+	if GameStateMachine.the_card_witch_fight:
+		self_fight.visible=true
+		self_fight.card_source=GameStateMachine.the_card_witch_fight.card_source
+	if GameStateMachine.enemy_card_witch_fight:
+		enemy_fight.visible=true
+		enemy_fight.card_source=GameStateMachine.enemy_card_witch_fight.card_source
+	GameStateMachine.self_card_change.connect(func():
+		self_fight.visible=true
+		self_fight.card_source=GameStateMachine.the_card_witch_fight.card_source)
+	GameStateMachine.enemy_card_change.connect(func():
+		enemy_fight.visible=true
+		enemy_fight.card_source=GameStateMachine.enemy_card_witch_fight.card_source)
+		
+		
+		
+		
 
 
 
@@ -17,3 +40,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("转化视角"):
 		Gamey.finished.emit("gamex")
+
+
+
+
+
+
+
+
+var has_checked=false	
+		
+func on_check(hp,damage,tex,state):
+	if !has_checked:
+		blur.visible=true
+		check.visible=true
+		check.tex=tex
+		check.state=state
+		check.hp=hp
+		check.damage=damage
+		has_checked=true
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:#左键
+			if has_checked:
+				blur.visible=false
+				check.visible=false
+				has_checked=false

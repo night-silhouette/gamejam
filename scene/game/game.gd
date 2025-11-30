@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var fight_card={}
+
 @onready var hard_container: Control = $hard_container
 @export var parent_card_list:Array[Resource]
 const CARD_ON_HARD = preload("res://scene/card_on_hard/Card_on_hard.tscn")
@@ -14,9 +16,8 @@ var current_seed:int
 
 var id
 
-@export var deal_card:Array[Array]:
-	set(value):
-		deal_card=value
+@export var deal_card:Array[Array]
+
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -42,6 +43,7 @@ var is_first_ready;
 func frist_ready():
 	
 	if is_first_ready:
+		GameStateMachine.parent_card_source=parent_card_list
 		init_seed()#初始化随机数
 		if multiplayer.is_server():
 			deal_card=GameStateMachine.card_in_hard_index
@@ -49,8 +51,7 @@ func frist_ready():
 		if multiplayer.is_server():
 			for i in range(11):
 				var src:Resource=parent_card_list[deal_card[0][i]]
-				GameStateMachine.card_in_hard.push_back(create_card(src))
-				
+				GameStateMachine.card_in_hard.push_back(create_card(src))		
 		else:
 			for i in range(11):
 				var src:Resource=parent_card_list[deal_card[1][i]]
@@ -66,6 +67,7 @@ func init_seed():
 	current_seed=rng.seed	
 	seed(current_seed)
 func _ready() -> void:
+	
 	is_first_ready=GameStateMachine.is_first_ready
 	desk_area2d.input_event.connect(func(obj,event,id):
 		if event is InputEventMouseButton:
@@ -88,13 +90,13 @@ func _ready() -> void:
 		for card in GameStateMachine.card_in_hard:
 			hard_container.add_child(card)
 			hard_container.container_init()
-		
+
 		
 	
 	animation_player.play("enter")
-	
-	
 
+
+	
 func save_card():
 	for card in GameStateMachine.card_in_hard:
 		hard_container.remove_child(card)

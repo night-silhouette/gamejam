@@ -6,6 +6,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_vcb5k")
+id = 1
 card_face = ExtResource("1_kfx6v")
 is_parent_card = true
 is_character = true

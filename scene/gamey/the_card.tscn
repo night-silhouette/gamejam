@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcb0xdhxtphdm"]
+
+[ext_resource type="Texture2D" uid="uid://cbxa2h736dgbo" path="res://asset/card_in_hard/子卡_战斗牌1.png" id="1_bkvuy"]
+[ext_resource type="Script" uid="uid://cg7uqnh2jca48" path="res://scene/gamey/the_card.gd" id="2_d3aaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk7xk"]
+size = Vector2(912.2068, 1416.844)
+
+[node name="self_fight" type="Sprite2D"]
+rotation = 0.0071597695
+scale = Vector2(0.09729189, 0.095960334)
+texture = ExtResource("1_bkvuy")
+script = ExtResource("2_d3aaf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11.013985, -104.13244)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gk7xk")

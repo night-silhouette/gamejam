@@ -52,7 +52,7 @@ func update_conect_state():
 func _on_peer_connected(id:int):#有新的客户端connect
 	update_conect_state.rpc()
 	MainMenu.on_servers_create()
-	
+	GameStateMachine.c_id=id
 	
 func update_ip(new_text):
 	if is_ip_address_valid(new_text):

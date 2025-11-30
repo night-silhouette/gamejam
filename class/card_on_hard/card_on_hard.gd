@@ -1,7 +1,8 @@
 class_name card_on_hard
 extends Control
 
-	
+var texture
+var id 
 @export var card_source:Card	
 	
 @export_category("特效参数")
@@ -38,7 +39,13 @@ var hover_end_tween
 var is_on_hard:bool=true:
 	set(value):
 		is_on_hard=value
-		change_is_on_hard.emit()		
+		if !value:
+			GameStateMachine.the_card_witch_fight=self
+			
+		change_is_on_hard.emit()	
+		
+		
+		
 var is_character:bool	
 		
 		
@@ -96,11 +103,14 @@ func flat():
 		flat_tween.tween_method(call_b,-flat_count,0,flat_time)
 		flat_tween.tween_property(self,"is_flat",!is_flat,0)		
 		flat_tween.tween_method(call_f,-flat_count,0,flat_time)
-			
+
 const parent_card_back_texture = preload("res://asset/card_in_hard/普通卡卡背.png")
 const child_card_back_texture = preload("res://asset/card_in_hard/对局卡卡背.png")
 
 func _ready() -> void:
+	id = card_source.id
+	
+	texture=card_source.card_face
 	is_character=card_source.is_character
 	
 	card_front.texture=card_source.card_face

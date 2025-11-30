@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://4r5bmf6r1kdi" path="res://scene/高斯蒙层/蒙层.tscn" id="34_2k6mr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
-size = Vector2(53, 40.375)
+size = Vector2(81.5, 75.1875)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
 
@@ -67,6 +67,9 @@ size = Vector2(1199.6022, 245.79068)
 properties/0/path = NodePath(".:deal_card")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:fight_card")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="Animation" id="Animation_4auim"]
 length = 0.001
@@ -149,7 +152,7 @@ script = ExtResource("3_l2vx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="出牌区"]
 z_index = 1
-position = Vector2(-59, 90)
+position = Vector2(-60, 82)
 shape = SubResource("RectangleShape2D_pw1yp")
 
 [node name="牌堆" type="Button" parent="."]
@@ -185,12 +188,14 @@ script = ExtResource("7_5nn1g")
 position = Vector2(-56, 101)
 scale = Vector2(0.24225166, 0.30827308)
 texture = ExtResource("30_x0v8v")
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="侧式桌面"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="侧式桌面/Area2D"]
 position = Vector2(-42.52942, -165.0658)
 shape = SubResource("RectangleShape2D_2k6mr")
+metadata/_edit_lock_ = true
 
 [node name="对手小人" type="Sprite2D" parent="."]
 z_index = -1
@@ -221,6 +226,7 @@ position = Vector2(71.999985, -24.000008)
 [node name="蒙层" parent="." instance=ExtResource("34_2k6mr")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 4096
 offset_left = -540.0
 offset_top = -329.0
