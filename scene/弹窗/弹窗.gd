@@ -24,8 +24,9 @@ func _ready():
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				leave()
 		)
-	
+signal has_leave
 func leave():
+	has_leave.emit()
 	blur.visible=false
 	var tween=create_tween()
 	tween.set_ease(Tween.EASE_OUT)

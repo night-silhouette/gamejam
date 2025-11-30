@@ -2,10 +2,11 @@ extends Node
 const alert_scene = preload("uid://c4mqmqbwf0meh")
 
 
-func alert(_text):
+func alert(_text,callback=func():pass):
 	var _alert=alert_scene.instantiate()
 	_alert.text=_text
 	get_tree().current_scene.add_child(_alert)
+	_alert.has_leave.connect(callback)
 	return _alert
 func u_sequence(total:int):#2,1,0,1,2
 	var middle=int(total/2)

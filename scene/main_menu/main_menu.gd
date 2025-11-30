@@ -80,9 +80,10 @@ func _on_client_pressed():
 		Util.alert("请输入ip")
 		return
 	else:
-		peer.create_client(ip,port)
-		multiplayer.multiplayer_peer=peer
 		connecting=true
+		print(peer.create_client(ip,port))
+		multiplayer.multiplayer_peer=peer
+		
 		
 
 var connecting:bool=false
@@ -92,11 +93,13 @@ func _process(delta: float) -> void:
 		if has_connect:
 			MainMenu.on_client_create()
 		elif lock:
-			if peer:##清理上一次的连接
-				peer.close()
 			multiplayer.multiplayer_peer=null
 			
-			Util.alert("未能找到服务器")
+			Util.alert("未能找到服务器",func():
+				
+				if peer:
+					peer.close()
+				)
 			lock=false
 
 	

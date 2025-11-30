@@ -44,19 +44,30 @@ var is_open=false
 
 
 @onready var right_hard: Sprite2D = $"../空右手"
-
+func change_state():
+	if !is_open:
+		open()
+		is_open=true
+	else:
+		back()
+		is_open=false
+@onready var area_2d: Area2D = $Area2D
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("查看手牌"):
-		if !is_open:
-			open()
-			is_open=true
-		else:
-			back()
-			is_open=false
-
-			
-		
+		change_state()
 	
+	
+func _ready() -> void:
+	area_2d.input_event.connect(func(obj,event,id):
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				change_state()
+		)
+		
+		
+		
+		
 
 	
 	

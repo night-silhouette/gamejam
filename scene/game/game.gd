@@ -20,14 +20,19 @@ var id
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+func change_view():
+	animation_player.play("leave")
+	animation_player.animation_finished.connect(func(_t):
+		GameX.finished.emit("gamey"))
+
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("查看手牌"):
 		hard_container.change_left_hard_state()
+		
+
 	if Input.is_action_just_pressed("转化视角"):
-		animation_player.play("leave")
-		animation_player.animation_finished.connect(func(_t):
-			GameX.finished.emit("gamey"))
+		change_view()
 		
 		
 var is_first_ready;
@@ -54,6 +59,7 @@ func frist_ready():
 			hard_container.add_child(card)	
 		hard_container.container_init()
 	
+@onready var desk_area2d: Area2D = $侧式桌面/Area2D
 	
 func init_seed():
 	rng.randomize()
@@ -61,7 +67,11 @@ func init_seed():
 	seed(current_seed)
 func _ready() -> void:
 	is_first_ready=GameStateMachine.is_first_ready
-	
+	desk_area2d.input_event.connect(func(obj,event,id):
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				change_view()
+		)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)#隐藏鼠标
 	
 	

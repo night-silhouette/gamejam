@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=23 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
@@ -55,11 +55,13 @@ _data = {
 &"ready": SubResource("Animation_d12hb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2w0t"]
+size = Vector2(487.5113, 454.48077)
+
 [node name="Gamey" type="Node2D"]
 script = ExtResource("1_rkk0s")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="桌面top" type="Sprite2D" parent="."]
@@ -147,6 +149,13 @@ texture = ExtResource("12_easol")
 visible = false
 position = Vector2(-18.611938, 37.23571)
 texture = ExtResource("13_vt2ku")
+
+[node name="Area2D" type="Area2D" parent="小袋子合"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="小袋子合/Area2D"]
+position = Vector2(-71.5526, 118.214676)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_v2w0t")
 
 [node name="空右手" type="Sprite2D" parent="."]
 z_index = 4096

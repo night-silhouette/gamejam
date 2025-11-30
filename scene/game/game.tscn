@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=53 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -59,6 +59,9 @@ size = Vector2(53, 40.375)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2hf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k6mr"]
+size = Vector2(1199.6022, 245.79068)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_req8m"]
 properties/0/path = NodePath(".:deal_card")
@@ -183,6 +186,12 @@ position = Vector2(-56, 101)
 scale = Vector2(0.24225166, 0.30827308)
 texture = ExtResource("30_x0v8v")
 
+[node name="Area2D" type="Area2D" parent="侧式桌面"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="侧式桌面/Area2D"]
+position = Vector2(-42.52942, -165.0658)
+shape = SubResource("RectangleShape2D_2k6mr")
+
 [node name="对手小人" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-99, -124)
@@ -212,7 +221,6 @@ position = Vector2(71.999985, -24.000008)
 [node name="蒙层" parent="." instance=ExtResource("34_2k6mr")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 z_index = 4096
 offset_left = -540.0
 offset_top = -329.0
