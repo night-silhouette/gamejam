@@ -11,11 +11,11 @@ extends Sprite2D
 @export var transform_time=0.5
 
 
-var round:int=0:
+var round:int:
 	set(value):
 		round=value
 		_on_round_change()
-var need_to_change=3
+var need_to_change=GameStateMachine.round+3
 func _ready() -> void:
 	for i in range(list.size()):
 		var temp=i+round+1
@@ -26,7 +26,7 @@ func _ready() -> void:
 			
 var tween:Tween
 func _on_round_change():
-	list[need_to_change].value=round+3
+	list[need_to_change].value=GameStateMachine.round+3
 	need_to_change=(need_to_change+1)%4
 	
 	if tween and tween.is_running():

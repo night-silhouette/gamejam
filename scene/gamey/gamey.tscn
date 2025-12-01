@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=28 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://bcb0xdhxtphdm" path="res://scene/gamey/the_card.tscn" id="19_55lua"]
 [ext_resource type="PackedScene" uid="uid://ieftlyype1x" path="res://scene/check/查看.tscn" id="20_j7pq8"]
 [ext_resource type="PackedScene" uid="uid://4r5bmf6r1kdi" path="res://scene/高斯蒙层/蒙层.tscn" id="21_medkg"]
+[ext_resource type="PackedScene" uid="uid://bwiu0hpfgrvfl" path="res://scene/gamey/button.tscn" id="22_medkg"]
+[ext_resource type="PackedScene" uid="uid://0c73owawc8ad" path="res://scene/gamey/round_start.tscn" id="23_p07be"]
 
 [sub_resource type="Animation" id="Animation_g0pox"]
 length = 0.001
@@ -157,6 +159,7 @@ texture = ExtResource("13_vt2ku")
 [node name="Area2D" type="Area2D" parent="小袋子合"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="小袋子合/Area2D"]
+visible = false
 position = Vector2(-71.5526, 118.214676)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_v2w0t")
@@ -200,3 +203,16 @@ offset_left = 535.0
 offset_top = 326.0
 offset_right = 575.0
 offset_bottom = 366.0
+
+[node name="button" parent="." instance=ExtResource("22_medkg")]
+
+[node name="RoundStart" parent="." instance=ExtResource("23_p07be")]
+position = Vector2(524, 191)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 986.0
+offset_top = 269.0
+offset_right = 1043.0
+offset_bottom = 300.0
+text = "debug
+"

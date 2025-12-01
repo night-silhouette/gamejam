@@ -1,6 +1,13 @@
 extends State_machine
 const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 
+
+signal on_round_change
+var round:int=0:
+	set(value):
+		round=value
+		on_round_change.emit()
+
 func find_card_by_id(id):
 	for card in parent_card_source:
 		if card.id==id:

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwiu0hpfgrvfl"]
+
+[ext_resource type="Script" uid="uid://k7yecgi8cdoq" path="res://scene/gamey/button.gd" id="1_wl78k"]
+[ext_resource type="Texture2D" uid="uid://dsw88h2tprxdd" path="res://asset/环境素材/俯视/button_none.png" id="1_xymnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl78k"]
+size = Vector2(14.75, 14.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gld6y"]
+size = Vector2(14.5, 14.5)
+
+[node name="button" type="Node2D"]
+position = Vector2(-5, -3)
+script = ExtResource("1_wl78k")
+
+[node name="button_none" type="Sprite2D" parent="."]
+position = Vector2(990, 567)
+scale = Vector2(0.10781245, 0.10781244)
+texture = ExtResource("1_xymnb")
+metadata/_edit_lock_ = true
+
+[node name="a" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a"]
+position = Vector2(971, 570)
+shape = SubResource("RectangleShape2D_wl78k")
+
+[node name="b" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="b"]
+position = Vector2(987, 581)
+shape = SubResource("RectangleShape2D_gld6y")

@@ -1,18 +1,27 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var button: Button = $Button
 
-const alert = preload("uid://c4mqmqbwf0meh")
+
 
 @onready var self_fight: Sprite2D = $self_fight
 @onready var enemy_fight: Sprite2D = $enemy_fight
 
 @onready var check: Sprite2D = $查看
 @onready var blur: Control = $蒙层
+@onready var round_start: Node2D = $RoundStart
+@onready var round_roll: Sprite2D = $回合计数圆盘
 
 
-
+func update_round(round):
+	round_start.round=round
+	round_roll.round=round
 
 func _ready() -> void:
+	button.pressed.connect(func():GameStateMachine.round+=1)
+	update_round(GameStateMachine.round)
+	GameStateMachine.on_round_change.connect(func():update_round(GameStateMachine.round))
+	
 	self_fight.on_check.connect(on_check)
 	enemy_fight.on_check.connect(on_check)
 	
