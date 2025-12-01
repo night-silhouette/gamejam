@@ -46,7 +46,8 @@ func tween_fast_to_slow(obj,prop,value,time,callback=func():pass):
 	
 	
 func set_time(time,callback):
-	get_tree().create_timer(time).timeout.connect(callback,CONNECT_ONE_SHOT)
-	
+	var temp=get_tree().create_timer(time)
+	temp.timeout.connect(callback,CONNECT_ONE_SHOT)
+	return temp
 
 	

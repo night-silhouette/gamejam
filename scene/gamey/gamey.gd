@@ -19,7 +19,7 @@ func update_round(round):
 
 func _ready() -> void:
 	button.pressed.connect(func():GameStateMachine.round+=1)
-	update_round(GameStateMachine.round)
+	
 	GameStateMachine.on_round_change.connect(func():update_round(GameStateMachine.round))
 	
 	self_fight.on_check.connect(on_check)

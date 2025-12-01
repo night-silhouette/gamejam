@@ -2,6 +2,7 @@ extends Node2D
 var round:int:
 	set(value):
 		round=value
+		num.value=value
 		_show()
 @onready var num: Node2D = $三位数
 @export var transform_time=0.2

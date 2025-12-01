@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwiu0hpfgrvfl"]
+[gd_scene load_steps=8 format=3 uid="uid://bwiu0hpfgrvfl"]
 
 [ext_resource type="Script" uid="uid://k7yecgi8cdoq" path="res://scene/gamey/button.gd" id="1_wl78k"]
 [ext_resource type="Texture2D" uid="uid://dsw88h2tprxdd" path="res://asset/环境素材/俯视/button_none.png" id="1_xymnb"]
+[ext_resource type="Texture2D" uid="uid://c6xppnvxp6mw8" path="res://asset/环境素材/俯视/按钮/A_no.png" id="3_7e36l"]
+[ext_resource type="Texture2D" uid="uid://bosso45ikmgq8" path="res://asset/环境素材/俯视/按钮/D_no.png" id="4_4u4hd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wl78k"]
 size = Vector2(14.75, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gld6y"]
 size = Vector2(14.5, 14.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e36l"]
+size = Vector2(26.867159, 30.547592)
 
 [node name="button" type="Node2D"]
 position = Vector2(-5, -3)
@@ -21,12 +26,33 @@ metadata/_edit_lock_ = true
 
 [node name="a" type="Area2D" parent="."]
 
+[node name="ANo" type="Sprite2D" parent="a"]
+position = Vector2(969.99994, 570)
+rotation = 0.04466818
+scale = Vector2(0.046356667, 0.04714964)
+texture = ExtResource("3_7e36l")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="a"]
+visible = false
 position = Vector2(971, 570)
 shape = SubResource("RectangleShape2D_wl78k")
 
 [node name="b" type="Area2D" parent="."]
 
+[node name="DNo" type="Sprite2D" parent="b"]
+position = Vector2(988.14996, 582.5528)
+rotation = -0.1690355
+scale = Vector2(0.043670133, 0.045848418)
+texture = ExtResource("4_4u4hd")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="b"]
-position = Vector2(987, 581)
+visible = false
+position = Vector2(988, 583)
 shape = SubResource("RectangleShape2D_gld6y")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(988.00006, 583)
+scale = Vector2(2.7170725, 2.7170725)
+shape = SubResource("RectangleShape2D_7e36l")

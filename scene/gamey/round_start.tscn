@@ -14,5 +14,5 @@ scale = Vector2(0.18344006, 0.18344006)
 texture = ExtResource("2_bgt7u")
 
 [node name="三位数" parent="." instance=ExtResource("3_vesia")]
-position = Vector2(-137.00002, 5.9999995)
+position = Vector2(-188, 2.9999995)
 scale = Vector2(0.7994871, 0.8457113)

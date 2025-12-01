@@ -18,7 +18,7 @@ var round:int:
 var need_to_change=GameStateMachine.round+3
 func _ready() -> void:
 	for i in range(list.size()):
-		var temp=i+round+1
+		var temp=i+round
 		list[i].value=temp
 	
 	
