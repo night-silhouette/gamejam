@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://7apndnhc4l5v"]
+
+[ext_resource type="Script" uid="uid://b2unfmbb5gxaf" path="res://scene/进度条/progress.gd" id="1_rwhsw"]
+[ext_resource type="Texture2D" uid="uid://v60d0ct4tbix" path="res://asset/GUI/进度条框.png" id="2_0wv4q"]
+[ext_resource type="Texture2D" uid="uid://cb0f1v0586t4x" path="res://asset/GUI/进度条.png" id="3_yotfd"]
+
+[node name="progress" type="Node2D"]
+scale = Vector2(0.24679029, 0.32765684)
+script = ExtResource("1_rwhsw")
+
+[node name="进度条框" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1171.0348, -21.363811)
+rotation = -0.02942364
+scale = Vector2(1.0257881, 1.2433965)
+texture = ExtResource("2_0wv4q")
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_top = -274.67767
+offset_right = 2048.0
+offset_bottom = 316.32233
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = -332.318
+offset_top = -198.962
+offset_right = 2082.6821
+offset_bottom = 612.03796
+scale = Vector2(1.1820755, 1)
+value = 100.0
+texture_progress = ExtResource("3_yotfd")
+
+[node name="Timer" type="Timer" parent="."]

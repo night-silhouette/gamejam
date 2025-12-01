@@ -20,12 +20,14 @@ func _ready() -> void:
 	for i in range(list.size()):
 		var temp=i+round
 		list[i].value=temp
-	
+	if GameStateMachine.round:
+		round=GameStateMachine.round
 	
 
 			
 var tween:Tween
 func _on_round_change():
+	need_to_change=need_to_change%4
 	list[need_to_change].value=GameStateMachine.round+3
 	need_to_change=(need_to_change+1)%4
 	

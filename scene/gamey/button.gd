@@ -31,18 +31,21 @@ func be_pressed(which):
 	
 
 func _ready() -> void:
-		attack_area.input_event.connect(func(obj,event,id):
-			
-				
-				
-			if event is InputEventMouseButton:
-				if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-					be_pressed("A"))
-		skill_area.input_event.connect(func(obj,event,id):
+	GameStateMachine.on_round_change.connect(func():lock=true)
+	
 
-			if event is InputEventMouseButton:
-				if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-					be_pressed("D"))		
+	attack_area.input_event.connect(func(obj,event,id):
+		
+			
+			
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				be_pressed("A"))
+	skill_area.input_event.connect(func(obj,event,id):
+
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				be_pressed("D"))		
 					
 		
 		

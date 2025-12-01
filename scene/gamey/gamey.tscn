@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=37 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://c6xppnvxp6mw8" path="res://asset/环境素材/俯视/按钮/A_no.png" id="25_h4ial"]
 [ext_resource type="Texture2D" uid="uid://b0beo0rdi8714" path="res://asset/环境素材/侧式/指右手2.0.png" id="26_l0v5f"]
 [ext_resource type="Texture2D" uid="uid://bosso45ikmgq8" path="res://asset/环境素材/俯视/按钮/D_no.png" id="26_so2va"]
+[ext_resource type="PackedScene" uid="uid://7apndnhc4l5v" path="res://scene/进度条/progress.tscn" id="28_chnas"]
 
 [sub_resource type="Animation" id="Animation_g0pox"]
 length = 0.001
@@ -152,6 +153,7 @@ position = Vector2(245.8125, 573.5625)
 scale = Vector2(0.15111262, 0.17288482)
 texture = ExtResource("9_kl76r")
 script = ExtResource("10_8b5nr")
+tranform_time = null
 position_map = Dictionary[int, Vector2]({
 0: Vector2(940, 37),
 1: Vector2(2125, 37),
@@ -181,11 +183,13 @@ scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_v2w0t")
 
 [node name="小齿轮" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1066.8615, 157.85512)
 scale = Vector2(0.033013422, 0.03784436)
 texture = ExtResource("16_8b5nr")
 
 [node name="大齿轮" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1000.00006, 82)
 scale = Vector2(0.109150074, 0.107229345)
 texture = ExtResource("17_v2w0t")
@@ -287,10 +291,6 @@ scale = Vector2(0.060228, 0.0773649)
 texture = ExtResource("26_l0v5f")
 script = ExtResource("15_kl76r")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 986.0
-offset_top = 269.0
-offset_right = 1043.0
-offset_bottom = 300.0
-text = "debug
-"
+[node name="progress" parent="." instance=ExtResource("28_chnas")]
+position = Vector2(844.00006, 96.00001)
+scale = Vector2(0.13748507, 0.1718065)

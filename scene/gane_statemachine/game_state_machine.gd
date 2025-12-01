@@ -3,10 +3,24 @@ const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 
 
 signal on_round_change
-var round:int=0:
+
+signal set_progress(time,total_time,flag)
+
+var judge_time=5
+var judge:String
+func judge_first_turn():
+	set_progress.emit(judge_time,judge_time,true)
+	Util.set_time(judge_time,func():pass
+		)
+var round:int:
 	set(value):
 		round=value
 		on_round_change.emit()
+		judge_first_turn()
+		
+		
+		
+		
 
 func find_card_by_id(id):
 	for card in parent_card_source:
@@ -50,10 +64,10 @@ func randi_deal_card():
 		card_in_hard_index[0].push_back(temp[i])
 	for i in range(12,23):
 		card_in_hard_index[1].push_back(temp[i])
-
+	
 
 func _ready() -> void:
-	
+
 	
 	if multiplayer.is_server():
 		randi_deal_card()

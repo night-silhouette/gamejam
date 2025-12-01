@@ -10,3 +10,8 @@ func on_servers_create():
 
 func on_client_create():
 	finished.emit("gamex")
+
+var begin_time=5
+func exit():
+	Util.set_time(begin_time,func():GameStateMachine.round=1)
+	

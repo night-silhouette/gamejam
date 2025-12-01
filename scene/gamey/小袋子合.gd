@@ -24,7 +24,7 @@ func open():
 		tween1.set_trans(Tween.TRANS_CUBIC)	
 		
 		tween1.set_parallel(true)
-		tween1.tween_property(item,"position",position_map[i],tranform_time)
+		tween1.tween_property(item,"position",position_map[i],0.4)
 func back():
 	for i in range(list.size()):
 		var item:Sprite2D=list[i]	
@@ -64,6 +64,19 @@ func _ready() -> void:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				change_state()
 		)
+	change_state()
+	for item in list:
+		item.has_press.connect(func(str):
+			GameStateMachine.judge=str
+			for i in list:
+				i.lock=false
+			)
+			
+	GameStateMachine.on_round_change.connect(func():
+		for i in list:
+			i.lock=true
+		)
+	
 		
 		
 		
