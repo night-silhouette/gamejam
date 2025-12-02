@@ -153,7 +153,6 @@ position = Vector2(245.8125, 573.5625)
 scale = Vector2(0.15111262, 0.17288482)
 texture = ExtResource("9_kl76r")
 script = ExtResource("10_8b5nr")
-tranform_time = null
 position_map = Dictionary[int, Vector2]({
 0: Vector2(940, 37),
 1: Vector2(2125, 37),

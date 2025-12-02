@@ -5,17 +5,69 @@ const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 signal on_round_change
 
 signal set_progress(time,total_time,flag)
-
+var is_first:bool:
+	set(value):
+		is_first=value
+		
 var judge_time=5
 var judge:String
+var judge_is_win:int:
+	set(value):
+		judge_is_win=value
+		if value==2:
+			judge_first_turn()
+		if value==0:
+			is_first=true
+		if value==1:
+			is_first=false
+@rpc("any_peer")
+func judge_if_win(_judge):
+	if !_judge or !judge:
+		await get_tree().create_timer(0.2).timeout
+	# ------------------- 自己的选择是剪刀 -------------------
+	if judge=="剪刀":
+		if _judge=="石头":
+			judge_is_win=1 # 输
+		if _judge=="布":
+			judge_is_win=0 # 赢
+		if _judge=="剪刀":
+			judge_is_win=2 # 平局
+
+	# ------------------- 自己的选择是石头 -------------------
+	if judge=="石头":
+		if _judge=="剪刀":
+			judge_is_win=0 # 赢
+		if _judge=="布":
+			judge_is_win=1 # 输
+		if _judge=="石头":
+			judge_is_win=2 # 平局
+
+	# ------------------- 自己的选择是布 -------------------
+	if judge=="布":
+		if _judge=="石头":
+			judge_is_win=0 # 赢
+		if _judge=="剪刀":
+			judge_is_win=1 # 输
+		if _judge=="布":
+			judge_is_win=2 # 平局
+	
+	
+
 func judge_first_turn():
+	judge=""
 	set_progress.emit(judge_time,judge_time,true)
-	Util.set_time(judge_time,func():pass
+	Util.set_time(judge_time,func():
+		if !judge:
+			var temp=["剪刀","石头","布"]
+			temp.shuffle()
+			judge=temp[0]
+		judge_if_win.rpc(judge)
 		)
 var round:int:
 	set(value):
 		round=value
 		on_round_change.emit()
+		
 		judge_first_turn()
 		
 		

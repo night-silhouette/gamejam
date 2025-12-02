@@ -13,7 +13,6 @@ texture = ExtResource("1_fb0sh")
 script = ExtResource("2_hk2gh")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

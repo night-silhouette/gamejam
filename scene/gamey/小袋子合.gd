@@ -34,7 +34,7 @@ func back():
 		tween2.set_ease(Tween.EASE_OUT)
 		tween2.set_trans(Tween.TRANS_CUBIC)	
 		tween2.set_parallel(true)
-		tween2.tween_property(item,"position",ori_position,tranform_time)
+		tween2.tween_property(item,"position",ori_position,0.4)
 		tween2.finished.connect(func():
 			self.texture=小袋子_合
 			for j in list:
@@ -65,6 +65,11 @@ func _ready() -> void:
 				change_state()
 		)
 	change_state()
+	if GameStateMachine.judge:
+		for i in list:
+			if i==GameStateMachine.judge:
+				i.scale*=1.25
+	
 	for item in list:
 		item.has_press.connect(func(str):
 			GameStateMachine.judge=str
@@ -75,6 +80,7 @@ func _ready() -> void:
 	GameStateMachine.on_round_change.connect(func():
 		for i in list:
 			i.lock=true
+			i.scale=Vector2(0.14,0.16)
 		)
 	
 		

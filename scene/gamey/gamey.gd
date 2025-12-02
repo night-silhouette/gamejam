@@ -1,6 +1,6 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var button: Button = $Button
+
 
 
 
@@ -18,7 +18,7 @@ func update_round(round):
 	round_roll.round=round
 
 func _ready() -> void:
-	button.pressed.connect(func():GameStateMachine.round+=1)
+
 	
 	GameStateMachine.on_round_change.connect(func():update_round(GameStateMachine.round))
 	
