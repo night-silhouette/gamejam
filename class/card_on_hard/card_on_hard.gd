@@ -44,8 +44,10 @@ var is_on_hard:bool=true:
 			
 		change_is_on_hard.emit()	
 		
-		
-		
+var damage
+var now_hp		
+var special
+	
 var is_character:bool	
 		
 		
@@ -108,6 +110,9 @@ const parent_card_back_texture = preload("res://asset/card_in_hard/普通卡卡�
 const child_card_back_texture = preload("res://asset/card_in_hard/对局卡卡背.png")
 
 func _ready() -> void:
+	damage=card_source.damage
+	now_hp=card_source.hp
+	special=card_source.special_state
 	id = card_source.id
 	
 	texture=card_source.card_face
