@@ -5,11 +5,33 @@ const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 signal on_round_change
 
 signal set_progress(time,total_time,flag)
+var timer1
+var timer2
+var timer
 var is_first:bool:
 	set(value):
 		is_first=value
 		
-var judge_time=5
+		
+		set_progress.emit(round_time,round_time,value)
+		is_self_round=value
+		timer1=Util.set_time(round_time,func():
+			is_self_round=!value
+			set_progress.emit(round_time,round_time,!value)
+			
+			timer2=Util.set_time(round_time,func():
+				
+				is_self_round=false
+				round+=1
+				
+				)
+			timer=timer2
+			)
+		timer=timer1 
+
+var is_self_round:bool	
+var round_time=25
+var judge_time=3
 var judge:String
 var judge_is_win:int:
 	set(value):

@@ -14,11 +14,17 @@ var map={"A":[A_NO,A],"D":[D_NO,D]}
 var temp1
 var temp2
 var lock:bool=true
+
+@rpc("any_peer","call_local")
+func round_end():
+	GameStateMachine.timer.timeout.emit()
+
 func be_pressed(which):
-	if lock:
+	if lock and GameStateMachine.is_self_round:
+		round_end.rpc()
 		if which=="A":
 			attack.emit()
-			a_no.texture=map[which][1]
+			a_no.texture=map[which][1]	
 			temp1=Util.set_time(transform_time,func():a_no.texture=map[which][0])
 			lock=false
 		elif which=="D":

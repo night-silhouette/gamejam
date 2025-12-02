@@ -84,7 +84,6 @@ size = Vector2(26.867159, 30.547592)
 script = ExtResource("1_rkk0s")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="桌面top" type="Sprite2D" parent="."]
