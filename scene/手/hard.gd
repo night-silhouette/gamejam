@@ -5,6 +5,8 @@ extends Sprite2D
 @onready var special: Node2D = $状态显示/special
 
 @export var flag=true
+
+
 var obj
 func _process(delta: float) -> void:
 	obj=GameStateMachine.the_card_witch_fight if flag else GameStateMachine.enemy_card_witch_fight

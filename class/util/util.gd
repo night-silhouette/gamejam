@@ -51,3 +51,17 @@ func set_time(time,callback):
 	return temp
 
 	
+
+
+func area2d_connect_click(area2d:Area2D,callback:Callable)->void:
+	area2d.input_event.connect(func(obj,event,id):
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				callback.call()
+		)
+	
+func get_viewport_center() -> Vector2:
+	var viewport: Viewport = get_viewport()
+	var viewport_size: Vector2 = viewport.size
+	var center_position: Vector2 = viewport_size / 2.0
+	return center_position

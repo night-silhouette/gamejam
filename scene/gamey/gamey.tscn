@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=90 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://ddfbeomtftprf" path="res://scene/gamey/game.gd" id="1_nxwef"]
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
@@ -228,13 +228,19 @@ _data = {
 &"leave": SubResource("Animation_vbxc3")
 }
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1u6on"]
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_nxwef")
+
+[node name="calc" type="Node2D" parent="."]
+script = ExtResource("9_l0v5f")
 
 [node name="gamey" type="Node2D" parent="."]
 script = ExtResource("1_rkk0s")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="gamey"]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gamey"]
@@ -263,6 +269,11 @@ rotation = 0.8082044
 scale = Vector2(0.016032713, 0.014375552)
 texture = ExtResource("4_ojiah")
 metadata/_edit_lock_ = true
+
+[node name="手_自己" parent="gamey" instance=ExtResource("5_l4h8c")]
+z_index = 2
+position = Vector2(866.9219, 451.00003)
+scale = Vector2(0.22481468, 0.20038915)
 
 [node name="手_对方" parent="gamey" instance=ExtResource("5_l4h8c")]
 z_index = 2
@@ -306,9 +317,6 @@ position = Vector2(-11.013985, -104.13244)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_gk7xk")
 
-[node name="calc" type="Node2D" parent="gamey"]
-script = ExtResource("9_l0v5f")
-
 [node name="查看" parent="gamey" instance=ExtResource("20_j7pq8")]
 visible = false
 position = Vector2(590, 304.00003)
@@ -320,7 +328,8 @@ offset_right = 575.0
 offset_bottom = 366.0
 
 [node name="button" type="Node2D" parent="gamey"]
-position = Vector2(-5, -3)
+z_index = 300
+position = Vector2(7, 6)
 script = ExtResource("23_4soeb")
 
 [node name="button_none" type="Sprite2D" parent="gamey/button"]
@@ -363,6 +372,7 @@ scale = Vector2(2.7170725, 2.7170725)
 shape = SubResource("RectangleShape2D_7e36l")
 
 [node name="RoundStart" parent="gamey" instance=ExtResource("23_p07be")]
+z_index = 1000
 position = Vector2(524, 191)
 
 [node name="空右手" type="Sprite2D" parent="gamey"]
@@ -373,6 +383,7 @@ texture = ExtResource("26_l0v5f")
 script = ExtResource("15_kl76r")
 
 [node name="progress" parent="gamey" instance=ExtResource("28_chnas")]
+z_index = 110
 position = Vector2(844.00006, 96.00001)
 scale = Vector2(0.13748507, 0.1718065)
 
@@ -427,10 +438,6 @@ visible = false
 position = Vector2(-71.5526, 118.214676)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_v2w0t")
-
-[node name="手_自己" parent="gamey" instance=ExtResource("5_l4h8c")]
-position = Vector2(866.9219, 451.00003)
-scale = Vector2(0.22481468, 0.20038915)
 
 [node name="ColorRect" type="ColorRect" parent="gamey"]
 z_index = -4096
@@ -548,3 +555,6 @@ offset_right = 614.0
 offset_bottom = 334.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_1u6on")

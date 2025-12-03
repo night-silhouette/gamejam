@@ -90,7 +90,7 @@ var round:int:
 	set(value):
 		round=value
 		on_round_change.emit()
-		
+		can_move=true
 		judge_first_turn()
 		
 		
@@ -107,12 +107,12 @@ func find_card_by_id(id):
 @rpc("any_peer")
 func update_enemy_card_witch_fight(id):
 	enemy_card_witch_fight=find_card_by_id(id)
-var the_card_witch_fight:
+var the_card_witch_fight:card_on_hard:
 	set(value):
 		the_card_witch_fight=value
 		update_enemy_card_witch_fight.rpc(value.id)
 		self_card_change.emit()
-var enemy_card_witch_fight :
+var enemy_card_witch_fight:card_on_hard:
 	set(value):
 		enemy_card_witch_fight=value
 		enemy_card_change.emit()
@@ -146,3 +146,48 @@ func _ready() -> void:
 	state_map["gamey"]=Gamey
 	init_state="main_menu"
 	init2()
+
+
+
+@rpc("any_peer")
+func damage(value):
+	print(value)
+	the_card_witch_fight.now_hp-value
+	print("rpc attack")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

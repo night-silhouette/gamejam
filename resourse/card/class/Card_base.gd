@@ -10,13 +10,14 @@ class_name Card_base
 @export var damage:int =0
 @export var special_state:int =0
 
-var obj
+var obj:card_on_hard
 
 
 	
 	
-func attack(value):
-	pass
+func attack():
+	print("attack")
+	GameStateMachine.damage.rpc(obj.damage)
 	
 func skill():
 	pass

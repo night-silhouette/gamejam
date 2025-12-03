@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqtfl0vxg70ce"]
+[gd_scene load_steps=7 format=3 uid="uid://dqtfl0vxg70ce"]
 
 [ext_resource type="Texture2D" uid="uid://0yiapkt8rtft" path="res://asset/环境素材/俯视/手.png" id="1_u6ja8"]
 [ext_resource type="Script" uid="uid://cxp55e71dtggp" path="res://scene/手/hard.gd" id="2_7u1wx"]
 [ext_resource type="Texture2D" uid="uid://cgtttv0q0xegq" path="res://asset/环境素材/俯视/状态显示.png" id="2_x64wu"]
 [ext_resource type="PackedScene" uid="uid://mtmpmnrqqnpv" path="res://scene/三位数/三位数.tscn" id="4_h582k"]
+[ext_resource type="Script" uid="uid://tjnugcqsxyyv" path="res://scene/手/状态显示.gd" id="4_jue5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h582k"]
+size = Vector2(1046.3706, 1269.978)
 
 [node name="手" type="Sprite2D"]
+z_index = 400
 scale = Vector2(0.23630632, 0.20233469)
 texture = ExtResource("1_u6ja8")
 script = ExtResource("2_7u1wx")
@@ -15,6 +20,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-677.08716, 98.84619)
 scale = Vector2(0.56619674, 0.564289)
 texture = ExtResource("2_x64wu")
+script = ExtResource("4_jue5d")
 metadata/_edit_lock_ = true
 
 [node name="hp" parent="状态显示" instance=ExtResource("4_h582k")]
@@ -28,3 +34,10 @@ scale = Vector2(0.7100753, 0.8264406)
 [node name="special" parent="状态显示" instance=ExtResource("4_h582k")]
 position = Vector2(22.422062, 78.82608)
 scale = Vector2(0.71553385, 0.85121423)
+
+[node name="Area2D" type="Area2D" parent="状态显示"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="状态显示/Area2D"]
+position = Vector2(-14.948242, -61.30938)
+scale = Vector2(0.7467587, 0.8629088)
+shape = SubResource("RectangleShape2D_h582k")
