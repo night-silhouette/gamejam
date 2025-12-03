@@ -33,7 +33,11 @@ var is_first:bool:
 			)
 		timer=timer1 
 
-var is_self_round:bool	
+var is_self_round:bool	:
+	set(value):
+		is_self_round=value
+		if value:
+			can_move=true
 var round_time=25
 var judge_time=3
 var judge:String
