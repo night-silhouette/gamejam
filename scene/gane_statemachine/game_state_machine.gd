@@ -4,7 +4,12 @@ const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 
 signal on_round_change
 
-var can_move:bool=true
+var can_move:bool=true:
+	set(value):
+		can_move=value
+		if !value:
+			print(123)
+
 signal set_progress(time,total_time,flag)
 var timer1
 var timer2
@@ -12,8 +17,6 @@ var timer
 var is_first:bool:
 	set(value):
 		is_first=value
-		
-		
 		set_progress.emit(round_time,round_time,value)
 		is_self_round=value
 		timer1=Util.set_time(round_time,func():
@@ -43,9 +46,10 @@ var judge_is_win:int:
 			is_first=true
 		if value==1:
 			is_first=false
-@rpc("any_peer")
+@rpc("any_peer","reliable")
 func judge_if_win(_judge):
-	if !_judge or !judge:
+	
+	if !judge:
 		await get_tree().create_timer(0.2).timeout
 	# ------------------- 自己的选择是剪刀 -------------------
 	if judge=="剪刀":
@@ -74,7 +78,6 @@ func judge_if_win(_judge):
 		if _judge=="布":
 			judge_is_win=2 # 平局
 	
-	
 
 func judge_first_turn():
 	judge=""
@@ -84,7 +87,8 @@ func judge_first_turn():
 			var temp=["剪刀","石头","布"]
 			temp.shuffle()
 			judge=temp[0]
-		judge_if_win.rpc(judge)
+			judge_if_win.rpc(judge)
+				
 		)
 var round:int:
 	set(value):
@@ -149,16 +153,16 @@ func _ready() -> void:
 
 
 
-@rpc("any_peer")
+@rpc("any_peer","reliable")
+func update_hp(value):
+	the_card_witch_fight.now_hp-=value
+	
+	
+	
+	
 func damage(value):
-	print(value)
-	the_card_witch_fight.now_hp-value
-	print("rpc attack")
-	
-	
-	
-	
-	
+	update_hp.rpc(value)
+	enemy_card_witch_fight.now_hp-=value
 	
 	
 	

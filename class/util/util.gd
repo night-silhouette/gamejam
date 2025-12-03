@@ -65,3 +65,21 @@ func get_viewport_center() -> Vector2:
 	var viewport_size: Vector2 = viewport.size
 	var center_position: Vector2 = viewport_size / 2.0
 	return center_position
+	
+	
+	
+func _await_time_until(obj_to_check, max_time: float) -> bool:
+	var elapsed_time: float = 0.0
+
+	while !obj_to_check and elapsed_time < max_time:
+		await get_tree().process_frame
+		elapsed_time += get_process_delta_time() 
+
+	if !obj_to_check:
+		return true # 成功找到对象
+	else:
+		return false # 超时
+	
+	
+	
+	

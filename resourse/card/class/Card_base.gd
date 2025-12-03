@@ -17,7 +17,7 @@ var obj:card_on_hard
 	
 func attack():
 	print("attack")
-	GameStateMachine.damage.rpc(obj.damage)
+	GameStateMachine.damage(obj.damage)
 	
 func skill():
 	pass
