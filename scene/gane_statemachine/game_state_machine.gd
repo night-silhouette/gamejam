@@ -54,7 +54,7 @@ var judge_is_win:int:
 func judge_if_win(_judge):
 	
 	if !judge:
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.15).timeout
 	# ------------------- 自己的选择是剪刀 -------------------
 	if judge=="剪刀":
 		if _judge=="石头":
@@ -169,13 +169,15 @@ func _ready() -> void:
 @rpc("any_peer","reliable")
 func update_hp(value):
 	the_card_witch_fight.now_hp-=value
-	
+	print("触发更新血量")
 	
 	
 	
 func damage(value):
 	update_hp.rpc(value)
 	enemy_card_witch_fight.now_hp-=value
+	print("触发更新血量")
+	
 	
 	
 	

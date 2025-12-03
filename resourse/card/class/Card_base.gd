@@ -16,7 +16,7 @@ var obj:card_on_hard
 	
 	
 func attack():
-	print("attack")
+
 	GameStateMachine.damage(obj.damage)
 	
 func skill():

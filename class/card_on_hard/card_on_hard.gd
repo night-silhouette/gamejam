@@ -7,12 +7,12 @@ var id
 	set(value):
 		card_source=value
 		card_source.obj=self
+		is_character=card_source.is_character
 		damage=card_source.damage
 		now_hp=card_source.hp
 		special=card_source.special_state
 		id = card_source.id
 		texture=card_source.card_face
-		
 	
 @export_category("特效参数")
 @export var transform_speed=1100	
@@ -130,7 +130,7 @@ const child_card_back_texture = preload("res://asset/card_in_hard/对局卡卡�
 
 func _ready() -> void:
 
-	is_character=card_source.is_character
+	
 	
 	card_front.texture=card_source.card_face
 	if card_source.is_parent_card:

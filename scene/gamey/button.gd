@@ -20,9 +20,7 @@ func round_end():
 	GameStateMachine.timer.timeout.emit()
 
 func be_pressed(which):
-	print("被点击")
 	if GameStateMachine.can_move and GameStateMachine.is_self_round and GameStateMachine.the_card_witch_fight:
-		print("符合条件触发了")
 		round_end.rpc()
 		if which=="A":
 			attack.emit()
