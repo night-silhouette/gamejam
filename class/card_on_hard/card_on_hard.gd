@@ -3,7 +3,16 @@ extends Control
 
 var texture
 var id 
-@export var card_source:Card	
+@export var card_source:Card:
+	set(value):
+		card_source=value
+		card_source.obj=self
+		damage=card_source.damage
+		now_hp=card_source.hp
+		special=card_source.special_state
+		id = card_source.id
+		texture=card_source.card_face
+		
 	
 @export_category("特效参数")
 @export var transform_speed=1100	
@@ -110,12 +119,7 @@ const parent_card_back_texture = preload("res://asset/card_in_hard/普通卡卡�
 const child_card_back_texture = preload("res://asset/card_in_hard/对局卡卡背.png")
 
 func _ready() -> void:
-	damage=card_source.damage
-	now_hp=card_source.hp
-	special=card_source.special_state
-	id = card_source.id
-	
-	texture=card_source.card_face
+
 	is_character=card_source.is_character
 	
 	card_front.texture=card_source.card_face

@@ -9,3 +9,14 @@ class_name Card_base
 @export var hp:int =0
 @export var damage:int =0
 @export var special_state:int =0
+
+var obj
+
+
+	
+	
+func attack(value):
+	pass
+	
+func skill():
+	pass

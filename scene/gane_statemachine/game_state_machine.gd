@@ -4,6 +4,7 @@ const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 
 signal on_round_change
 
+var can_move:bool=true
 signal set_progress(time,total_time,flag)
 var timer1
 var timer2

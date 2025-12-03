@@ -6,6 +6,7 @@ var span:Vector2=final_position-init_position
 
 @onready var texture_progress_bar: TextureProgressBar = $Control/TextureProgressBar
 @onready var timer: Timer = $Timer
+@onready var num: Node2D = $num
 
 var total_time:float
 var time:float
@@ -24,8 +25,8 @@ func _ready() -> void:
 	GameStateMachine.set_progress.connect(start)
 	
 	timer.timeout.connect(func():
-		if time>=1:
-			time-=1
+		if time>=0.05:
+			time-=0.05
 			#ratio=time/total_time
 		else:
 			timer.stop()
@@ -34,6 +35,8 @@ func _ready() -> void:
 			)
 
 func _process(delta: float) -> void:
+	if time:
+		num.value=time
 	if is_use:
 		if flag:
 			texture_progress_bar.position=init_position + span*(1-time/total_time)

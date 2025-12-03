@@ -14,9 +14,9 @@ config/name="gamejam"
 run/main_scene="uid://b0fbv2q4dlyu2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="uid://c8u0hmpbj3di"
 
 [autoload]
 

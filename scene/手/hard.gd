@@ -9,9 +9,9 @@ var obj
 func _process(delta: float) -> void:
 	obj=GameStateMachine.the_card_witch_fight if flag else GameStateMachine.enemy_card_witch_fight
 	if obj:
-		hp.value=obj.now_hp
-		damage.value=obj.damage
-		special.value=obj.special
+		hp.value=obj.now_hp if obj.now_hp else 0 
+		damage.value=obj.damage if obj.damage else 0
+		special.value=obj.special if obj.special else 0
 	else:
 		hp.value=0
 		damage.value=0	
