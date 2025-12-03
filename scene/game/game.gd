@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var fight_card={}
+@onready var game: Node2D = $".."
 
 @onready var hard_container: Control = $hard_container
 @export var parent_card_list:Array[Resource]
@@ -20,11 +21,9 @@ var id
 
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var gamey: Node2D = $"../gamey"
 
-func change_view():
-	animation_player.play("leave")
-	animation_player.animation_finished.connect(func(_t):
-		GameX.finished.emit("gamey"))
+
 
 func _process(delta: float) -> void:
 	
@@ -32,8 +31,7 @@ func _process(delta: float) -> void:
 		hard_container.change_left_hard_state()
 		
 
-	if Input.is_action_just_pressed("转化视角"):
-		change_view()
+
 		
 		
 var is_first_ready;
@@ -72,7 +70,7 @@ func _ready() -> void:
 	desk_area2d.input_event.connect(func(obj,event,id):
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-				change_view()
+				game.change_view()
 		)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)#隐藏鼠标
 	

@@ -129,7 +129,6 @@ var fight_card={}
 var parent_card_source
 var c_id
 
-
 func randi_deal_card():
 	var temp:Array[int]=[]
 	for i in range(23):
@@ -139,22 +138,11 @@ func randi_deal_card():
 		card_in_hard_index[0].push_back(temp[i])
 	for i in range(12,23):
 		card_in_hard_index[1].push_back(temp[i])
-	
 
 func _ready() -> void:
-
-	
 	if multiplayer.is_server():
 		randi_deal_card()
-	
-	
-	state_map["gamex"]=GameX
-	state_map["loading"]=Loading
 	state_map["main_menu"]=MainMenu
 	state_map["gamey"]=Gamey
-	
-	init_state="loading"
-	
-	
+	init_state="main_menu"
 	init2()
-	

@@ -44,11 +44,11 @@ func _ready() -> void:
 		
 
 
+@onready var gamex: Node2D = $"../gamex"
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("转化视角"):
-		Gamey.finished.emit("gamex")
+
+		
 
 
 

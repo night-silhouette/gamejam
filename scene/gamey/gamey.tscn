@@ -1,5 +1,6 @@
-[gd_scene load_steps=64 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=89 format=3 uid="uid://d0k7g14b70jo4"]
 
+[ext_resource type="Script" uid="uid://ddfbeomtftprf" path="res://scene/gamey/game.gd" id="1_nxwef"]
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
 [ext_resource type="Texture2D" uid="uid://cq1ex7brvsmrb" path="res://asset/环境素材/桌面转视角/桌面top.png" id="2_g6k2o"]
 [ext_resource type="Texture2D" uid="uid://crp76sqiwuse5" path="res://asset/环境素材/俯视/background.jpg" id="3_g0pox"]
@@ -16,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="16_8b5nr"]
 [ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="17_v2w0t"]
 [ext_resource type="PackedScene" uid="uid://b7pl3moajgcv1" path="res://scene/gamey/计数圆盘/回合计数圆盘.tscn" id="18_v2w0t"]
-[ext_resource type="Texture2D" uid="uid://cbxa2h736dgbo" path="res://asset/card_in_hard/子卡_战斗牌1.png" id="19_l0v5f"]
 [ext_resource type="Script" uid="uid://cg7uqnh2jca48" path="res://scene/gamey/the_card.gd" id="20_chnas"]
 [ext_resource type="PackedScene" uid="uid://ieftlyype1x" path="res://scene/check/查看.tscn" id="20_j7pq8"]
 [ext_resource type="PackedScene" uid="uid://4r5bmf6r1kdi" path="res://scene/高斯蒙层/蒙层.tscn" id="21_medkg"]
@@ -27,8 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://b0beo0rdi8714" path="res://asset/环境素材/侧式/指右手2.0.png" id="26_l0v5f"]
 [ext_resource type="Texture2D" uid="uid://bosso45ikmgq8" path="res://asset/环境素材/俯视/按钮/D_no.png" id="26_so2va"]
 [ext_resource type="PackedScene" uid="uid://7apndnhc4l5v" path="res://scene/进度条/progress.tscn" id="28_chnas"]
-[ext_resource type="PackedScene" uid="uid://clj41ktobb2y" path="res://scene/game/game.tscn" id="28_q4xgl"]
 [ext_resource type="Texture2D" uid="uid://bys1h316l3m1t" path="res://asset/card_in_hard/战斗牌5.png" id="29_1c8nm"]
+[ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="29_ji2l3"]
 [ext_resource type="Script" uid="uid://bspgioegar6p6" path="res://resourse/card/class/Card.gd" id="30_j8xso"]
 [ext_resource type="Resource" uid="uid://c7aask474sp0m" path="res://resourse/card/source/母卡_战斗卡6.tres" id="31_8pbkx"]
 [ext_resource type="Resource" uid="uid://cg5aj38rgnc10" path="res://resourse/card/source/母卡_战斗卡7.tres" id="32_k2a0i"]
@@ -52,6 +52,13 @@
 [ext_resource type="Resource" uid="uid://78vqumnmaj3f" path="res://resourse/card/source/母卡_法术卡8.tres" id="50_eg8u8"]
 [ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="51_cutgu"]
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="52_0ka2r"]
+[ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="54_wty57"]
+[ext_resource type="Script" uid="uid://c2aqpvcyji0sc" path="res://scene/game/出牌区.gd" id="55_83ood"]
+[ext_resource type="Texture2D" uid="uid://bc46kfdnel4b6" path="res://asset/环境素材/侧式/空左手.png" id="56_4iuc5"]
+[ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/侧式/空右手.png" id="57_rpwbv"]
+[ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式/侧式桌面.png" id="58_2yjyb"]
+[ext_resource type="Texture2D" uid="uid://c0qtdmutjdqaj" path="res://asset/环境素材/侧式/对手小人.png" id="59_rwh4p"]
+[ext_resource type="Texture2D" uid="uid://oggoxotaxswf" path="res://asset/环境素材/侧式/侧式场景图.jpg" id="60_7o5jh"]
 
 [sub_resource type="Animation" id="Animation_g0pox"]
 length = 0.001
@@ -131,10 +138,104 @@ hp = 2
 special_state = 1
 metadata/_custom_type_script = "uid://bspgioegar6p6"
 
-[node name="Gamey" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1yp"]
+size = Vector2(81.5, 75.1875)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wlrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oixtr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okn60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o100e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rwqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yv2ml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4hye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u7u6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7fbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k6mr"]
+size = Vector2(1199.6022, 245.79068)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_req8m"]
+properties/0/path = NodePath(".:deal_card")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:fight_card")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="Animation" id="Animation_4auim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_req8m"]
+resource_name = "leave"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.36666667, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0.1764706), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vbxc3"]
+resource_name = "enter"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0.0253638, 0.0253638, 0.025363795, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2k6mr"]
+_data = {
+&"RESET": SubResource("Animation_4auim"),
+&"enter": SubResource("Animation_req8m"),
+&"leave": SubResource("Animation_vbxc3")
+}
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_nxwef")
 
 [node name="gamey" type="Node2D" parent="."]
 script = ExtResource("1_rkk0s")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="gamey"]
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gamey"]
 root_node = NodePath("../..")
@@ -175,12 +276,11 @@ position = Vector2(-28, 366.00003)
 scale = Vector2(0.324943, 0.28162226)
 
 [node name="self_fight" type="Sprite2D" parent="gamey"]
-visible = false
+z_index = 10
 material = SubResource("ShaderMaterial_l0v5f")
 position = Vector2(573.00006, 459)
 rotation = 0.00715977
 scale = Vector2(0.09729189, 0.095960334)
-texture = ExtResource("19_l0v5f")
 script = ExtResource("20_chnas")
 
 [node name="Area2D" type="Area2D" parent="gamey/self_fight"]
@@ -191,12 +291,11 @@ scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_gk7xk")
 
 [node name="enemy_fight" type="Sprite2D" parent="gamey"]
-visible = false
+z_index = 10
 material = SubResource("ShaderMaterial_g7f83")
 position = Vector2(562, 135)
 rotation = 3.129299
 scale = Vector2(0.09729189, 0.095960334)
-texture = ExtResource("19_l0v5f")
 script = ExtResource("20_chnas")
 is_enemy = true
 
@@ -283,10 +382,6 @@ scale = Vector2(0.39121094, 0.39121094)
 texture = ExtResource("2_g6k2o")
 metadata/_edit_lock_ = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="gamey"]
-visible = false
-color = Color(0, 0, 0, 1)
-
 [node name="大齿轮" type="Sprite2D" parent="gamey"]
 visible = false
 position = Vector2(1000.00006, 82)
@@ -344,5 +439,112 @@ offset_bottom = 649.0
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="Game" parent="." instance=ExtResource("28_q4xgl")]
+[node name="gamex" type="Node2D" parent="."]
+visible = false
+position = Vector2(542, 327)
+script = ExtResource("29_ji2l3")
 parent_card_list = Array[Resource]([SubResource("Resource_u1sqc"), ExtResource("31_8pbkx"), ExtResource("32_k2a0i"), ExtResource("33_lou6h"), ExtResource("34_7bbbv"), ExtResource("35_1u6on"), ExtResource("36_nxwef"), ExtResource("37_ji2l3"), ExtResource("38_wty57"), ExtResource("39_83ood"), ExtResource("40_4iuc5"), ExtResource("41_rpwbv"), ExtResource("42_2yjyb"), ExtResource("43_rwh4p"), ExtResource("44_7o5jh"), ExtResource("45_sx20m"), ExtResource("46_7rqom"), ExtResource("47_k7fl2"), ExtResource("48_dxidg"), ExtResource("49_346xj"), ExtResource("50_eg8u8"), ExtResource("51_cutgu"), ExtResource("52_0ka2r")])
+
+[node name="Camera2D" type="Camera2D" parent="gamex"]
+position = Vector2(37, -2)
+
+[node name="hard_container" type="Control" parent="gamex"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 298.0
+offset_top = 63.0
+offset_right = 338.0
+offset_bottom = 103.0
+script = ExtResource("54_wty57")
+x_span = 70.0
+base_y_offset = -100.0
+card_arc_angle = 0.6
+y_bios = 7
+metadata/_edit_use_anchors_ = true
+
+[node name="出牌区" type="Area2D" parent="gamex" groups=["出牌区"]]
+script = ExtResource("55_83ood")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gamex/出牌区"]
+z_index = 1
+position = Vector2(-60, 82)
+shape = SubResource("RectangleShape2D_pw1yp")
+
+[node name="牌堆" type="Button" parent="gamex"]
+offset_left = -460.0
+offset_top = 145.0
+offset_right = 824.0
+offset_bottom = 2289.0
+scale = Vector2(0.100758, 0.0795975)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5wlrd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oixtr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_okn60")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_o100e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2rwqa")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yv2ml")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4hye")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8u7u6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c7fbu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7d2hf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cirq1")
+text = "
+"
+icon = ExtResource("56_4iuc5")
+metadata/_edit_use_anchors_ = true
+
+[node name="空右手" type="Sprite2D" parent="gamex"]
+z_index = 4096
+position = Vector2(418.484, 61.1167)
+scale = Vector2(0.060228, 0.0773649)
+texture = ExtResource("57_rpwbv")
+script = ExtResource("15_kl76r")
+
+[node name="侧式桌面" type="Sprite2D" parent="gamex"]
+position = Vector2(-56, 101)
+scale = Vector2(0.24225166, 0.30827308)
+texture = ExtResource("58_2yjyb")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="gamex/侧式桌面"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gamex/侧式桌面/Area2D"]
+position = Vector2(-42.52942, -165.0658)
+shape = SubResource("RectangleShape2D_2k6mr")
+metadata/_edit_lock_ = true
+
+[node name="对手小人" type="Sprite2D" parent="gamex"]
+z_index = -1
+position = Vector2(-99, -124)
+scale = Vector2(0.18344644, 0.18961392)
+texture = ExtResource("59_rwh4p")
+metadata/_edit_lock_ = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="gamex"]
+replication_config = SubResource("SceneReplicationConfig_req8m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="gamex"]
+libraries = {
+&"": SubResource("AnimationLibrary_2k6mr")
+}
+
+[node name="侧式场景图" type="Sprite2D" parent="gamex"]
+z_index = -1000
+position = Vector2(37.499985, -2.9999866)
+scale = Vector2(0.7654075, 0.5082096)
+texture = ExtResource("60_7o5jh")
+metadata/_edit_lock_ = true
+
+[node name="查看" parent="gamex" instance=ExtResource("20_j7pq8")]
+visible = false
+position = Vector2(71.999985, -24.000008)
+
+[node name="蒙层" parent="gamex" instance=ExtResource("21_medkg")]
+
+[node name="ColorRect" type="ColorRect" parent="gamex"]
+z_index = 4096
+offset_left = -540.0
+offset_top = -329.0
+offset_right = 614.0
+offset_bottom = 334.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

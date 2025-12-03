@@ -6,10 +6,10 @@ func enter():
 	
 func on_servers_create():
 	
-	finished.emit("gamex")
+	finished.emit("gamey")
 
 func on_client_create():
-	finished.emit("gamex")
+	finished.emit("gamey")
 
 var begin_time=10
 func exit():
