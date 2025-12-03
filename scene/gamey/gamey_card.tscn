@@ -1,0 +1,174 @@
+[gd_scene load_steps=12 format=3 uid="uid://diiwpdstnbjna"]
+
+[ext_resource type="Shader" uid="uid://c33exbavmhy32" path="res://resourse/shader/glow.gdshader" id="1_e4lpl"]
+[ext_resource type="Script" uid="uid://cg7uqnh2jca48" path="res://scene/gamey/the_card.gd" id="3_b1e5w"]
+[ext_resource type="Texture2D" uid="uid://cgac2t8sih7un" path="res://asset/小特效/卡牌碎裂1.png" id="4_5uefg"]
+[ext_resource type="Texture2D" uid="uid://bu4hqyeaksxhv" path="res://asset/小特效/卡牌碎裂2.png" id="5_d7ag7"]
+[ext_resource type="Texture2D" uid="uid://ftfvpa4irqie" path="res://asset/小特效/卡牌碎裂3.png" id="6_eh8jj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0v5f"]
+resource_local_to_scene = true
+shader = ExtResource("1_e4lpl")
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+shader_parameter/glow_intensity = 0.0
+shader_parameter/glow_width = 1.7570000834575
+shader_parameter/glow_softness = 0.5
+shader_parameter/global_fade = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk7xk"]
+size = Vector2(912.2068, 1416.844)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usdgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5uefg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d7ag7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eh8jj")
+}],
+"loop": true,
+"name": &"crush",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_no1fv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.0210009, 0.97045636)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ffsu0"]
+resource_name = "crush"
+length = 0.7
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.41),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.3, 0.42, 0.67),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.0210009, 0.97045636), Vector2(1.061, 1.06), Vector2(1.061, 1.06), Vector2(1.4, 1.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.67),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.01, 0.67),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_noaop"]
+_data = {
+&"RESET": SubResource("Animation_no1fv"),
+&"crush": SubResource("Animation_ffsu0")
+}
+
+[node name="self_fight" type="Sprite2D"]
+z_index = 10
+material = SubResource("ShaderMaterial_l0v5f")
+rotation = 0.00715977
+scale = Vector2(0.09729189, 0.095960334)
+script = ExtResource("3_b1e5w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(-11.013985, -104.13244)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gk7xk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-31.86452, -145.66605)
+scale = Vector2(1.0210009, 0.97045636)
+sprite_frames = SubResource("SpriteFrames_usdgf")
+animation = &"crush"
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_noaop")
+}

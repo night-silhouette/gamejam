@@ -115,15 +115,24 @@ func find_card_by_id(id):
 @rpc("any_peer")
 func update_enemy_card_witch_fight(id):
 	enemy_card_witch_fight=find_card_by_id(id)
+	
+# 出战对象-------------------------------------------------------------------------------------------------------
 var the_card_witch_fight:card_on_hard:
 	set(value):
 		the_card_witch_fight=value
 		update_enemy_card_witch_fight.rpc(value.id)
 		self_card_change.emit()
+		
+		
+		
+		
 var enemy_card_witch_fight:card_on_hard:
 	set(value):
 		enemy_card_witch_fight=value
 		enemy_card_change.emit()
+		
+# 出战对象-------------------------------------------------------------------------------------------------------
+
 signal self_card_change
 signal enemy_card_change
 
@@ -170,6 +179,8 @@ func damage(value):
 	
 	
 	
+func _process(delta: float) -> void:
+	super._process(delta)
 	
 	
 	

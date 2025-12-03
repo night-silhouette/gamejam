@@ -33,6 +33,14 @@ var number_map = {0: _0, 1: _1, 2: _2, 3: _3, 4: _4, 5: _5, 6: _6, 7: _7, 8: _8,
 var value:int:
 	set(new_value):
 		var temp_value = new_value
+		
+		
+		if temp_value < 0:
+			temp_value = 0
+		
+		# 只有在值发生变化时才更新（避免不必要的重绘）
+		if value == temp_value:
+			return
 		value = temp_value
 		
 		# 每次更新前，先清除所有 Sprite2D 的贴图

@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=89 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://ddfbeomtftprf" path="res://scene/gamey/game.gd" id="1_nxwef"]
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crp76sqiwuse5" path="res://asset/环境素材/俯视/background.jpg" id="3_g0pox"]
 [ext_resource type="Texture2D" uid="uid://drs7wappjqm4x" path="res://asset/card_in_hard/对局卡卡背.png" id="4_ojiah"]
 [ext_resource type="PackedScene" uid="uid://dqtfl0vxg70ce" path="res://scene/手/手.tscn" id="5_l4h8c"]
+[ext_resource type="PackedScene" uid="uid://diiwpdstnbjna" path="res://scene/gamey/gamey_card.tscn" id="7_nxwef"]
 [ext_resource type="Texture2D" uid="uid://ddfcrqcbtxt7u" path="res://asset/环境素材/俯视/小袋子_合.png" id="9_kl76r"]
 [ext_resource type="Script" uid="uid://bl2d0wbj4ptiy" path="res://scene/gamey/calc.gd" id="9_l0v5f"]
 [ext_resource type="Script" uid="uid://12suwc8gitlv" path="res://scene/gamey/小袋子合.gd" id="10_8b5nr"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="16_8b5nr"]
 [ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="17_v2w0t"]
 [ext_resource type="PackedScene" uid="uid://b7pl3moajgcv1" path="res://scene/gamey/计数圆盘/回合计数圆盘.tscn" id="18_v2w0t"]
-[ext_resource type="Script" uid="uid://cg7uqnh2jca48" path="res://scene/gamey/the_card.gd" id="20_chnas"]
 [ext_resource type="PackedScene" uid="uid://ieftlyype1x" path="res://scene/check/查看.tscn" id="20_j7pq8"]
 [ext_resource type="PackedScene" uid="uid://4r5bmf6r1kdi" path="res://scene/高斯蒙层/蒙层.tscn" id="21_medkg"]
 [ext_resource type="Script" uid="uid://k7yecgi8cdoq" path="res://scene/gamey/button.gd" id="23_4soeb"]
@@ -96,24 +96,23 @@ _data = {
 &"ready": SubResource("Animation_d12hb")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0v5f"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wty57"]
 resource_local_to_scene = true
 shader = ExtResource("14_g7f83")
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 shader_parameter/glow_intensity = 0.0
 shader_parameter/glow_width = 1.7570000834575
 shader_parameter/glow_softness = 0.5
+shader_parameter/global_fade = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk7xk"]
-size = Vector2(912.2068, 1416.844)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7f83"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1u6on"]
 resource_local_to_scene = true
 shader = ExtResource("14_g7f83")
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 shader_parameter/glow_intensity = 0.0
 shader_parameter/glow_width = 1.7570000834575
 shader_parameter/glow_softness = 0.5
+shader_parameter/global_fade = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wl78k"]
 size = Vector2(14.75, 14.5)
@@ -257,6 +256,7 @@ texture = ExtResource("3_g0pox")
 metadata/_edit_lock_ = true
 
 [node name="对局卡卡背" type="Sprite2D" parent="gamey"]
+z_index = 5
 position = Vector2(564.07574, 301.8762)
 rotation = 0.5919482
 scale = Vector2(0.016032713, 0.014375553)
@@ -264,6 +264,7 @@ texture = ExtResource("4_ojiah")
 metadata/_edit_lock_ = true
 
 [node name="对局卡卡背2" type="Sprite2D" parent="gamey"]
+z_index = 5
 position = Vector2(564.07574, 301.8762)
 rotation = 0.8082044
 scale = Vector2(0.016032713, 0.014375552)
@@ -282,40 +283,19 @@ rotation = 3.1415925
 scale = Vector2(0.22755496, 0.20233469)
 flag = false
 
+[node name="self_fight" parent="gamey" instance=ExtResource("7_nxwef")]
+material = SubResource("ShaderMaterial_wty57")
+position = Vector2(573.00006, 462)
+
+[node name="enemy_fight" parent="gamey" instance=ExtResource("7_nxwef")]
+material = SubResource("ShaderMaterial_1u6on")
+position = Vector2(564.99994, 125)
+rotation = 3.141361
+is_enemy = true
+
 [node name="回合计数圆盘" parent="gamey" instance=ExtResource("18_v2w0t")]
 position = Vector2(-28, 366.00003)
 scale = Vector2(0.324943, 0.28162226)
-
-[node name="self_fight" type="Sprite2D" parent="gamey"]
-z_index = 10
-material = SubResource("ShaderMaterial_l0v5f")
-position = Vector2(573.00006, 459)
-rotation = 0.00715977
-scale = Vector2(0.09729189, 0.095960334)
-script = ExtResource("20_chnas")
-
-[node name="Area2D" type="Area2D" parent="gamey/self_fight"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gamey/self_fight/Area2D"]
-position = Vector2(-11.013985, -104.13244)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_gk7xk")
-
-[node name="enemy_fight" type="Sprite2D" parent="gamey"]
-z_index = 10
-material = SubResource("ShaderMaterial_g7f83")
-position = Vector2(562, 135)
-rotation = 3.129299
-scale = Vector2(0.09729189, 0.095960334)
-script = ExtResource("20_chnas")
-is_enemy = true
-
-[node name="Area2D" type="Area2D" parent="gamey/enemy_fight"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gamey/enemy_fight/Area2D"]
-position = Vector2(-11.013985, -104.13244)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_gk7xk")
 
 [node name="查看" parent="gamey" instance=ExtResource("20_j7pq8")]
 visible = false

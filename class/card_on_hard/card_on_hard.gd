@@ -54,7 +54,17 @@ var is_on_hard:bool=true:
 		change_is_on_hard.emit()	
 		
 var damage
-var now_hp		
+
+signal die
+var now_hp:
+	set(value):
+		if value<0:
+			value=0
+		now_hp=value
+		
+		if now_hp==0 and is_character:
+			die.emit()
+			self.queue_free()
 var special
 	
 var is_character:bool	
