@@ -10,3 +10,8 @@ var has_card:bool=false:
 		else: 
 			collision_shape_2d.disabled=false
 			
+			
+func _process(delta: float) -> void:
+	if !GameStateMachine.the_card_witch_fight:
+		has_card=false
+		

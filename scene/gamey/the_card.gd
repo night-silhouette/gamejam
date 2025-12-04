@@ -17,6 +17,8 @@ var card_source:Card :
 		else :
 			GameStateMachine.enemy_card_witch_fight.die.connect(func():
 				_dead())
+		a=0
+
 			
 @export var is_enemy:bool=false
 func _ready() -> void:

@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://duyv3wqe6k8r4"]
+[gd_scene load_steps=10 format=3 uid="uid://duyv3wqe6k8r4"]
 
 [ext_resource type="Script" uid="uid://gk40m51ggufg" path="res://scene/main_menu/main_menu.gd" id="1_o25w2"]
+[ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="2_isrph"]
+[ext_resource type="Script" uid="uid://w23652dnomtn" path="res://scene/main_menu/小齿轮.gd" id="3_e8klu"]
+[ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="4_ywaph"]
+[ext_resource type="Texture2D" uid="uid://dve0b8iiv5ppp" path="res://asset/菜单/人.png" id="5_1vqx8"]
+[ext_resource type="Texture2D" uid="uid://vtcp00tgocr" path="res://asset/菜单/hard.png" id="6_rq7sb"]
+[ext_resource type="Texture2D" uid="uid://bojn5swo70dy5" path="res://asset/菜单/sword.png" id="7_3k2ij"]
+[ext_resource type="Texture2D" uid="uid://cbvk6rmuxw8h0" path="res://asset/菜单/join.png" id="8_bj3ug"]
+[ext_resource type="Texture2D" uid="uid://ddbcyapuf62ps" path="res://asset/菜单/found.png" id="9_eo5a4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,11 +19,12 @@ offset_bottom = -141.912
 script = ExtResource("1_o25w2")
 
 [node name="host" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 317.0
-offset_top = 288.0
-offset_right = 417.0
-offset_bottom = 351.0
+offset_left = 957.0
+offset_top = 241.0
+offset_right = 1098.0
+offset_bottom = 304.0
 text = "host"
 
 [node name="Client" type="Button" parent="."]
@@ -41,3 +50,62 @@ offset_top = 432.0
 offset_right = 889.0
 offset_bottom = 479.0
 placeholder_text = "port"
+
+[node name="小齿轮" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(64.99999, 140.99998)
+scale = Vector2(0.046427447, 0.046427447)
+texture = ExtResource("2_isrph")
+script = ExtResource("3_e8klu")
+metadata/_edit_lock_ = true
+
+[node name="大齿轮" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(115, 75)
+scale = Vector2(0.097928025, 0.097928025)
+texture = ExtResource("4_ywaph")
+metadata/_edit_lock_ = true
+
+[node name="人" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(573.88293, 293.22076)
+scale = Vector2(0.37863228, 0.37863228)
+texture = ExtResource("5_1vqx8")
+metadata/_edit_lock_ = true
+
+[node name="Hard" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(755.88306, 142.2208)
+scale = Vector2(0.2753623, 0.27431124)
+texture = ExtResource("6_rq7sb")
+metadata/_edit_lock_ = true
+
+[node name="Sword" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(261.88297, 19.22078)
+scale = Vector2(0.20237303, 0.20237303)
+texture = ExtResource("7_3k2ij")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -4000
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 651.0
+metadata/_edit_lock_ = true
+
+[node name="Join" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(164, 271)
+scale = Vector2(0.14576201, 0.1462292)
+texture = ExtResource("8_bj3ug")
+metadata/_edit_lock_ = true
+
+[node name="Found" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1021.99994, 272)
+scale = Vector2(0.14006068, 0.14006068)
+texture = ExtResource("9_eo5a4")
+metadata/_edit_lock_ = true

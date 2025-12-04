@@ -39,7 +39,7 @@ var is_self_round:bool	:
 		if value:
 			can_move=true
 var round_time=25
-var judge_time=3
+var judge_time=1.5
 var judge:String
 var judge_is_win:int:
 	set(value):
@@ -97,12 +97,17 @@ func judge_first_turn():
 var round:int:
 	set(value):
 		round=value
+
 		on_round_change.emit()
 		can_move=true
 		judge_first_turn()
 		
-		
-		
+func force_out():
+	var list = 	card_in_hard.filter(func(item):
+		if item and item.is_character:
+			return true)
+	list.shuffle()
+	list[0]._force_out()
 		
 
 func find_card_by_id(id):
@@ -137,7 +142,8 @@ signal self_card_change
 signal enemy_card_change
 
 var card_in_hard_index:Array[Array]=[[],[]]
-var card_in_hard:Array[Control]=[]
+var card_in_hard:Array[card_on_hard]=[]
+var skill_card:Array[card_on_hard]
 var is_first_ready=true
 
 
@@ -169,21 +175,27 @@ func _ready() -> void:
 @rpc("any_peer","reliable")
 func update_hp(value):
 	the_card_witch_fight.now_hp-=value
-	print("触发更新血量")
 	
 	
 	
 func damage(value):
 	update_hp.rpc(value)
 	enemy_card_witch_fight.now_hp-=value
-	print("触发更新血量")
 	
 	
 	
-	
+var _lock=false
 func _process(delta: float) -> void:
 	super._process(delta)
 	
+	if !the_card_witch_fight and _lock:
+		_lock=false
+		Util.set_time(round_time*0.95,func():
+			
+			if !the_card_witch_fight:
+				_lock=true
+				force_out()
+			)
 	
 	
 	

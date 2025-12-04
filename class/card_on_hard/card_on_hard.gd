@@ -48,6 +48,7 @@ var hover_end_tween
 var is_on_hard:bool=true:
 	set(value):
 		is_on_hard=value
+		drag_lock=false
 		if !value:
 			GameStateMachine.the_card_witch_fight=self
 			
@@ -64,6 +65,7 @@ var now_hp:
 		
 		if now_hp==0 and is_character:
 			die.emit()
+
 			self.queue_free()
 var special
 	
@@ -257,7 +259,11 @@ func init():
 
 
 
-
+func _force_out():
+	is_on_hard=false
+	flat()
+	global_position=Vector2(430,350)
+	rotation=0	
 
 	
 	

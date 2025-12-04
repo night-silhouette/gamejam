@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=90 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://ddfbeomtftprf" path="res://scene/gamey/game.gd" id="1_nxwef"]
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b0beo0rdi8714" path="res://asset/环境素材/侧式/指右手2.0.png" id="26_l0v5f"]
 [ext_resource type="Texture2D" uid="uid://bosso45ikmgq8" path="res://asset/环境素材/俯视/按钮/D_no.png" id="26_so2va"]
 [ext_resource type="PackedScene" uid="uid://7apndnhc4l5v" path="res://scene/进度条/progress.tscn" id="28_chnas"]
+[ext_resource type="PackedScene" uid="uid://qcpsgunmweib" path="res://scene/bag/bag.tscn" id="28_nxwef"]
 [ext_resource type="Texture2D" uid="uid://bys1h316l3m1t" path="res://asset/card_in_hard/战斗牌5.png" id="29_1c8nm"]
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="29_ji2l3"]
 [ext_resource type="Script" uid="uid://bspgioegar6p6" path="res://resourse/card/class/Card.gd" id="30_j8xso"]
@@ -272,12 +273,12 @@ texture = ExtResource("4_ojiah")
 metadata/_edit_lock_ = true
 
 [node name="手_自己" parent="gamey" instance=ExtResource("5_l4h8c")]
-z_index = 2
+z_index = 500
 position = Vector2(866.9219, 451.00003)
 scale = Vector2(0.22481468, 0.20038915)
 
 [node name="手_对方" parent="gamey" instance=ExtResource("5_l4h8c")]
-z_index = 2
+z_index = 500
 position = Vector2(288, 131)
 rotation = 3.1415925
 scale = Vector2(0.22755496, 0.20233469)
@@ -308,7 +309,7 @@ offset_right = 575.0
 offset_bottom = 366.0
 
 [node name="button" type="Node2D" parent="gamey"]
-z_index = 300
+z_index = 1000
 position = Vector2(7, 6)
 script = ExtResource("23_4soeb")
 
@@ -352,7 +353,7 @@ scale = Vector2(2.7170725, 2.7170725)
 shape = SubResource("RectangleShape2D_7e36l")
 
 [node name="RoundStart" parent="gamey" instance=ExtResource("23_p07be")]
-z_index = 1000
+z_index = 4096
 position = Vector2(524, 191)
 
 [node name="空右手" type="Sprite2D" parent="gamey"]
@@ -387,7 +388,7 @@ texture = ExtResource("16_8b5nr")
 
 [node name="小袋子合" type="Sprite2D" parent="gamey"]
 z_index = 20
-position = Vector2(245.8125, 573.5625)
+position = Vector2(251, 575)
 scale = Vector2(0.15111262, 0.17288482)
 texture = ExtResource("9_kl76r")
 script = ExtResource("10_8b5nr")
@@ -425,6 +426,12 @@ offset_right = 1152.0
 offset_bottom = 649.0
 mouse_filter = 2
 metadata/_edit_lock_ = true
+
+[node name="Bag" parent="gamey" instance=ExtResource("28_nxwef")]
+visible = false
+z_index = 4000
+position = Vector2(51.000004, -2)
+scale = Vector2(0.995875, 0.92083114)
 
 [node name="gamex" type="Node2D" parent="."]
 visible = false

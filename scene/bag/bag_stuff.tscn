@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4omrcm8dvet3"]
+
+[ext_resource type="Script" uid="uid://dvbu7wwjjhvhp" path="res://scene/bag/bag_stuff.gd" id="1_c6ytq"]
+[ext_resource type="Texture2D" uid="uid://le4iwhdhscav" path="res://asset/GUI/bag_stuff.png" id="1_p48fr"]
+[ext_resource type="Texture2D" uid="uid://cbxa2h736dgbo" path="res://asset/card_in_hard/子卡_战斗牌1.png" id="2_c6ytq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahtgr"]
+size = Vector2(25.074268, 42.66376)
+
+[node name="BagStuff" type="Control"]
+custom_minimum_size = Vector2(170, 240)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -85.0
+offset_top = -119.0
+offset_right = 85.0
+offset_bottom = 121.0
+script = ExtResource("1_c6ytq")
+
+[node name="edge" type="Sprite2D" parent="."]
+position = Vector2(88.76876, 151.60057)
+rotation = 0.13531324
+scale = Vector2(0.16256823, 0.16256823)
+texture = ExtResource("1_p48fr")
+
+[node name="card_face" type="Sprite2D" parent="."]
+position = Vector2(85.75775, 128.39395)
+scale = Vector2(0.10147692, 0.10471306)
+texture = ExtResource("2_c6ytq")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(88.76876, 151.60054)
+scale = Vector2(0.6642147, 0.48860174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7.6506467, -81.7179)
+scale = Vector2(6.048015, 7.9069986)
+shape = SubResource("RectangleShape2D_ahtgr")

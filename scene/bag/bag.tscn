@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://qcpsgunmweib"]
+
+[ext_resource type="Script" uid="uid://dkvwxnhjayohj" path="res://scene/bag/bag.gd" id="1_rwd3y"]
+[ext_resource type="Texture2D" uid="uid://cm5hig6fg4bg1" path="res://asset/GUI/bag.png" id="1_yqk81"]
+
+[node name="Bag" type="Node2D"]
+script = ExtResource("1_rwd3y")
+
+[node name="Bag" type="Sprite2D" parent="."]
+position = Vector2(584.00006, 415)
+scale = Vector2(0.8770388, 0.50909036)
+texture = ExtResource("1_yqk81")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 120.0
+offset_top = 81.0
+offset_right = 1007.0
+offset_bottom = 556.0
+follow_focus = true
+draw_focus_border = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2

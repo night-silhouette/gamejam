@@ -57,7 +57,9 @@ func frist_ready():
 		for card in GameStateMachine.card_in_hard:
 			hard_container.add_child(card)	
 		hard_container.container_init()
-	
+		GameStateMachine.skill_card=GameStateMachine.card_in_hard.filter(func(items):
+				if !items.is_character:
+					return true)
 @onready var desk_area2d: Area2D = $侧式桌面/Area2D
 	
 func init_seed():
