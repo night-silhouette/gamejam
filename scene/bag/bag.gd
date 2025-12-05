@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const BAG_STUFF = preload("uid://c4omrcm8dvet3")
 @onready var v_box_container: VBoxContainer = $ScrollContainer/VBoxContainer
@@ -29,3 +29,32 @@ func update(card_list):
 		if i==5 and j<=3:
 			i=0
 			j+=1
+var lock:bool=true
+func _ready() -> void:
+	pressed.connect(on_pressed)
+	
+	
+func on_pressed(id):
+	
+	if lock:
+		var card=GameStateMachine.skill_card[GameStateMachine.skill_card.find_custom(func(item):return item.id==id)]
+		card.card_source.skill()
+		card.queue_free()
+		Util.set_time(0.1,func():
+			Util.cleanup_array(GameStateMachine.card_in_hard)
+			Util.cleanup_array(GameStateMachine.skill_card)
+			GameStateMachine.update_skill_card()
+			stuff_list=GameStateMachine.skill_card
+			$"../../gamex/hard_container".delete_card(id)
+			)
+
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	

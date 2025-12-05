@@ -104,6 +104,7 @@ shader_parameter/glow_color = Color(1, 1, 1, 1)
 shader_parameter/glow_intensity = 0.0
 shader_parameter/glow_width = 1.7570000834575
 shader_parameter/glow_softness = 0.5
+shader_parameter/_modulate = Vector4(1, 1, 1, 1)
 shader_parameter/global_fade = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1u6on"]
@@ -113,6 +114,7 @@ shader_parameter/glow_color = Color(1, 1, 1, 1)
 shader_parameter/glow_intensity = 0.0
 shader_parameter/glow_width = 1.7570000834575
 shader_parameter/glow_softness = 0.5
+shader_parameter/_modulate = Vector4(1, 1, 1, 1)
 shader_parameter/global_fade = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wl78k"]
@@ -430,8 +432,12 @@ metadata/_edit_lock_ = true
 [node name="Bag" parent="gamey" instance=ExtResource("28_nxwef")]
 visible = false
 z_index = 4000
-position = Vector2(51.000004, -2)
+offset_left = 51.000004
+offset_top = -2.0
+offset_right = 51.000004
+offset_bottom = -2.0
 scale = Vector2(0.995875, 0.92083114)
+mouse_filter = 1
 
 [node name="gamex" type="Node2D" parent="."]
 visible = false

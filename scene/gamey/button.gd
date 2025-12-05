@@ -28,6 +28,8 @@ func be_pressed(which):
 			temp1=Util.set_time(0.6,func():a_no.texture=map[which][0])
 			GameStateMachine.can_move=false
 			GameStateMachine.the_card_witch_fight.card_source.attack()
+			attack_animation()
+			be_attack_animation.rpc()
 			
 		elif which=="D":
 			skill.emit()
@@ -35,17 +37,43 @@ func be_pressed(which):
 			temp2=Util.set_time(0.6,func():d_no.texture=map[which][0])
 			GameStateMachine.can_move=false
 			GameStateMachine.the_card_witch_fight.card_source.skill()
-		
-	
+@onready var gamey: Node2D = $".."
+@onready var enemy_fight: Sprite2D = $"../enemy_fight"
+@onready var self_fight: Sprite2D = $"../self_fight"
 
-	
-	
+const ATTACK = preload("uid://bmoomkc5yexrt")
+var enemy_attack_animation_position=Vector2(600,129)
+var self_attack_animation_position=Vector2(541,440)
+func attack_animation():
+	self_fight.be_attack(15)
+	Util.set_time(0.1,func():
+		var temp=ATTACK.instantiate()
+		gamey.add_child(temp)
+		temp.position=enemy_attack_animation_position
+		enemy_fight.be_attack(30)
+		enemy_fight.material.set_shader_parameter("_modulate",Color("red"))
+		Util.set_time(0.15,func():enemy_fight.material.set_shader_parameter("_modulate",Color("white")))
+
+			)
+@rpc("any_peer")
+func be_attack_animation():
+	enemy_fight.be_attack(-15)
+	Util.set_time(0.1,func():
+		var temp=ATTACK.instantiate()
+		gamey.add_child(temp)
+		temp.position=self_attack_animation_position
+		temp.scale.x=-temp.scale.x
+		self_fight.be_attack(-30)
+		self_fight.material.set_shader_parameter("_modulate",Color("red"))
+		Util.set_time(0.15,func():self_fight.material.set_shader_parameter("_modulate",Color("white"))))
+
 
 func _ready() -> void:
 	attack_area.input_event.connect(func(obj,event,id):
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				be_pressed("A"))
+				
 	skill_area.input_event.connect(func(obj,event,id):
 		
 		if event is InputEventMouseButton:

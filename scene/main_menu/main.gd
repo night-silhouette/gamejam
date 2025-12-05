@@ -17,7 +17,7 @@ var tween
 @onready var _exit: Area2D = $exit
 @onready var _enter: Area2D = $enter
 
-
+var lock=true
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("up"):
@@ -28,12 +28,12 @@ func _process(delta: float) -> void:
 		i-=1
 		transform()
 		
-	if Input.is_action_just_pressed("confirm"):
+	if Input.is_action_just_pressed("confirm") and lock:
 		
 		if i==1:#enter
 			enter()
 		elif i==0:
-			print(1)
+		
 			get_tree().quit(0)
 	
 func transform():
@@ -48,7 +48,7 @@ func transform():
 func enter():
 	self.visible=false
 	$"../start_game".visible=true
-	
+	lock=false
 func _ready() -> void:
 	Util.area2d_connect_click(_exit,func():get_tree().quit(0))
 	Util.area2d_connect_click(_enter,enter)

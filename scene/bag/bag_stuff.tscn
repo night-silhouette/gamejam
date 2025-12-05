@@ -15,6 +15,7 @@ offset_left = -85.0
 offset_top = -119.0
 offset_right = 85.0
 offset_bottom = 121.0
+mouse_filter = 1
 script = ExtResource("1_c6ytq")
 
 [node name="edge" type="Sprite2D" parent="."]

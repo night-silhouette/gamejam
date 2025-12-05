@@ -4,6 +4,10 @@ const CARD_ON_HARD = preload("uid://bn84ltnokpuvb")
 
 signal on_round_change
 
+
+
+
+
 var can_move:bool=true:
 	set(value):
 		can_move=value
@@ -191,9 +195,7 @@ func damage(value):
 	
 	
 var _lock=false
-func _process(delta: float) -> void:
-	super._process(delta)
-	
+func check_force():
 	if !the_card_witch_fight and _lock:
 		_lock=false
 		Util.set_time(round_time*0.95,func():
@@ -202,9 +204,31 @@ func _process(delta: float) -> void:
 				_lock=true
 				force_out()
 			)
+func _process(delta: float) -> void:
+	super._process(delta)
+	check_force()
+
+@rpc("any_peer","reliable") 
+func _update_reduction(value):
+	enemy_card_witch_fight.reduction=value
+	
+func update_reduction(value):
+	_update_reduction.rpc(value)
+	the_card_witch_fight.reduction=value
 	
 	
+@rpc("any_peer","reliable")
+func _update_prop_self(prop:String,value):
+	enemy_card_witch_fight.set("prop",value)
 	
+func update_prop_self(prop:String,value):
+	the_card_witch_fight.set(prop,value)
+
+func update_skill_card():
+	skill_card=card_in_hard.filter(func(items):
+		if !items.is_character:
+			return true)
+
 	
 	
 	

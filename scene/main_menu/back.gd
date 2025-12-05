@@ -8,6 +8,7 @@ extends Sprite2D
 func _ready() -> void:
 	Util.area2d_connect_click(area_2d,func():
 			start_game.visible=false
-			main.visible=true)
+			main.visible=true
+			main.lock=true)
 
 		

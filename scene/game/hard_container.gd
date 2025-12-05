@@ -51,7 +51,13 @@ func _ready() -> void:
 	
 	
 
-
+func delete_card(id):
+	var children=get_children()
+	for i in children:
+		if i.id==id:
+			i.queue_free()
+	tranform_card()
+	
 
 var transform_tween:Tween
 func tranform_card():

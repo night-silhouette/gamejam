@@ -31,6 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://ca2edcihun0tv" path="res://asset/菜单/手指.png" id="27_fxk28"]
 [ext_resource type="Script" uid="uid://bblddos4i6qqn" path="res://scene/main_menu/sprite_2d.gd" id="29_o3if4"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtty"]
+shader = ExtResource("11_e1cfd")
+shader_parameter/wind_speed = 2.30700010632262
+shader_parameter/wind_strength = 18.334000870865
+shader_parameter/wave_density = 20.0
+shader_parameter/start_height = 0.8
+
 [sub_resource type="Animation" id="Animation_cta3x"]
 length = 0.001
 tracks/0/type = "value"
@@ -154,58 +161,6 @@ tracks/9/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_e1cfd"]
-resource_name = "host"
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hard:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(755.88306, 142.2208), Vector2(769.00006, 166.99997)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hard:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.30088216]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("端口提示:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.01),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("端口提示:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.98669815),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-27, -229), Vector2(-20, -28.000015)]
-}
-
 [sub_resource type="Animation" id="Animation_ojiqs"]
 resource_name = "blood"
 length = 0.47
@@ -283,19 +238,64 @@ tracks/5/keys = {
 "values": [0.0, -0.18498571]
 }
 
+[sub_resource type="Animation" id="Animation_e1cfd"]
+resource_name = "host"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(755.88306, 142.2208), Vector2(769.00006, 166.99997)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hard:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.30088216]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("端口提示:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("端口提示:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.98669815),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-27, -229), Vector2(-20, -28.000015)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tm7m5"]
 _data = {
 &"RESET": SubResource("Animation_cta3x"),
 &"blood": SubResource("Animation_ojiqs"),
 &"host": SubResource("Animation_e1cfd")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtty"]
-shader = ExtResource("11_e1cfd")
-shader_parameter/wind_speed = 2.30700010632262
-shader_parameter/wind_strength = 18.334000870865
-shader_parameter/wave_density = 20.0
-shader_parameter/start_height = 0.8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cta3x"]
 size = Vector2(688.77277, 764.6262)
@@ -365,6 +365,12 @@ scale = Vector2(0.046427447, 0.046427447)
 texture = ExtResource("2_isrph")
 script = ExtResource("3_e8klu")
 metadata/_edit_lock_ = true
+
+[node name="稻草人" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wbtty")
+position = Vector2(1030, 526)
+scale = Vector2(0.2496321, 0.2496321)
+texture = ExtResource("11_wbtty")
 
 [node name="大齿轮" type="Sprite2D" parent="."]
 position = Vector2(115, 75)
@@ -464,12 +470,6 @@ offset_right = 312.0
 offset_bottom = 361.0
 text = "host"
 
-[node name="稻草人" type="Sprite2D" parent="start_game"]
-material = SubResource("ShaderMaterial_wbtty")
-position = Vector2(1030, 526)
-scale = Vector2(0.2496321, 0.2496321)
-texture = ExtResource("11_wbtty")
-
 [node name="Back" type="Sprite2D" parent="start_game"]
 position = Vector2(90.00001, 574)
 scale = Vector2(0.12677175, 0.12677175)
@@ -490,6 +490,7 @@ scale = Vector2(0.23425831, 0.23425831)
 sprite_frames = SubResource("SpriteFrames_p4mry")
 
 [node name="main" type="Node2D" parent="."]
+position = Vector2(-31, 11)
 script = ExtResource("10_eo5a4")
 
 [node name="Main" type="Sprite2D" parent="main"]

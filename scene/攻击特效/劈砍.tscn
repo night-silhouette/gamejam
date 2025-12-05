@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmoomkc5yexrt"]
+
+[ext_resource type="Script" uid="uid://cfusi5g0xifon" path="res://scene/攻击特效/劈砍.gd" id="1_3ufa3"]
+[ext_resource type="Texture2D" uid="uid://cwmx46e6wuglr" path="res://asset/小特效/attack.png" id="1_40n3v"]
+[ext_resource type="Texture2D" uid="uid://085s3okjjlky" path="res://asset/小特效/attack2.png" id="3_rrc0u"]
+
+[sub_resource type="Animation" id="Animation_tii6v"]
+resource_name = "attack"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attack2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.011404036, 0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(29, -40), Vector2(20.331038, -36.946808), Vector2(-0.99999976, 13.000002)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Attack2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.011404036, 0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.3167829, 0.27423713, 0.027025178]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Attack:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8, -6.999999), Vector2(-2.000001, 13.000003)]
+}
+
+[sub_resource type="Animation" id="Animation_mlpde"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attack2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, -41)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Attack2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3167829]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Attack:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -6.999999)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ufa3"]
+_data = {
+&"RESET": SubResource("Animation_mlpde"),
+&"attack": SubResource("Animation_tii6v")
+}
+
+[node name="劈砍" type="Node2D"]
+z_index = 3000
+scale = Vector2(2, 2)
+script = ExtResource("1_3ufa3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3ufa3")
+}
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(8, -6.999999)
+rotation = -0.01104378
+scale = Vector2(0.040637415, 0.040637415)
+texture = ExtResource("1_40n3v")
+
+[node name="Attack2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(22, -41)
+rotation = 0.3167829
+scale = Vector2(0.040637415, 0.040637415)
+texture = ExtResource("3_rrc0u")

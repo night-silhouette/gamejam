@@ -7,6 +7,14 @@ func _dead():
 	animation_player.play("crush")
 	texture=null
 
+
+func be_attack(distance):
+	var tween=create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self,"position:y",position.y-distance,0.15)	
+	tween.finished.connect(func():position.y+=distance)
+
 signal on_check
 var card_source:Card :
 	set(value):
@@ -19,10 +27,9 @@ var card_source:Card :
 				_dead())
 		a=0
 
-			
+	
 @export var is_enemy:bool=false
 func _ready() -> void:
-
 	
 	area_2d.input_event.connect(func(obj,event,id):
 		if event is InputEventMouseButton:
@@ -32,7 +39,20 @@ func _ready() -> void:
 	
 var is_grow:bool=false	
 @export var a:float
+
+		
+@onready var canvas_modulate: CanvasModulate = $CanvasModulate
+
 func _process(delta: float) -> void:
+
+	var obj=GameStateMachine.the_card_witch_fight if !is_enemy else GameStateMachine.enemy_card_witch_fight
+	if obj:
+		
+		if obj.card_source.lock and obj.card_source.skill_use_number>0:
+			self.material.set_shader_parameter("glow_color",Color("b2906eff"))
+		else:
+			self.material.set_shader_parameter("glow_color",Color("white"))
+			
 	material.set_shader_parameter("global_fade",a)
 	
 	

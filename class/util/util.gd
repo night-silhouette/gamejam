@@ -81,5 +81,10 @@ func _await_time_until(obj_to_check, max_time: float) -> bool:
 		return false # 超时
 	
 	
-	
+
+func cleanup_array(list):
+	for i in range(list.size() - 1, -1, -1):
+		var item = list[i]
+		if not is_instance_valid(item):
+			list.remove_at(i)
 	

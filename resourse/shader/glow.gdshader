@@ -8,6 +8,7 @@ uniform float glow_intensity : hint_range(0.0, 5.0) = 1.0;
 uniform float glow_width : hint_range(0.001, 10.0) = 0.05; 
 // 新增：控制辉光边缘的模糊程度。
 uniform float glow_softness : hint_range(0.001, 0.5) = 0.1;
+uniform vec4 _modulate  = vec4(1.0, 1.0, 1.0, 1.0);
 
 // *** 新增参数：全局淡出/透明度控制 ***
 // 0.0 表示完全不透明（正常显示），1.0 表示完全透明（消失）。
@@ -52,6 +53,7 @@ void fragment() {
         COLOR.rgb = glow_color.rgb;
         // 最终的透明度是辉光颜色自身的 alpha 乘以计算出的辉光因子。
         COLOR.a = glow_color.a * glow_factor; 
+		
         
     } else {
         // 如果不是透明像素 (即在物体内部)，则保持其原有的颜色和透明度
@@ -64,4 +66,5 @@ void fragment() {
     // 当 global_fade = 1.0 时，透明度变为 0.0 (1.0 - 1.0 = 0.0)，完全透明。
     // ======================================================================
     COLOR.a *= (1.0 - global_fade);
+	COLOR=COLOR*_modulate;
 }

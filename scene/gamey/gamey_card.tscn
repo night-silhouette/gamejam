@@ -13,6 +13,7 @@ shader_parameter/glow_color = Color(1, 1, 1, 1)
 shader_parameter/glow_intensity = 0.0
 shader_parameter/glow_width = 1.7570000834575
 shader_parameter/glow_softness = 0.5
+shader_parameter/_modulate = Vector4(1, 1, 1, 1)
 shader_parameter/global_fade = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk7xk"]

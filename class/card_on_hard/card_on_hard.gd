@@ -56,10 +56,11 @@ var is_on_hard:bool=true:
 		change_is_on_hard.emit()	
 		
 var damage
-
+var in_skill:bool=false	
 signal die
-var now_hp:
+var now_hp:float:
 	set(value):
+		
 		var hurt=now_hp-value
 		now_hp=now_hp-hurt*reduction
 		

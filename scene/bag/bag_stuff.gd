@@ -7,7 +7,10 @@ var id
 signal pressed(id)
 func _ready() -> void:
 	card_face.texture=texture
-	Util.area2d_connect_click(area_2d,func():pressed.emit(id))
+	Util.area2d_connect_click(area_2d,func():
+		print(999)
+		pressed.emit(id)
+		get_viewport().set_input_as_handled())
 		
 		
 		

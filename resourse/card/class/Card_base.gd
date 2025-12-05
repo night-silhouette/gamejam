@@ -20,20 +20,44 @@ var last_round:int=0:
 			last_round=0
 			return
 		last_round=value
+		if last_round==0:
+			obj.in_skill=false
 		skill_last_callback()
+
+		
+		
+#----------------------
+
+
 func skill_last_callback():
 	pass
-
-#----------------------
+signal _dis
+func set_round_callback(round:int,callback:Callable):#我说这个函数设计是人类智商之巅峰（狗头）
+	var i=0
+	var update_i=func():
+		i+=1
+		if i == round:
+			callback.call()
+			_dis.emit()
+	GameStateMachine.on_round_change.connect(update_i)
+	_dis.connect(func():GameStateMachine.on_round_change.disconnect(update_i),CONNECT_ONE_SHOT)
+	
+	
 	
 	
 func attack():
 
 	GameStateMachine.damage(obj.damage)
+	
+var can_use_skill:bool=lock and skill_use_number>0
 func skill():
-	if !lock:
+	can_use_skill=lock and skill_use_number>0
+	if !can_use_skill:
 		return
-	if skill_use_number==0:
-		return
-
+	var temp=skill_use_number-1
+	GameStateMachine.update_prop_self("card_source:skill_use_number",temp)
+	obj.in_skill=true
+	
+	
+	
 	

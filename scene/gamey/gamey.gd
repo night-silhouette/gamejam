@@ -47,19 +47,20 @@ func _ready() -> void:
 @onready var gamex: Node2D = $"../gamex"
 
 
-@onready var bag: Node2D = $Bag
+@onready var bag: Control = $Bag
 var bag_flag=true
 var need_to_update_stuff_list=true
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("打开背包") :
+		open_bag()
+		
+func open_bag():
 		blur.visible=bag_flag
 		bag.visible=bag_flag
 		bag_flag=!bag_flag
 		if need_to_update_stuff_list:
 			bag.stuff_list=GameStateMachine.skill_card
 			need_to_update_stuff_list=false
-		
-
 
 
 
