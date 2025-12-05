@@ -1,14 +1,347 @@
-[gd_scene load_steps=10 format=3 uid="uid://duyv3wqe6k8r4"]
+[gd_scene load_steps=43 format=3 uid="uid://duyv3wqe6k8r4"]
 
 [ext_resource type="Script" uid="uid://gk40m51ggufg" path="res://scene/main_menu/main_menu.gd" id="1_o25w2"]
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="2_isrph"]
 [ext_resource type="Script" uid="uid://w23652dnomtn" path="res://scene/main_menu/小齿轮.gd" id="3_e8klu"]
 [ext_resource type="Texture2D" uid="uid://b6hhdeh7x1eua" path="res://asset/环境素材/俯视/大齿轮.png" id="4_ywaph"]
 [ext_resource type="Texture2D" uid="uid://dve0b8iiv5ppp" path="res://asset/菜单/人.png" id="5_1vqx8"]
+[ext_resource type="Texture2D" uid="uid://m0wl1kq1wo4k" path="res://asset/菜单/found_牌子.png" id="5_tm7m5"]
+[ext_resource type="Texture2D" uid="uid://cuettj5853pro" path="res://asset/菜单/port_input.png" id="6_42r2u"]
 [ext_resource type="Texture2D" uid="uid://vtcp00tgocr" path="res://asset/菜单/hard.png" id="6_rq7sb"]
 [ext_resource type="Texture2D" uid="uid://bojn5swo70dy5" path="res://asset/菜单/sword.png" id="7_3k2ij"]
 [ext_resource type="Texture2D" uid="uid://cbvk6rmuxw8h0" path="res://asset/菜单/join.png" id="8_bj3ug"]
 [ext_resource type="Texture2D" uid="uid://ddbcyapuf62ps" path="res://asset/菜单/found.png" id="9_eo5a4"]
+[ext_resource type="Script" uid="uid://dwwwsiby628d6" path="res://scene/main_menu/main.gd" id="10_eo5a4"]
+[ext_resource type="Texture2D" uid="uid://dt3lh4wr88et" path="res://asset/菜单/back.png" id="10_kvq8n"]
+[ext_resource type="Shader" uid="uid://bywi7n4p24qo5" path="res://resourse/shader/摇晃.gdshader" id="11_e1cfd"]
+[ext_resource type="Texture2D" uid="uid://dukhkri7764q6" path="res://asset/菜单/main.jpg" id="11_lt21p"]
+[ext_resource type="Texture2D" uid="uid://cgfj0phqir8lw" path="res://asset/菜单/稻草人.png" id="11_wbtty"]
+[ext_resource type="Texture2D" uid="uid://d0t7716wi7xy4" path="res://asset/菜单/箭头.png" id="12_kvq8n"]
+[ext_resource type="Script" uid="uid://dx5cvvq07qaha" path="res://scene/main_menu/back.gd" id="13_e1cfd"]
+[ext_resource type="Texture2D" uid="uid://bg6mbcbi5r2fe" path="res://asset/菜单/小标志.png" id="13_wbtty"]
+[ext_resource type="Texture2D" uid="uid://cnm38kh5tknis" path="res://asset/菜单/血滴/2.png" id="16_fvcaw"]
+[ext_resource type="Texture2D" uid="uid://bu56bmgf3knk0" path="res://asset/菜单/血滴/3.png" id="17_o3if4"]
+[ext_resource type="Texture2D" uid="uid://bh0xks743417l" path="res://asset/菜单/血滴/4.png" id="18_fxk28"]
+[ext_resource type="Texture2D" uid="uid://cw60xmoe51lcw" path="res://asset/菜单/血滴/5.png" id="19_8byyq"]
+[ext_resource type="Texture2D" uid="uid://dmyhkg6itcoqw" path="res://asset/菜单/ip_input.png" id="20_hlrsq"]
+[ext_resource type="Texture2D" uid="uid://b0vbw6hq1x66f" path="res://asset/菜单/血滴/6.png" id="20_ks1ao"]
+[ext_resource type="Texture2D" uid="uid://ht4n67ppaw2j" path="res://asset/菜单/血滴/7.png" id="21_t6h3x"]
+[ext_resource type="Texture2D" uid="uid://bqwf0qf6wyham" path="res://asset/菜单/join_牌子.png" id="21_uuivk"]
+[ext_resource type="Texture2D" uid="uid://bptoauf5tcpjl" path="res://asset/菜单/血滴/8.png" id="22_18pke"]
+[ext_resource type="Script" uid="uid://bblddos4i6qqn" path="res://scene/main_menu/sprite_2d.gd" id="29_o3if4"]
+
+[sub_resource type="Animation" id="Animation_cta3x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(755.88306, 142.2208)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hard:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("端口提示:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("端口提示:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-27, -229)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("血滴:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("血滴:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(361, 262)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("血滴:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sword:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(294, 185)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("血滴:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sword:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_e1cfd"]
+resource_name = "host"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(755.88306, 142.2208), Vector2(769.00006, 166.99997)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hard:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.30088216]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("端口提示:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("端口提示:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.98669815),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-27, -229), Vector2(-20, -28.000015)]
+}
+
+[sub_resource type="Animation" id="Animation_ojiqs"]
+resource_name = "blood"
+length = 0.47
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("血滴:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21780002, 0.26400003, 0.31, 0.35, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("血滴:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.22000001, 0.27060002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(361, 262), Vector2(361, 570), Vector2(361, 590)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("血滴:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.36, 0.4, 0.47),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.54509807), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sword:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(294, 185), Vector2(217, 42)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("血滴:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sword:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.19821368),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.18498571]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tm7m5"]
+_data = {
+&"RESET": SubResource("Animation_cta3x"),
+&"blood": SubResource("Animation_ojiqs"),
+&"host": SubResource("Animation_e1cfd")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtty"]
+shader = ExtResource("11_e1cfd")
+shader_parameter/wind_speed = 2.30700010632262
+shader_parameter/wind_strength = 18.334000870865
+shader_parameter/wave_density = 20.0
+shader_parameter/start_height = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cta3x"]
+size = Vector2(688.77277, 764.6262)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4mry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_fvcaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o3if4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fxk28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8byyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ks1ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_t6h3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_18pke")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo5a4"]
+size = Vector2(19.834213, 23.102623)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt21p"]
+size = Vector2(137, 186)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ykkdi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsfq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osy6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxk28"]
+size = Vector2(753.4718, 957.97314)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,43 +349,16 @@ anchor_right = 0.163
 anchor_bottom = 0.219
 offset_right = -187.776
 offset_bottom = -141.912
-script = ExtResource("1_o25w2")
 
-[node name="host" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4000
 layout_mode = 0
-offset_left = 957.0
-offset_top = 241.0
-offset_right = 1098.0
-offset_bottom = 304.0
-text = "host"
-
-[node name="Client" type="Button" parent="."]
-layout_mode = 0
-offset_left = 643.0
-offset_top = 289.0
-offset_right = 738.0
-offset_bottom = 347.0
-text = "Client"
-
-[node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 643.0
-offset_top = 372.0
-offset_right = 889.0
-offset_bottom = 419.0
-placeholder_text = "客户端请输入房主ip,回车结束"
-
-[node name="LineEdit2" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 643.0
-offset_top = 432.0
-offset_right = 889.0
-offset_bottom = 479.0
-placeholder_text = "port"
+offset_right = 1154.0
+offset_bottom = 651.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="小齿轮" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(64.99999, 140.99998)
 scale = Vector2(0.046427447, 0.046427447)
 texture = ExtResource("2_isrph")
@@ -60,52 +366,220 @@ script = ExtResource("3_e8klu")
 metadata/_edit_lock_ = true
 
 [node name="大齿轮" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(115, 75)
 scale = Vector2(0.097928025, 0.097928025)
 texture = ExtResource("4_ywaph")
 metadata/_edit_lock_ = true
 
-[node name="人" type="Sprite2D" parent="."]
+[node name="start_game" type="Control" parent="."]
 visible = false
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_o25w2")
+
+[node name="端口提示" type="Node2D" parent="start_game"]
+visible = false
+position = Vector2(-27, -229)
+scale = Vector2(1.0336305, 1.0336305)
+
+[node name="Found牌子" type="Sprite2D" parent="start_game/端口提示"]
+z_index = -1
+position = Vector2(723.00006, 436)
+scale = Vector2(0.12395218, 0.30280772)
+texture = ExtResource("5_tm7m5")
+
+[node name="ColorRect" type="ColorRect" parent="start_game/端口提示/Found牌子"]
+offset_left = -616.89825
+offset_top = -910.0791
+offset_right = 547.38837
+offset_bottom = -123.487305
+metadata/_edit_lock_ = true
+
+[node name="PortInput" type="Sprite2D" parent="start_game/端口提示"]
+position = Vector2(714, 586)
+scale = Vector2(0.12298535, 0.12345927)
+texture = ExtResource("6_42r2u")
+
+[node name="Label" type="Label" parent="start_game/端口提示"]
+offset_left = 667.5499
+offset_top = 594.0227
+offset_right = 707.5499
+offset_bottom = 617.0227
+scale = Vector2(1.2572763, 1.2572763)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3372549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.654902)
+theme_override_font_sizes/font_size = 15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="start_game"]
+libraries = {
+&"": SubResource("AnimationLibrary_tm7m5")
+}
+
+[node name="人" type="Sprite2D" parent="start_game"]
 z_index = 1
-position = Vector2(573.88293, 293.22076)
+position = Vector2(571, 303)
 scale = Vector2(0.37863228, 0.37863228)
 texture = ExtResource("5_1vqx8")
 metadata/_edit_lock_ = true
 
-[node name="Hard" type="Sprite2D" parent="."]
-visible = false
+[node name="Found" type="Sprite2D" parent="start_game"]
+position = Vector2(947, 260)
+scale = Vector2(0.14006068, 0.14006068)
+texture = ExtResource("9_eo5a4")
+
+[node name="Join" type="Sprite2D" parent="start_game"]
+position = Vector2(237.99998, 329)
+scale = Vector2(0.14576201, 0.1462292)
+texture = ExtResource("8_bj3ug")
+
+[node name="Sword" type="Sprite2D" parent="start_game"]
+position = Vector2(294, 185)
+scale = Vector2(0.20237303, 0.20237303)
+texture = ExtResource("7_3k2ij")
+
+[node name="Hard" type="Sprite2D" parent="start_game"]
 position = Vector2(755.88306, 142.2208)
 scale = Vector2(0.2753623, 0.27431124)
 texture = ExtResource("6_rq7sb")
-metadata/_edit_lock_ = true
 
-[node name="Sword" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(261.88297, 19.22078)
-scale = Vector2(0.20237303, 0.20237303)
-texture = ExtResource("7_3k2ij")
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = -4000
+[node name="host" type="Button" parent="start_game"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
 layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 651.0
+offset_left = 880.0
+offset_top = 234.0
+offset_right = 1021.0
+offset_bottom = 297.0
+text = "host"
+
+[node name="join" type="Button" parent="start_game"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 171.0
+offset_top = 298.0
+offset_right = 312.0
+offset_bottom = 361.0
+text = "host"
+
+[node name="稻草人" type="Sprite2D" parent="start_game"]
+material = SubResource("ShaderMaterial_wbtty")
+position = Vector2(1030, 526)
+scale = Vector2(0.2496321, 0.2496321)
+texture = ExtResource("11_wbtty")
+
+[node name="Back" type="Sprite2D" parent="start_game"]
+position = Vector2(90.00001, 574)
+scale = Vector2(0.12677175, 0.12677175)
+texture = ExtResource("10_kvq8n")
+script = ExtResource("13_e1cfd")
+
+[node name="Area2D" type="Area2D" parent="start_game/Back"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start_game/Back/Area2D"]
+position = Vector2(7.8881097, -102.54674)
+shape = SubResource("RectangleShape2D_cta3x")
+
+[node name="血滴" type="AnimatedSprite2D" parent="start_game"]
+visible = false
+z_index = 2
+position = Vector2(361, 262)
+scale = Vector2(0.23425831, 0.23425831)
+sprite_frames = SubResource("SpriteFrames_p4mry")
+
+[node name="main" type="Node2D" parent="."]
+script = ExtResource("10_eo5a4")
+
+[node name="Main" type="Sprite2D" parent="main"]
+position = Vector2(565, 322.00003)
+scale = Vector2(0.24864672, 0.24940296)
+texture = ExtResource("11_lt21p")
+
+[node name="箭头" type="Sprite2D" parent="main"]
+z_index = 1
+position = Vector2(386.52228, 349.89252)
+rotation = -0.41887903
+scale = Vector2(0.20237039, 0.18990153)
+texture = ExtResource("12_kvq8n")
+offset = Vector2(644.57983, 41.527832)
+
+[node name="小标志" type="Sprite2D" parent="main"]
+position = Vector2(880, 122)
+rotation = 0.9046364
+scale = Vector2(0.17354432, 0.20453228)
+texture = ExtResource("13_wbtty")
+
+[node name="enter" type="Area2D" parent="main"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/enter"]
+position = Vector2(742.46906, 201)
+scale = Vector2(6.4061995, 6.4061995)
+shape = SubResource("RectangleShape2D_eo5a4")
+
+[node name="exit" type="Area2D" parent="main"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/exit"]
+position = Vector2(707, 426)
+shape = SubResource("RectangleShape2D_lt21p")
+
+[node name="join" type="Node2D" parent="."]
+visible = false
+
+[node name="Client" type="Button" parent="join"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 391.0
+offset_top = 152.0
+offset_right = 731.0
+offset_bottom = 263.0
+text = "Client"
+
+[node name="LineEdit" type="LineEdit" parent="join"]
+z_index = 1
+offset_left = 295.0
+offset_top = 319.0
+offset_right = 384.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ykkdi")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_fsfq8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_osy6q")
+
+[node name="LineEdit2" type="LineEdit" parent="join"]
+z_index = 1
+offset_left = 791.0
+offset_top = 361.0
+offset_right = 883.0
+offset_bottom = 398.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ykkdi")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_fsfq8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_osy6q")
+
+[node name="PortInput" type="Sprite2D" parent="join"]
+position = Vector2(828, 348)
+scale = Vector2(0.15581377, 0.1474368)
+texture = ExtResource("6_42r2u")
+
+[node name="IpInput" type="Sprite2D" parent="join"]
+position = Vector2(306.8452, 325.66132)
+scale = Vector2(0.15290149, 0.13082302)
+texture = ExtResource("20_hlrsq")
 metadata/_edit_lock_ = true
 
-[node name="Join" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(164, 271)
-scale = Vector2(0.14576201, 0.1462292)
-texture = ExtResource("8_bj3ug")
-metadata/_edit_lock_ = true
+[node name="Join牌子" type="Sprite2D" parent="join"]
+position = Vector2(581, 363)
+scale = Vector2(0.41953388, 0.41953388)
+texture = ExtResource("21_uuivk")
 
-[node name="Found" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1021.99994, 272)
-scale = Vector2(0.14006068, 0.14006068)
-texture = ExtResource("9_eo5a4")
-metadata/_edit_lock_ = true
+[node name="Sprite2D" type="Sprite2D" parent="join"]
+position = Vector2(95.00001, 577)
+scale = Vector2(0.10955656, 0.10955656)
+texture = ExtResource("10_kvq8n")
+script = ExtResource("29_o3if4")
+
+[node name="Area2D" type="Area2D" parent="join/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="join/Sprite2D/Area2D"]
+position = Vector2(24.883179, -113.87793)
+shape = SubResource("RectangleShape2D_fxk28")

@@ -1,13 +1,16 @@
 extends Control
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var has_connect:bool=false
 
 var peer = ENetMultiplayerPeer.new()
-@onready var line_edit: LineEdit = $LineEdit
-@onready var line_edit_2: LineEdit = $LineEdit2
+@onready var line_edit: LineEdit = $"../join/LineEdit"
+@onready var line_edit_2: LineEdit = $"../join/LineEdit2"
+
+
+@onready var join: Button = $join
 
 @onready var host_button=$host
-@onready var client_button=$Client
+@onready var client_button=$"../join/Client"
 var ip:String
 var port=3000
 
@@ -36,12 +39,14 @@ func create_server(_port):
 	
 
 func _on_host_pressed():
+	animation_player.play("host")
+	join.disabled=true
 	host_button.disabled=true
 	client_button.disabled=true
 	
 	port=create_server(port)
 	multiplayer.multiplayer_peer = peer
-	Util.alert("创建成功，端口号为"+str(port))
+	$"端口提示/Label".text="成功!端口"+str(port)
 	
 	multiplayer.peer_connected.connect(_on_peer_connected)
 
@@ -63,6 +68,14 @@ func update_ip(new_text):
 func update_port(new_text):
 	port=int(new_text)
 func _ready():
+	join.pressed.connect(
+		func():
+			animation_player.play("blood")
+			animation_player.animation_finished.connect(func(_t):
+				if _t == "blood":
+					self.visible=false
+					$"../join".visible=true))
+
 	host_button.pressed.connect(_on_host_pressed)
 	client_button.pressed.connect(_on_client_pressed)
 	
@@ -95,11 +108,11 @@ func _process(delta: float) -> void:
 		elif lock:
 			multiplayer.multiplayer_peer=null
 			
-			Util.alert("未能找到服务器",func():
-				
-				if peer:
-					peer.close()
-				)
+			#Util.alert("未能找到服务器",func():
+				#
+				#if peer:
+					#peer.close()
+				#)
 			lock=false
 
 	
