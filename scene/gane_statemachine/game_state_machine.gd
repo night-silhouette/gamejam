@@ -94,10 +94,16 @@ func judge_first_turn():
 			judge_if_win.rpc(judge)
 				
 		)
+		
+func update_last_round():#更新技能持续回合
+	if the_card_witch_fight:
+		the_card_witch_fight.card_source.last_round-=1	
+	if enemy_card_witch_fight:
+		enemy_card_witch_fight.card_source.last_round-=1
 var round:int:
 	set(value):
 		round=value
-
+		update_last_round()
 		on_round_change.emit()
 		can_move=true
 		judge_first_turn()

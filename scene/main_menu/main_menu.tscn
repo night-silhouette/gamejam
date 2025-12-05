@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://duyv3wqe6k8r4"]
+[gd_scene load_steps=44 format=3 uid="uid://duyv3wqe6k8r4"]
 
 [ext_resource type="Script" uid="uid://gk40m51ggufg" path="res://scene/main_menu/main_menu.gd" id="1_o25w2"]
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="2_isrph"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://ht4n67ppaw2j" path="res://asset/菜单/血滴/7.png" id="21_t6h3x"]
 [ext_resource type="Texture2D" uid="uid://bqwf0qf6wyham" path="res://asset/菜单/join_牌子.png" id="21_uuivk"]
 [ext_resource type="Texture2D" uid="uid://bptoauf5tcpjl" path="res://asset/菜单/血滴/8.png" id="22_18pke"]
+[ext_resource type="Texture2D" uid="uid://ca2edcihun0tv" path="res://asset/菜单/手指.png" id="27_fxk28"]
 [ext_resource type="Script" uid="uid://bblddos4i6qqn" path="res://scene/main_menu/sprite_2d.gd" id="29_o3if4"]
 
 [sub_resource type="Animation" id="Animation_cta3x"]
@@ -525,6 +526,18 @@ shape = SubResource("RectangleShape2D_lt21p")
 
 [node name="join" type="Node2D" parent="."]
 visible = false
+
+[node name="手指" type="Sprite2D" parent="join"]
+position = Vector2(548, 338)
+scale = Vector2(0.14334825, 0.14334825)
+texture = ExtResource("27_fxk28")
+
+[node name="手指2" type="Sprite2D" parent="join"]
+position = Vector2(547, 396.99997)
+rotation = 0.04363018
+scale = Vector2(0.14334825, 0.14334825)
+texture = ExtResource("27_fxk28")
+flip_h = true
 
 [node name="Client" type="Button" parent="join"]
 modulate = Color(1, 1, 1, 0)

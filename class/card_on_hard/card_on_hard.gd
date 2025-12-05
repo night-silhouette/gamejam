@@ -13,7 +13,7 @@ var id
 		special=card_source.special_state
 		id = card_source.id
 		texture=card_source.card_face
-	
+		reduction=card_source.reduction
 @export_category("特效参数")
 @export var transform_speed=1100	
 @export var hover_transform_time=0.1
@@ -45,6 +45,7 @@ var hover_end_tween
 
 
 #战斗相关-------------------------------------------------
+var reduction=1
 var is_on_hard:bool=true:
 	set(value):
 		is_on_hard=value
@@ -59,11 +60,12 @@ var damage
 signal die
 var now_hp:
 	set(value):
-		if value<0:
-			value=0
-		now_hp=value
+		var hurt=now_hp-value
+		now_hp=now_hp-hurt*reduction
 		
-		if now_hp==0 and is_character:
+		if now_hp<0:#0修正
+			now_hp=0
+		if now_hp==0 and is_character:#死亡逻辑
 			die.emit()
 
 			self.queue_free()
