@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://clj41ktobb2y"]
+[gd_scene load_steps=50 format=3 uid="uid://clj41ktobb2y"]
 
 [ext_resource type="Script" uid="uid://e5cwrg6xahey" path="res://scene/game/game.gd" id="1_82mss"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="1_pw1yp"]
@@ -19,15 +19,12 @@
 [ext_resource type="Resource" uid="uid://sfr5wtttwp5x" path="res://resourse/card/source/母卡_战斗卡15.tres" id="12_t35ln"]
 [ext_resource type="Resource" uid="uid://d0psas4n3lsjo" path="res://resourse/card/source/母卡_战斗卡16.tres" id="13_efkk3"]
 [ext_resource type="Resource" uid="uid://b5gkoafuuhik2" path="res://resourse/card/source/母卡_战斗卡17.tres" id="14_7yvv2"]
-[ext_resource type="Resource" uid="uid://nhubjslh7pbn" path="res://resourse/card/source/母卡_战斗卡18.tres" id="15_0nkex"]
 [ext_resource type="Resource" uid="uid://by5j7724bu4jh" path="res://resourse/card/source/母卡_战斗卡19.tres" id="16_ersld"]
 [ext_resource type="Resource" uid="uid://bukyfkvgoewpg" path="res://resourse/card/source/母卡_战斗卡20.tres" id="17_34hgw"]
-[ext_resource type="Resource" uid="uid://04j0pl582p2o" path="res://resourse/card/source/母卡_战斗卡21.tres" id="18_hddrd"]
 [ext_resource type="Resource" uid="uid://cs0x3eb7aytkd" path="res://resourse/card/source/母卡_法术卡5.tres" id="19_267do"]
 [ext_resource type="Resource" uid="uid://dp37myy72so8e" path="res://resourse/card/source/母卡_法术卡6.tres" id="20_4q42n"]
 [ext_resource type="Resource" uid="uid://dku02d8eeeunw" path="res://resourse/card/source/母卡_法术卡7.tres" id="21_mmq3w"]
 [ext_resource type="Resource" uid="uid://78vqumnmaj3f" path="res://resourse/card/source/母卡_法术卡8.tres" id="22_fgo0e"]
-[ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="23_2h8y6"]
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="24_cl4qa"]
 [ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式/侧式桌面.png" id="30_x0v8v"]
 [ext_resource type="Texture2D" uid="uid://c0qtdmutjdqaj" path="res://asset/环境素材/侧式/对手小人.png" id="31_req8m"]
@@ -128,7 +125,7 @@ _data = {
 [node name="Game" type="Node2D"]
 position = Vector2(542, 327)
 script = ExtResource("1_82mss")
-parent_card_list = Array[Resource]([ExtResource("2_4r5hn"), ExtResource("3_x0v8v"), ExtResource("4_req8m"), ExtResource("5_4auim"), ExtResource("6_vbxc3"), ExtResource("7_2k6mr"), ExtResource("8_tyrbm"), ExtResource("9_extmi"), ExtResource("10_ey85o"), ExtResource("11_d5h2i"), ExtResource("12_t35ln"), ExtResource("13_efkk3"), ExtResource("14_7yvv2"), ExtResource("15_0nkex"), ExtResource("16_ersld"), ExtResource("17_34hgw"), ExtResource("18_hddrd"), ExtResource("19_267do"), ExtResource("20_4q42n"), ExtResource("21_mmq3w"), ExtResource("22_fgo0e"), ExtResource("23_2h8y6"), ExtResource("24_cl4qa")])
+parent_card_list = Array[Resource]([ExtResource("2_4r5hn"), ExtResource("3_x0v8v"), ExtResource("4_req8m"), ExtResource("5_4auim"), ExtResource("6_vbxc3"), ExtResource("7_2k6mr"), ExtResource("8_tyrbm"), ExtResource("9_extmi"), ExtResource("10_ey85o"), ExtResource("11_d5h2i"), ExtResource("12_t35ln"), ExtResource("13_efkk3"), ExtResource("14_7yvv2"), ExtResource("16_ersld"), ExtResource("17_34hgw"), ExtResource("19_267do"), ExtResource("20_4q42n"), ExtResource("21_mmq3w"), ExtResource("22_fgo0e"), ExtResource("24_cl4qa")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, -2)

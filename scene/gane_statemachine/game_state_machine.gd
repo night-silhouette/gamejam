@@ -186,12 +186,12 @@ var c_id
 
 func randi_deal_card():
 	var temp:Array[int]=[]
-	for i in range(22):
+	for i in range(20):
 		temp.push_back(i)
 	temp.shuffle()
-	for i in range(11):
+	for i in range(10):
 		card_in_hard_index[0].push_back(temp[i])
-	for i in range(11,22):
+	for i in range(10,20):
 		card_in_hard_index[1].push_back(temp[i])
 
 func _ready() -> void:

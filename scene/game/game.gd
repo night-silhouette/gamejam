@@ -50,11 +50,11 @@ func frist_ready():
 			deal_card=GameStateMachine.card_in_hard_index
 		#根据deal_card和是否为服务器发牌
 		if multiplayer.is_server():
-			for i in range(11):
+			for i in range(10):
 				var src:Resource=parent_card_list[deal_card[0][i]]
 				GameStateMachine.card_in_hard.push_back(create_card(src))		
 		else:
-			for i in range(11):
+			for i in range(10):
 				var src:Resource=parent_card_list[deal_card[1][i]]
 				GameStateMachine.card_in_hard.push_back(create_card(src))
 		for card in GameStateMachine.card_in_hard:
