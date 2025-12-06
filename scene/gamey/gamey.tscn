@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=108 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://ddfbeomtftprf" path="res://scene/gamey/game.gd" id="1_nxwef"]
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
@@ -64,7 +64,6 @@
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="54_wty57"]
 [ext_resource type="Script" uid="uid://c2aqpvcyji0sc" path="res://scene/game/出牌区.gd" id="55_83ood"]
 [ext_resource type="Texture2D" uid="uid://bc46kfdnel4b6" path="res://asset/环境素材/侧式/空左手.png" id="56_4iuc5"]
-[ext_resource type="Texture2D" uid="uid://dwbqbeh7lnoj3" path="res://asset/环境素材/侧式/空右手.png" id="57_rpwbv"]
 [ext_resource type="Texture2D" uid="uid://eeruej8gc6kt" path="res://asset/环境素材/侧式/侧式桌面.png" id="58_2yjyb"]
 [ext_resource type="Texture2D" uid="uid://c0qtdmutjdqaj" path="res://asset/环境素材/侧式/对手小人.png" id="59_rwh4p"]
 [ext_resource type="Texture2D" uid="uid://oggoxotaxswf" path="res://asset/环境素材/侧式/侧式场景图.jpg" id="60_7o5jh"]
@@ -112,6 +111,57 @@ size = Vector2(26.867159, 30.547592)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2w0t"]
 size = Vector2(487.5113, 454.48077)
+
+[sub_resource type="Animation" id="Animation_sx20m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("self:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125.99998, 589)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("self:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.6542637]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("self:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.057246882, 0.057246882)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("self:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7o5jh"]
 resource_name = "skill_card"
@@ -166,61 +216,73 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_sx20m"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7rqom"]
+_data = {
+&"RESET": SubResource("Animation_sx20m"),
+&"skill_card": SubResource("Animation_7o5jh")
+}
+
+[sub_resource type="Animation" id="Animation_rwh4p"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("self:position")
+tracks/0/path = NodePath("翻牌2:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(125.99998, 589)]
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("self:rotation")
+tracks/1/path = NodePath("翻牌1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.6542637]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("self:scale")
+tracks/2/path = NodePath("翻牌1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.057246882, 0.057246882)]
+"values": [Vector2(522, 308)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("self:visible")
+tracks/3/path = NodePath("翻牌1:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.5829921]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7rqom"]
-_data = {
-&"RESET": SubResource("Animation_sx20m"),
-&"skill_card": SubResource("Animation_7o5jh")
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("翻牌1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.08474388, 0.099014215)]
 }
 
 [sub_resource type="Animation" id="Animation_2yjyb"]
@@ -288,77 +350,14 @@ tracks/4/keys = {
 "values": [Vector2(0.08474388, 0.099014215), Vector2(0.0558638, 0.057907235)]
 }
 
-[sub_resource type="Animation" id="Animation_rwh4p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("翻牌2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("翻牌1:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("翻牌1:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(522, 308)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("翻牌1:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.5829921]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("翻牌1:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.08474388, 0.099014215)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7o5jh"]
 _data = {
 &"RESET": SubResource("Animation_rwh4p"),
 &"child_spwan": SubResource("Animation_2yjyb")
 }
 
-[sub_resource type="Animation" id="Animation_k7fl2"]
-resource_name = "relive"
+[sub_resource type="Animation" id="Animation_dxidg"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -366,10 +365,10 @@ tracks/0/path = NodePath("Spwan2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.22194982, 0.46666667, 0.96666664),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(975, 325), Vector2(975, 373), Vector2(975, 373), Vector2(975, 325)]
+"values": [Vector2(975, 325)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -408,8 +407,8 @@ tracks/3/keys = {
 "values": [Vector2(0.0053695193, 0.0051414743)]
 }
 
-[sub_resource type="Animation" id="Animation_dxidg"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_k7fl2"]
+resource_name = "relive"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -417,10 +416,10 @@ tracks/0/path = NodePath("Spwan2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.22194982, 0.46666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(975, 325)]
+"values": [Vector2(975, 325), Vector2(975, 373), Vector2(975, 373), Vector2(975, 325)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -530,6 +529,33 @@ _data = {
 &"leave": SubResource("Animation_vbxc3")
 }
 
+[sub_resource type="Animation" id="Animation_346xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(579, 3224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_7rqom"]
 resource_name = "x_y"
 length = 1.6
@@ -556,33 +582,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.84, 0.84), Vector2(0.84, 0.84), Vector2(1.005, 1.005)]
-}
-
-[sub_resource type="Animation" id="Animation_346xj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(579, 3224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:zoom")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eg8u8"]
@@ -694,13 +693,6 @@ shape = SubResource("RectangleShape2D_7e36l")
 [node name="RoundStart" parent="gamey" instance=ExtResource("23_p07be")]
 z_index = 4096
 position = Vector2(524, 191)
-
-[node name="空右手" type="Sprite2D" parent="gamey"]
-z_index = 4096
-position = Vector2(1267, 249.99998)
-scale = Vector2(0.060228, 0.0773649)
-texture = ExtResource("26_l0v5f")
-script = ExtResource("15_kl76r")
 
 [node name="progress" parent="gamey" instance=ExtResource("28_chnas")]
 z_index = 110
@@ -962,7 +954,7 @@ metadata/_edit_use_anchors_ = true
 z_index = 4096
 position = Vector2(418.484, 61.1167)
 scale = Vector2(0.060228, 0.0773649)
-texture = ExtResource("57_rpwbv")
+texture = ExtResource("26_l0v5f")
 script = ExtResource("15_kl76r")
 
 [node name="侧式桌面" type="Sprite2D" parent="gamex"]

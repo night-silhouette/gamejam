@@ -18,7 +18,7 @@ func update_round(round):
 	round_roll.round=round
 
 func _ready() -> void:
-
+	GameStateMachine.gamey=self
 	
 	GameStateMachine.on_round_change.connect(func():update_round(GameStateMachine.round))
 	

@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var hard_container: Control = $hard_container
 @export var parent_card_list:Array[Resource]
+@export var child_card_list:Array[Resource]
 const CARD_ON_HARD = preload("res://scene/card_on_hard/Card_on_hard.tscn")
 func create_card(src:Resource)->Control:
 	var card = CARD_ON_HARD.instantiate()
@@ -42,6 +43,8 @@ func frist_ready():
 	
 	if is_first_ready:
 		GameStateMachine.parent_card_source=parent_card_list
+		GameStateMachine.child_card_source=child_card_list
+		GameStateMachine.total_card_source=GameStateMachine.parent_card_source+GameStateMachine.child_card_source
 		init_seed()#初始化随机数
 		if multiplayer.is_server():
 			deal_card=GameStateMachine.card_in_hard_index
@@ -60,6 +63,12 @@ func frist_ready():
 		GameStateMachine.skill_card=GameStateMachine.card_in_hard.filter(func(items):
 				if !items.is_character:
 					return true)
+					
+		GameStateMachine.character_card=GameStateMachine.card_in_hard.filter(func(items):
+				if items.is_character:
+					return true)			
+					
+		
 @onready var desk_area2d: Area2D = $侧式桌面/Area2D
 	
 func init_seed():
@@ -67,6 +76,9 @@ func init_seed():
 	current_seed=rng.seed	
 	seed(current_seed)
 func _ready() -> void:
+	
+	
+	
 	
 	is_first_ready=GameStateMachine.is_first_ready
 	desk_area2d.input_event.connect(func(obj,event,id):

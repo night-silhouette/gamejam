@@ -48,8 +48,10 @@ func _ready() -> void:
 	GameStateMachine.hard_container=self
 	
 	$"../牌堆".pressed.connect(change_left_hard_state)
-	
-	
+#----------------------------------------------------------接口-------------------------------------------------------s
+func add_card(card:card_on_hard):
+	add_child(card)
+	tranform_card()
 
 func delete_card(id):
 	var children=get_children()
@@ -58,6 +60,7 @@ func delete_card(id):
 			i.queue_free()
 	tranform_card()
 	
+#----------------------------------------------------------接口-------------------------------------------------------e
 
 var transform_tween:Tween
 func tranform_card():

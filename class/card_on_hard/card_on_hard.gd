@@ -57,10 +57,10 @@ var is_on_hard:bool=true:
 				GameStateMachine.enemy_card_witch_fight.card_source.passive_skill()
 		change_is_on_hard.emit()	
 		
-var damage
+var damage:int
 var in_skill:bool=false	
 signal die
-var now_hp:float:
+var now_hp:int:
 	set(value):
 		
 		var hurt=now_hp-value

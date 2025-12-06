@@ -7,7 +7,7 @@ signal on_round_change
 
 
 
-
+var gamey
 var can_move:bool=true:
 	set(value):
 		can_move=value
@@ -158,12 +158,24 @@ signal enemy_card_change
 var card_in_hard_index:Array[Array]=[[],[]]
 var card_in_hard:Array[card_on_hard]=[]
 var skill_card:Array[card_on_hard]
+var character_card:Array[card_on_hard]
+
+func update_card():
+	Util.cleanup_array(card_in_hard)
+	Util.cleanup_array(skill_card)
+	Util.cleanup_array(character_card)
+	gamey.need_to_update_stuff_list=true
+	
+
+
 var is_first_ready=true
 
 
 var fight_card={}
 
 var parent_card_source
+var child_card_source
+var total_card_source
 var c_id
 
 func randi_deal_card():
