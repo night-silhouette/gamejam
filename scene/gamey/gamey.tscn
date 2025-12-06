@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://d0k7g14b70jo4"]
+[gd_scene load_steps=107 format=3 uid="uid://d0k7g14b70jo4"]
 
 [ext_resource type="Script" uid="uid://ddfbeomtftprf" path="res://scene/gamey/game.gd" id="1_nxwef"]
 [ext_resource type="Script" uid="uid://cfcbdvifyyop3" path="res://scene/gamey/gamey.gd" id="1_rkk0s"]
@@ -59,7 +59,6 @@
 [ext_resource type="Resource" uid="uid://dp37myy72so8e" path="res://resourse/card/source/母卡_法术卡6.tres" id="48_dxidg"]
 [ext_resource type="Resource" uid="uid://dku02d8eeeunw" path="res://resourse/card/source/母卡_法术卡7.tres" id="49_346xj"]
 [ext_resource type="Resource" uid="uid://78vqumnmaj3f" path="res://resourse/card/source/母卡_法术卡8.tres" id="50_eg8u8"]
-[ext_resource type="Resource" uid="uid://dcu1g8vo62x60" path="res://resourse/card/source/母卡_法术卡9.tres" id="51_cutgu"]
 [ext_resource type="Resource" uid="uid://d0s6khutm5uqs" path="res://resourse/card/source/母卡_法术卡10.tres" id="52_0ka2r"]
 [ext_resource type="Script" uid="uid://w2x3k4pj42xs" path="res://scene/game/hard_container.gd" id="54_wty57"]
 [ext_resource type="Script" uid="uid://c2aqpvcyji0sc" path="res://scene/game/出牌区.gd" id="55_83ood"]
@@ -904,7 +903,7 @@ libraries = {
 [node name="gamex" type="Node2D" parent="."]
 position = Vector2(539, 3226)
 script = ExtResource("29_ji2l3")
-parent_card_list = Array[Resource]([SubResource("Resource_u1sqc"), ExtResource("31_8pbkx"), ExtResource("32_k2a0i"), ExtResource("33_lou6h"), ExtResource("34_7bbbv"), ExtResource("35_1u6on"), ExtResource("36_nxwef"), ExtResource("37_ji2l3"), ExtResource("38_wty57"), ExtResource("39_83ood"), ExtResource("40_4iuc5"), ExtResource("41_rpwbv"), ExtResource("42_2yjyb"), ExtResource("43_rwh4p"), ExtResource("44_7o5jh"), ExtResource("45_sx20m"), ExtResource("46_7rqom"), ExtResource("47_k7fl2"), ExtResource("48_dxidg"), ExtResource("49_346xj"), ExtResource("50_eg8u8"), ExtResource("51_cutgu"), ExtResource("52_0ka2r")])
+parent_card_list = Array[Resource]([SubResource("Resource_u1sqc"), ExtResource("31_8pbkx"), ExtResource("32_k2a0i"), ExtResource("33_lou6h"), ExtResource("34_7bbbv"), ExtResource("35_1u6on"), ExtResource("36_nxwef"), ExtResource("37_ji2l3"), ExtResource("38_wty57"), ExtResource("39_83ood"), ExtResource("40_4iuc5"), ExtResource("41_rpwbv"), ExtResource("42_2yjyb"), ExtResource("43_rwh4p"), ExtResource("44_7o5jh"), ExtResource("45_sx20m"), ExtResource("46_7rqom"), ExtResource("47_k7fl2"), ExtResource("48_dxidg"), ExtResource("49_346xj"), ExtResource("50_eg8u8"), ExtResource("52_0ka2r")])
 
 [node name="hard_container" type="Control" parent="gamex"]
 layout_mode = 3

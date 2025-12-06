@@ -60,10 +60,12 @@ var is_on_hard:bool=true:
 var damage:int
 var in_skill:bool=false	
 signal die
+signal be_hurt(hurt)
 var now_hp:int:
 	set(value):
 		
 		var hurt=now_hp-value
+		be_hurt.emit(hurt)
 		now_hp=now_hp-hurt*reduction
 		
 		if now_hp<0:#0修正
@@ -71,7 +73,11 @@ var now_hp:int:
 		if now_hp==0 and is_character:#死亡逻辑
 			die.emit()
 			card_source.die()
-			Util.set_time(0.1,func():Util.cleanup_array(GameStateMachine.card_in_hard))
+			SkillCard.last_died_card_damage=damage
+			Util.set_time(0.1,func():GameStateMachine.update_card())
+			if card_source.is_parent_card:
+				GameStateMachine.card_has_died.push_back(id)
+			
 			self.queue_free()
 			
 var special
@@ -165,7 +171,7 @@ func _ready() -> void:
 	set_process(false)
 	mouse_entered.connect(func():
 		$"../../空右手".change_texture(false)
-		self.z_index=100
+		
 		if hover_end_tween and hover_end_tween.is_running():
 			hover_end_tween.custom_step(hover_transform_time)
 		hover_start_tween=create_tween()
@@ -179,7 +185,7 @@ func _ready() -> void:
 		
 	mouse_exited.connect(func():
 		$"../../空右手".change_texture(true)
-		self.z_index=original_z_index
+		
 		if hover_start_tween and hover_start_tween.is_running():
 			hover_start_tween.custom_step(hover_transform_time)
 		hover_end_tween=create_tween()

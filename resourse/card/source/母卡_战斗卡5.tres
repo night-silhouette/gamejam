@@ -12,4 +12,5 @@ is_parent_card = true
 is_character = true
 hp = 2
 special_state = 1
+skill_use_number = 1000
 metadata/_custom_type_script = "uid://bspgioegar6p6"

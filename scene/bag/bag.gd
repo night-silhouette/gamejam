@@ -32,7 +32,10 @@ func update(card_list):
 var lock:bool=true
 func _ready() -> void:
 	GameStateMachine.bag=self
-	pressed.connect(on_pressed)
+	pressed.connect(func(id):
+		on_pressed(id)
+		
+		)
 	
 @onready var _self: Sprite2D = $"../skill_card/self"
 @onready var _enemy: Sprite2D = $"../skill_card/enemy"
@@ -40,7 +43,7 @@ func _ready() -> void:
 @onready var gamey: Node2D = $".."
 @onready var blur: Control = $"../蒙层"
 
-
+var other=true
 @rpc("any_peer","reliable")
 func enemy_show(id):
 	_enemy.visible=true
@@ -59,12 +62,12 @@ func skill_card_not_visible():
 
 func on_pressed(id):
 	
-	if lock and GameStateMachine.is_self_round:
+	if lock and GameStateMachine.is_self_round and other:
 		#一回合后消失 
 		GameStateMachine.on_round_change.connect(skill_card_not_visible,CONNECT_ONE_SHOT)
 		
 		#___________
-		close()
+		switch()
 		enemy_show.rpc(id)
 		lock=false
 		var card=GameStateMachine.skill_card[GameStateMachine.skill_card.find_custom(func(item):return item.id==id)]
@@ -87,15 +90,17 @@ func on_pressed(id):
 			)
 		
 		
-func close():
+func switch():
 	blur.visible=gamey.bag_flag
 	self.visible=gamey.bag_flag
 	gamey.bag_flag=!gamey.bag_flag
 		
 		
 func select_from_list(list):
-	
+	other=false
 	stuff_list=list
+	switch()
+	
 	gamey.need_to_update_stuff_list=true
 	
 	

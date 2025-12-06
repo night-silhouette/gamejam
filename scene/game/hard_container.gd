@@ -58,7 +58,8 @@ func delete_card(id):
 	for i in children:
 		if i.id==id:
 			i.queue_free()
-	tranform_card()
+			
+	Util.set_time(0.1,tranform_card) 
 	
 #----------------------------------------------------------接口-------------------------------------------------------e
 

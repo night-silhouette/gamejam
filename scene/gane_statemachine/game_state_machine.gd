@@ -125,7 +125,7 @@ func force_out():
 		
 
 func find_card_by_id(id):
-	for card in parent_card_source:
+	for card in total_card_source:
 		if card.id==id:
 			var temp=CARD_ON_HARD.instantiate()
 			temp.card_source=card
@@ -155,16 +155,21 @@ var enemy_card_witch_fight:card_on_hard:
 signal self_card_change
 signal enemy_card_change
 
+var card_has_died:Array[int]
 var card_in_hard_index:Array[Array]=[[],[]]
 var card_in_hard:Array[card_on_hard]=[]
 var skill_card:Array[card_on_hard]
 var character_card:Array[card_on_hard]
 
+
 func update_card():
-	Util.cleanup_array(card_in_hard)
-	Util.cleanup_array(skill_card)
-	Util.cleanup_array(character_card)
-	gamey.need_to_update_stuff_list=true
+	Util.set_time(0.1,func():
+		Util.cleanup_array(card_in_hard)
+		Util.cleanup_array(skill_card)
+		Util.cleanup_array(character_card)
+		gamey.need_to_update_stuff_list=true		
+		)
+
 	
 
 
@@ -173,6 +178,7 @@ var is_first_ready=true
 
 var fight_card={}
 
+
 var parent_card_source
 var child_card_source
 var total_card_source
@@ -180,12 +186,12 @@ var c_id
 
 func randi_deal_card():
 	var temp:Array[int]=[]
-	for i in range(23):
+	for i in range(22):
 		temp.push_back(i)
 	temp.shuffle()
 	for i in range(11):
 		card_in_hard_index[0].push_back(temp[i])
-	for i in range(12,23):
+	for i in range(11,22):
 		card_in_hard_index[1].push_back(temp[i])
 
 func _ready() -> void:
@@ -271,9 +277,10 @@ func kill_randi_skill_card():#随机废除手牌
 	var temp =skill_card
 	temp.shuffle()
 	var id=temp[0].id
-	temp[0].quene_free()
+	temp[0].queue_free()
 	temp.remove_at(0)
 	skill_card=temp
+	update_card()
 	hard_container.delete_card(id)
 	
 @rpc("any_peer","reliable")
@@ -290,6 +297,42 @@ func kill_all_skill_card():
 
 
 #_____________________________________________________________________	
+	
+	
+	
+	
+	
+func find_by_id(list,id):
+	for item in list:
+		if item.id == id:
+			return item
+	
+var enemy_character_card:Array[card_on_hard]
+
+@rpc("any_peer","reliable")#传输id生成list
+func update_enemy_card_info(list:String,id_list:Array[int]):
+	var res=[]
+	for id in id_list:
+		res.push_back(find_card_by_id(id))
+	set(list,res)
+	
+
+	
+func return_id_by_list(list)->Array[int]:	#根据list转化出id
+	var res=[]
+	for item in list:
+		res.push_back(item.id)
+	return res
+	
+	
+	
+@rpc("any_peer","reliable")
+func transmit_character_card():
+	var res=return_id_by_list(GameStateMachine.character_card)
+	update_enemy_card_info.rpc("enemy_character_card",res)
+	
+	
+	
 	
 	
 	
