@@ -42,7 +42,10 @@ func set_round_callback(round:int,callback:Callable):#我说这个函数设计�
 	GameStateMachine.on_round_change.connect(update_i)
 	_dis.connect(func():GameStateMachine.on_round_change.disconnect(update_i),CONNECT_ONE_SHOT)
 	
+
 	
+func passive_skill():
+	pass
 	
 	
 func attack():
@@ -58,6 +61,8 @@ func skill():
 	GameStateMachine.update_prop_self("card_source:skill_use_number",temp)
 	obj.in_skill=true
 	
+func die():
+	pass
 	
 	
 	

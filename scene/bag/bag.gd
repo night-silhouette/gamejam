@@ -31,13 +31,40 @@ func update(card_list):
 			j+=1
 var lock:bool=true
 func _ready() -> void:
+	GameStateMachine.bag=self
 	pressed.connect(on_pressed)
 	
+@onready var _self: Sprite2D = $"../skill_card/self"
+@onready var _enemy: Sprite2D = $"../skill_card/enemy"
+@onready var animation_player: AnimationPlayer = $"../skill_card/AnimationPlayer"
+
+
+@rpc("any_peer","reliable")
+func enemy_show(id):
+	_enemy.visible=true
+	var tex
+	for item in GameStateMachine.parent_card_source:
+		if item.id == id:
+			tex=item.card_face
+	_enemy.texture=tex
 	
 func on_pressed(id):
 	
-	if lock:
+	if lock and GameStateMachine.is_self_round:
+		
+		enemy_show.rpc(id)
+		
+		
+		lock=false
 		var card=GameStateMachine.skill_card[GameStateMachine.skill_card.find_custom(func(item):return item.id==id)]
+		
+		
+		_self.texture=card.card_source.card_face#法术牌出牌  自己
+		animation_player.play("skill_card")
+		
+		
+		
+		
 		card.card_source.skill()
 		card.queue_free()
 		Util.set_time(0.1,func():
@@ -47,7 +74,11 @@ func on_pressed(id):
 			stuff_list=GameStateMachine.skill_card
 			$"../../gamex/hard_container".delete_card(id)
 			)
-
+		
+		
+		
+		
+		
 		
 	
 	

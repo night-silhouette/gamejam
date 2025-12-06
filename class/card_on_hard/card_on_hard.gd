@@ -52,7 +52,9 @@ var is_on_hard:bool=true:
 		drag_lock=false
 		if !value:
 			GameStateMachine.the_card_witch_fight=self
-			
+			if GameStateMachine.enemy_card_witch_fight:
+				card_source.passive_skill()
+				GameStateMachine.enemy_card_witch_fight.card_source.passive_skill()
 		change_is_on_hard.emit()	
 		
 var damage
@@ -68,8 +70,10 @@ var now_hp:float:
 			now_hp=0
 		if now_hp==0 and is_character:#死亡逻辑
 			die.emit()
-
+			card_source.die()
+			Util.set_time(0.1,func():Util.cleanup_array(GameStateMachine.card_in_hard))
 			self.queue_free()
+			
 var special
 	
 var is_character:bool	

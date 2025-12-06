@@ -11,4 +11,5 @@ is_parent_card = true
 is_character = true
 hp = 4
 damage = 2
+skill_use_number = 2
 metadata/_custom_type_script = "uid://bspgioegar6p6"

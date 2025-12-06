@@ -45,7 +45,7 @@ func container_init():
 		item.change_is_on_hard.connect(tranform_card)
 		item.on_check.connect(on_check)
 func _ready() -> void:
-	
+	GameStateMachine.hard_container=self
 	
 	$"../牌堆".pressed.connect(change_left_hard_state)
 	

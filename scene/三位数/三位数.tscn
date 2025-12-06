@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mtmpmnrqqnpv"]
+[gd_scene load_steps=3 format=3 uid="uid://mtmpmnrqqnpv"]
 
 [ext_resource type="Script" uid="uid://dh4hr6us0rsgs" path="res://scene/三位数/三位数.gd" id="1_8sj5p"]
+[ext_resource type="Texture2D" uid="uid://r1ren270yj76" path="res://asset/数字/0.png" id="2_rsb7b"]
 
 [node name="三位数" type="Node2D"]
 position = Vector2(100, 2)
@@ -13,6 +14,7 @@ scale = Vector2(0.4769585, 0.8201856)
 [node name="middle" type="Sprite2D" parent="."]
 position = Vector2(-98, 0)
 scale = Vector2(0.4769585, 0.8201856)
+texture = ExtResource("2_rsb7b")
 
 [node name="right" type="Sprite2D" parent="."]
 position = Vector2(-7, -1)

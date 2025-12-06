@@ -226,6 +226,7 @@ position = Vector2(71.999985, -24.000008)
 [node name="蒙层" parent="." instance=ExtResource("34_2k6mr")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 4096
 offset_left = -540.0
 offset_top = -329.0

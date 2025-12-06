@@ -1,30 +1,21 @@
 extends Sprite2D
 
 
-const _0 = preload("uid://r1ren270yj76")
-const _1 = preload("uid://cjrqjvbw1fruy")
-const _2 = preload("uid://c60q66h04ad6m")
-const _3 = preload("uid://5665qvsvfqe6")
-const _4 = preload("uid://cukcgcn6210qc")
-const _5 = preload("uid://dhfa0daxoty2f")
-const _6 = preload("uid://coal4gmvroyk4")
-const _7 = preload("uid://bb5n6e2v7j205")
-const _8 = preload("uid://kjsep4yyjb2u")
-const _9 = preload("uid://cj2ry54tvhkwm")
-const _10 = preload("uid://cxfcaniygen0i")
 
-@onready var _hp: Sprite2D = $hp
-@onready var _damage: Sprite2D = $damage
 @onready var 牌面: Sprite2D = $牌面
-@onready var _state: Sprite2D = $state
+
+@onready var _hp: Node2D = $hp
+@onready var _state: Node2D = $state
+@onready var _damage: Node2D = $damage
 
 
 
-var state:int:
+
+var state:int=0:
 	set(value):
 		
 		state=value
-		_state.texture=number_map[value]
+		_state.value=value
 
 
 var tex:Texture:
@@ -32,15 +23,14 @@ var tex:Texture:
 		tex=value
 		牌面.texture=value
 
-var hp:int:
+var hp:int=0:
 	set(value):
 		hp=value
-		_hp.texture=number_map[hp]
+		_hp.value=value
 			
 
-var damage:int:
+var damage:int=0:
 	set(value):
 		damage=value
 		
-		_damage.texture=number_map[damage]
-var number_map={1:_1,2:_2,3:_3,4:_4,5:_5,6:_6,7:_7,8:_8,9:_9,10:_10,0:_0}
+		_damage.value=value

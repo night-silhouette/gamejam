@@ -5,6 +5,8 @@ extends Node2D
 func _ready() -> void:
 	animation_player.play("loading")
 	animation_player.animation_finished.connect(func(_t):
-		Loading.lock2=true)
+		if _t == "loading":
+			self.queue_free()
+		)
 	
 	

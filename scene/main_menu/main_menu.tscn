@@ -1,5 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://duyv3wqe6k8r4"]
+[gd_scene load_steps=45 format=3 uid="uid://duyv3wqe6k8r4"]
 
+[ext_resource type="Script" uid="uid://srovtlh26n7x" path="res://scene/main_menu/game.gd" id="1_8byyq"]
 [ext_resource type="Script" uid="uid://gk40m51ggufg" path="res://scene/main_menu/main_menu.gd" id="1_o25w2"]
 [ext_resource type="Texture2D" uid="uid://bt4ynbgm5aqmt" path="res://asset/环境素材/俯视/小齿轮.png" id="2_isrph"]
 [ext_resource type="Script" uid="uid://w23652dnomtn" path="res://scene/main_menu/小齿轮.gd" id="3_e8klu"]
@@ -350,6 +351,7 @@ anchor_right = 0.163
 anchor_bottom = 0.219
 offset_right = -187.776
 offset_bottom = -141.912
+script = ExtResource("1_8byyq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -4000

@@ -45,6 +45,7 @@ var is_self_round:bool	:
 var round_time=25
 var judge_time=1.5
 var judge:String
+var judge_sustained_number:int=0
 var judge_is_win:int:
 	set(value):
 		judge_is_win=value
@@ -52,8 +53,10 @@ var judge_is_win:int:
 			judge_first_turn()
 		if value==0:
 			is_first=true
+			judge_sustained_number+=1
 		if value==1:
 			is_first=false
+			judge_sustained_number=0
 @rpc("any_peer","reliable")
 func judge_if_win(_judge):
 	
@@ -110,6 +113,7 @@ var round:int:
 		update_last_round()
 		on_round_change.emit()
 		can_move=true
+		bag.lock=true
 		judge_first_turn()
 		
 func force_out():
@@ -219,10 +223,22 @@ func update_reduction(value):
 	
 @rpc("any_peer","reliable")
 func _update_prop_self(prop:String,value):
-	enemy_card_witch_fight.set("prop",value)
+	enemy_card_witch_fight.set(prop,value)
 	
 func update_prop_self(prop:String,value):
 	the_card_witch_fight.set(prop,value)
+	_update_prop_self.rpc(prop,value)
+
+@rpc("any_peer","reliable")
+func _update_prop_enemy(prop:String,value):
+	the_card_witch_fight.set(prop,value)
+	
+func update_prop_enemy(prop:String,value):
+	enemy_card_witch_fight.set(prop,value)
+	_update_prop_enemy.rpc(prop,value)
+	
+
+
 
 func update_skill_card():
 	skill_card=card_in_hard.filter(func(items):
@@ -230,6 +246,38 @@ func update_skill_card():
 			return true)
 
 	
+	
+@onready var hard_container: Control
+@onready var bag: Control
+
+# skill_need_rpc__________________________________________________
+
+@rpc("any_peer","reliable")
+func kill_randi_skill_card():#随机废除手牌
+	if !skill_card:
+		return
+	var temp =skill_card
+	temp.shuffle()
+	var id=temp[0].id
+	temp[0].quene_free()
+	temp.remove_at(0)
+	skill_card=temp
+	hard_container.delete_card(id)
+	
+@rpc("any_peer","reliable")
+func kill_all_skill_card():
+	for item in skill_card:
+		hard_container.delete_card(item.id)
+		item.queue_free()
+		Util.cleanup_array(card_in_hard)
+	
+	skill_card=[]
+	bag.stuff_list=skill_card
+
+
+
+
+#_____________________________________________________________________	
 	
 	
 	
