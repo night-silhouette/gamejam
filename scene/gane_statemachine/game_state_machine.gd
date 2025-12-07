@@ -195,8 +195,7 @@ func randi_deal_card():
 		card_in_hard_index[1].push_back(temp[i])
 
 func _ready() -> void:
-	if multiplayer.is_server():
-		randi_deal_card()
+
 	state_map["main_menu"]=MainMenu
 	state_map["gamey"]=Gamey
 	init_state="main_menu"

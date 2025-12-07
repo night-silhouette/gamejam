@@ -76,7 +76,8 @@ func init_seed():
 	current_seed=rng.seed	
 	seed(current_seed)
 func _ready() -> void:
-	
+	if multiplayer.is_server():
+		GameStateMachine.randi_deal_card()
 	
 	
 	

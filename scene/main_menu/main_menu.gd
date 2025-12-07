@@ -12,7 +12,7 @@ var peer = ENetMultiplayerPeer.new()
 @onready var host_button=$host
 @onready var client_button=$"../join/Client"
 var ip:String
-var port=3000
+var port=3001
 
 # 检查字符串是否符合 IPv4 地址格式 
 func is_ip_address_valid(ip_address: String) -> bool:
@@ -33,7 +33,8 @@ func create_server(_port):
 		Util.alert("无端口可用")
 		return
 	var error=peer.create_server(_port)
-	if error==ERR_ALREADY_IN_USE:
+	print(error)
+	if error==20:
 		create_server(_port+1)
 	return	_port
 	
@@ -92,28 +93,18 @@ func _on_client_pressed():
 	if !ip:
 		Util.alert("请输入ip")
 		return
-	else:
-		connecting=true
+	else: 
 		print(peer.create_client(ip,port))
 		multiplayer.multiplayer_peer=peer
 		
 		
 
-var connecting:bool=false
-var lock:bool=true		
+
+	
 func _process(delta: float) -> void:
-	if connecting and !multiplayer.is_server():
-		if has_connect:
-			MainMenu.on_client_create()
-		elif lock:
-			multiplayer.multiplayer_peer=null
-			
-			#Util.alert("未能找到服务器",func():
-				#
-				#if peer:
-					#peer.close()
-				#)
-			lock=false
+	if has_connect and !multiplayer.is_server():
+		MainMenu.on_client_create()
+
 
 	
 	
