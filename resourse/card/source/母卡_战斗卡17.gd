@@ -3,7 +3,7 @@ var num=0
 func skill():
 	super.skill()
 	if num==3:
-		GameStateMachine.update_prop_enemy("now_hap",0)
+		GameStateMachine.update_prop_enemy("now_hp",0)
 		return
 	
 	GameStateMachine.bag.select_from_list(GameStateMachine.character_card)
@@ -15,9 +15,5 @@ func skill():
 		GameStateMachine.hard_container.delete_card(id)
 		GameStateMachine.bag.other=true
 		num+=1
-		obj.now_hp=3
-		
-		
-		
-		
-		)
+		GameStateMachine.update_prop_self("now_hp",3)
+		,CONNECT_ONE_SHOT)
