@@ -6,7 +6,7 @@ var port = 443
 func _ready() -> void:
 	var err=peer.create_server(port)
 	if err!=OK:
-		print("服务器启动失败")
+		print("服务器启动失败,错误码"+str(err))
 	else:
 		print("服务器启动success")
 		
