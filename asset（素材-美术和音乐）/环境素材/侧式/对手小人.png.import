@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0qtdmutjdqaj"
-path="res://.godot/imported/对手小人.png-a155adcb22c2f434a114bfe0f4e760a6.ctex"
+path="res://.godot/imported/对手小人.png-aa8e76591f2182229707b2fb966f03bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/侧式/对手小人.png"
-dest_files=["res://.godot/imported/对手小人.png-a155adcb22c2f434a114bfe0f4e760a6.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/侧式/对手小人.png"
+dest_files=["res://.godot/imported/对手小人.png-aa8e76591f2182229707b2fb966f03bb.ctex"]
 
 [params]
 

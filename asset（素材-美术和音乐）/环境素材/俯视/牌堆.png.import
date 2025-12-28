@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://do08ogwmcn28y"
-path="res://.godot/imported/牌堆.png-bdddab4fbebb8ba75fac103357078f15.ctex"
+path="res://.godot/imported/牌堆.png-7e746c6995a3d85b81fa087829a9ce6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/牌堆.png"
-dest_files=["res://.godot/imported/牌堆.png-bdddab4fbebb8ba75fac103357078f15.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/牌堆.png"
+dest_files=["res://.godot/imported/牌堆.png-7e746c6995a3d85b81fa087829a9ce6e.ctex"]
 
 [params]
 

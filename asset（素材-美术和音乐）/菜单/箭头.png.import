@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0t7716wi7xy4"
-path="res://.godot/imported/箭头.png-6738aca0c53b847a02e6ea9a448343fa.ctex"
+path="res://.godot/imported/箭头.png-a479a5e135221c2de9f2f4d91c203059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/箭头.png"
-dest_files=["res://.godot/imported/箭头.png-6738aca0c53b847a02e6ea9a448343fa.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/箭头.png"
+dest_files=["res://.godot/imported/箭头.png-a479a5e135221c2de9f2f4d91c203059.ctex"]
 
 [params]
 

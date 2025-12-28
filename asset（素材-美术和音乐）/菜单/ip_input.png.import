@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmyhkg6itcoqw"
-path="res://.godot/imported/ip_input.png-2771c67c0d7ec5b8ff16eb4709b09135.ctex"
+path="res://.godot/imported/ip_input.png-d53f5714efc6a7a5e14bab2558c23941.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/ip_input.png"
-dest_files=["res://.godot/imported/ip_input.png-2771c67c0d7ec5b8ff16eb4709b09135.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/ip_input.png"
+dest_files=["res://.godot/imported/ip_input.png-d53f5714efc6a7a5e14bab2558c23941.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyrs7h2ynwm1y"
-path="res://.godot/imported/转换.png-967fb13a48725840c800ef08e188bc5c.ctex"
+path="res://.godot/imported/转换.png-867c182a0ba4c59dec4db61a3129770a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/桌面转视角/转换.png"
-dest_files=["res://.godot/imported/转换.png-967fb13a48725840c800ef08e188bc5c.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/桌面转视角/转换.png"
+dest_files=["res://.godot/imported/转换.png-867c182a0ba4c59dec4db61a3129770a.ctex"]
 
 [params]
 

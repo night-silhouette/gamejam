@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuettj5853pro"
-path="res://.godot/imported/port_input.png-d9b229c177df0936ceece1f9050c9980.ctex"
+path="res://.godot/imported/port_input.png-ff4dd899a2d10bca124e8e62af0bd64c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/port_input.png"
-dest_files=["res://.godot/imported/port_input.png-d9b229c177df0936ceece1f9050c9980.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/port_input.png"
+dest_files=["res://.godot/imported/port_input.png-ff4dd899a2d10bca124e8e62af0bd64c.ctex"]
 
 [params]
 

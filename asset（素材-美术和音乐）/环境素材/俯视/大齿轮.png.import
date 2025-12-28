@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6hhdeh7x1eua"
-path="res://.godot/imported/大齿轮.png-7175c0af87b713626a8662f5fd72fa91.ctex"
+path="res://.godot/imported/大齿轮.png-924384880932732c19aac1875458e036.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/大齿轮.png"
-dest_files=["res://.godot/imported/大齿轮.png-7175c0af87b713626a8662f5fd72fa91.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/大齿轮.png"
+dest_files=["res://.godot/imported/大齿轮.png-924384880932732c19aac1875458e036.ctex"]
 
 [params]
 

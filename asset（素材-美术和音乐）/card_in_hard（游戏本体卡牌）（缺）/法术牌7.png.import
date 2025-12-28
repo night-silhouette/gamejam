@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd0ijw4r12kt7"
-path="res://.godot/imported/法术牌7.png-1c381918bd8bd6ccbf5717af9949271c.ctex"
+path="res://.godot/imported/法术牌7.png-a9a0ec33ae69fad51634eacf1de1bd97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/card_in_hard/法术牌7.png"
-dest_files=["res://.godot/imported/法术牌7.png-1c381918bd8bd6ccbf5717af9949271c.ctex"]
+source_file="res://asset（素材-美术和音乐）/card_in_hard（游戏本体卡牌）（缺）/法术牌7.png"
+dest_files=["res://.godot/imported/法术牌7.png-a9a0ec33ae69fad51634eacf1de1bd97.ctex"]
 
 [params]
 

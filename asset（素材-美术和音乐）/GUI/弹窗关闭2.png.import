@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca5pphhmvebfn"
-path="res://.godot/imported/弹窗关闭2.png-1eff36a28c4065a19bcdb1b8f700e810.ctex"
+path="res://.godot/imported/弹窗关闭2.png-f9e6f03cea7f8347d5336ca9362f05dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/GUI/弹窗关闭2.png"
-dest_files=["res://.godot/imported/弹窗关闭2.png-1eff36a28c4065a19bcdb1b8f700e810.ctex"]
+source_file="res://asset（素材-美术和音乐）/GUI/弹窗关闭2.png"
+dest_files=["res://.godot/imported/弹窗关闭2.png-f9e6f03cea7f8347d5336ca9362f05dc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgfj0phqir8lw"
-path="res://.godot/imported/稻草人.png-a32bc8dfa38d102881f6bf29ba78fe2f.ctex"
+path="res://.godot/imported/稻草人.png-d4ef9d0dc9d499871a37ee201af8d724.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/稻草人.png"
-dest_files=["res://.godot/imported/稻草人.png-a32bc8dfa38d102881f6bf29ba78fe2f.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/稻草人.png"
+dest_files=["res://.godot/imported/稻草人.png-d4ef9d0dc9d499871a37ee201af8d724.ctex"]
 
 [params]
 

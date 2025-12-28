@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuhhttc75qpan"
-path="res://.godot/imported/卡框.png-09e67682c65943433e5b248e58f513f3.ctex"
+path="res://.godot/imported/卡框.png-98847dec6eb396e865ae356d477301b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/card_in_hard/卡框.png"
-dest_files=["res://.godot/imported/卡框.png-09e67682c65943433e5b248e58f513f3.ctex"]
+source_file="res://asset（素材-美术和音乐）/card_in_hard（游戏本体卡牌）（缺）/卡框.png"
+dest_files=["res://.godot/imported/卡框.png-98847dec6eb396e865ae356d477301b1.ctex"]
 
 [params]
 

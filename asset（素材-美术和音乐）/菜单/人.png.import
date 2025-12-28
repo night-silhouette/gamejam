@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dve0b8iiv5ppp"
-path="res://.godot/imported/人.png-3f02a04b23a336d33fdeefe85ae4bb4a.ctex"
+path="res://.godot/imported/人.png-d16e0ac95793380db22531e9e17944da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/人.png"
-dest_files=["res://.godot/imported/人.png-3f02a04b23a336d33fdeefe85ae4bb4a.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/人.png"
+dest_files=["res://.godot/imported/人.png-d16e0ac95793380db22531e9e17944da.ctex"]
 
 [params]
 

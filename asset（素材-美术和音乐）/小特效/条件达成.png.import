@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kyu8vb0l5vac"
-path="res://.godot/imported/条件达成.png-752370d03046b538e42215cfea263f11.ctex"
+path="res://.godot/imported/条件达成.png-fa035216096f85d7eefc5cd5ff741e32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/小特效/条件达成.png"
-dest_files=["res://.godot/imported/条件达成.png-752370d03046b538e42215cfea263f11.ctex"]
+source_file="res://asset（素材-美术和音乐）/小特效/条件达成.png"
+dest_files=["res://.godot/imported/条件达成.png-fa035216096f85d7eefc5cd5ff741e32.ctex"]
 
 [params]
 

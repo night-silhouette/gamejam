@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bimkpc50h24sh"
-path="res://.godot/imported/弹窗.png-74e2799517aed2b23db330ad8de1a300.ctex"
+path="res://.godot/imported/弹窗.png-e340e75bb3db3c48638f3348fb1699fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/GUI/弹窗.png"
-dest_files=["res://.godot/imported/弹窗.png-74e2799517aed2b23db330ad8de1a300.ctex"]
+source_file="res://asset（素材-美术和音乐）/GUI/弹窗.png"
+dest_files=["res://.godot/imported/弹窗.png-e340e75bb3db3c48638f3348fb1699fd.ctex"]
 
 [params]
 

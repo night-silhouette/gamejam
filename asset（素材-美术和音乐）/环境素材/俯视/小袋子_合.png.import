@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddfcrqcbtxt7u"
-path="res://.godot/imported/小袋子_合.png-f143fa70b1acd7ee6987d5816bc15cbf.ctex"
+path="res://.godot/imported/小袋子_合.png-3bd1f0a09b8ea85c55d7f4d595fc9d72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/小袋子_合.png"
-dest_files=["res://.godot/imported/小袋子_合.png-f143fa70b1acd7ee6987d5816bc15cbf.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/小袋子_合.png"
+dest_files=["res://.godot/imported/小袋子_合.png-3bd1f0a09b8ea85c55d7f4d595fc9d72.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhfa0daxoty2f"
-path="res://.godot/imported/5.png-a3962bf24b1f3b6ab7d31916020ade1a.ctex"
+path="res://.godot/imported/5.png-c8e54c116426a871634a9dd9e4800319.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/数字/5.png"
-dest_files=["res://.godot/imported/5.png-a3962bf24b1f3b6ab7d31916020ade1a.ctex"]
+source_file="res://asset（素材-美术和音乐）/数字/5.png"
+dest_files=["res://.godot/imported/5.png-c8e54c116426a871634a9dd9e4800319.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq1ex7brvsmrb"
-path="res://.godot/imported/桌面top.png-aa72abcb1fb5b768436078ca938493e6.ctex"
+path="res://.godot/imported/桌面top.png-07eed8308ae5508609d3e13907e60806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/桌面转视角/桌面top.png"
-dest_files=["res://.godot/imported/桌面top.png-aa72abcb1fb5b768436078ca938493e6.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/桌面转视角/桌面top.png"
+dest_files=["res://.godot/imported/桌面top.png-07eed8308ae5508609d3e13907e60806.ctex"]
 
 [params]
 

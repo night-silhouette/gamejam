@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5clg7kox5584"
-path="res://.godot/imported/爱心.png-f8ac1405d69d5a7f7c06f92f9c94c631.ctex"
+path="res://.godot/imported/爱心.png-6fc35841500414b131162e90fd8abd9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/爱心.png"
-dest_files=["res://.godot/imported/爱心.png-f8ac1405d69d5a7f7c06f92f9c94c631.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/爱心.png"
+dest_files=["res://.godot/imported/爱心.png-6fc35841500414b131162e90fd8abd9a.ctex"]
 
 [params]
 

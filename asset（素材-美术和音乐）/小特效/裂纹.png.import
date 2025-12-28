@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bahpbph32qy4n"
-path="res://.godot/imported/裂纹.png-63993ba96d466c7b24a3865f32c3f556.ctex"
+path="res://.godot/imported/裂纹.png-d296cf8f20b4e3cd7ced0e68db448590.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/小特效/裂纹.png"
-dest_files=["res://.godot/imported/裂纹.png-63993ba96d466c7b24a3865f32c3f556.ctex"]
+source_file="res://asset（素材-美术和音乐）/小特效/裂纹.png"
+dest_files=["res://.godot/imported/裂纹.png-d296cf8f20b4e3cd7ced0e68db448590.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://imywb7d5otfv"
-path="res://.godot/imported/spwan2.png-e12f3e3111dbb73557c89716f1194599.ctex"
+path="res://.godot/imported/spwan2.png-d0e779d58ea48dbfbbaa0394ae1380a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/小特效/spwan2.png"
-dest_files=["res://.godot/imported/spwan2.png-e12f3e3111dbb73557c89716f1194599.ctex"]
+source_file="res://asset（素材-美术和音乐）/小特效/spwan2.png"
+dest_files=["res://.godot/imported/spwan2.png-d0e779d58ea48dbfbbaa0394ae1380a7.ctex"]
 
 [params]
 

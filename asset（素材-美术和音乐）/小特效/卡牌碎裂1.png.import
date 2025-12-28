@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgac2t8sih7un"
-path="res://.godot/imported/卡牌碎裂1.png-880fe38bcff61d19758526ae058261fc.ctex"
+path="res://.godot/imported/卡牌碎裂1.png-7cfdf979bd0b8ccba2348bb3c541745a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/小特效/卡牌碎裂1.png"
-dest_files=["res://.godot/imported/卡牌碎裂1.png-880fe38bcff61d19758526ae058261fc.ctex"]
+source_file="res://asset（素材-美术和音乐）/小特效/卡牌碎裂1.png"
+dest_files=["res://.godot/imported/卡牌碎裂1.png-7cfdf979bd0b8ccba2348bb3c541745a.ctex"]
 
 [params]
 

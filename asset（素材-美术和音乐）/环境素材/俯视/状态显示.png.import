@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgtttv0q0xegq"
-path="res://.godot/imported/状态显示.png-b2aa8aa625f1023a0b643b5da109e849.ctex"
+path="res://.godot/imported/状态显示.png-ddde08b8f8d55a545534a4cba4adb013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/状态显示.png"
-dest_files=["res://.godot/imported/状态显示.png-b2aa8aa625f1023a0b643b5da109e849.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/状态显示.png"
+dest_files=["res://.godot/imported/状态显示.png-ddde08b8f8d55a545534a4cba4adb013.ctex"]
 
 [params]
 

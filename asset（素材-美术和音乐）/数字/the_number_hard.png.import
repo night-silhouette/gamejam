@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8knx4uvl3th0"
-path="res://.godot/imported/the_number_hard.png-0773722b873469aa80cf2108c57446af.ctex"
+path="res://.godot/imported/the_number_hard.png-59ddb9d977159c7f7145cda8174806e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/数字/the_number_hard.png"
-dest_files=["res://.godot/imported/the_number_hard.png-0773722b873469aa80cf2108c57446af.ctex"]
+source_file="res://asset（素材-美术和音乐）/数字/the_number_hard.png"
+dest_files=["res://.godot/imported/the_number_hard.png-59ddb9d977159c7f7145cda8174806e6.ctex"]
 
 [params]
 

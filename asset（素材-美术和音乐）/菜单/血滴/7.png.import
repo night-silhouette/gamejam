@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ht4n67ppaw2j"
-path="res://.godot/imported/7.png-686307dec59bf034241a82058a6052b5.ctex"
+path="res://.godot/imported/7.png-0334b971082329182cf7240a60a8f7a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/菜单/血滴/7.png"
-dest_files=["res://.godot/imported/7.png-686307dec59bf034241a82058a6052b5.ctex"]
+source_file="res://asset（素材-美术和音乐）/菜单/血滴/7.png"
+dest_files=["res://.godot/imported/7.png-0334b971082329182cf7240a60a8f7a4.ctex"]
 
 [params]
 

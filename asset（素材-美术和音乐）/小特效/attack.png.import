@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwmx46e6wuglr"
-path="res://.godot/imported/attack.png-99ee378ac7c6eb559a24c16ac76178b6.ctex"
+path="res://.godot/imported/attack.png-1f82eb2c29d9364b095eec51d94a3d0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/小特效/attack.png"
-dest_files=["res://.godot/imported/attack.png-99ee378ac7c6eb559a24c16ac76178b6.ctex"]
+source_file="res://asset（素材-美术和音乐）/小特效/attack.png"
+dest_files=["res://.godot/imported/attack.png-1f82eb2c29d9364b095eec51d94a3d0c.ctex"]
 
 [params]
 

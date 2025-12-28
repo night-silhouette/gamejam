@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://von2l2vqpx5i"
-path="res://.godot/imported/翻牌.png-09f8d25f699c88faacb66e8f8ab54bb4.ctex"
+path="res://.godot/imported/翻牌.png-619b17ab04a69279126c8b2dec5d9fca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/小特效/翻牌.png"
-dest_files=["res://.godot/imported/翻牌.png-09f8d25f699c88faacb66e8f8ab54bb4.ctex"]
+source_file="res://asset（素材-美术和音乐）/小特效/翻牌.png"
+dest_files=["res://.godot/imported/翻牌.png-619b17ab04a69279126c8b2dec5d9fca.ctex"]
 
 [params]
 

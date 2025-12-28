@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clmajnxrha1dq"
-path="res://.godot/imported/D.png-81b194e3a61e5c86a05fabfcb6e5b67d.ctex"
+path="res://.godot/imported/D.png-8579968ea35faae978f28ec1d21137b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/按钮/D.png"
-dest_files=["res://.godot/imported/D.png-81b194e3a61e5c86a05fabfcb6e5b67d.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/按钮/D.png"
+dest_files=["res://.godot/imported/D.png-8579968ea35faae978f28ec1d21137b0.ctex"]
 
 [params]
 

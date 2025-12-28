@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0beo0rdi8714"
-path="res://.godot/imported/指右手2.0.png-dc1863c25f8b4388f98ec0e8154250f9.ctex"
+path="res://.godot/imported/指右手2.0.png-1e6681d96987d6b856e83296bf4a4036.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/侧式/指右手2.0.png"
-dest_files=["res://.godot/imported/指右手2.0.png-dc1863c25f8b4388f98ec0e8154250f9.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/侧式/指右手2.0.png"
+dest_files=["res://.godot/imported/指右手2.0.png-1e6681d96987d6b856e83296bf4a4036.ctex"]
 
 [params]
 

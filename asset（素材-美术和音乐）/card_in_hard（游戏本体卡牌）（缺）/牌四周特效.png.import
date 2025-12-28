@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cckmaqp3ky8jy"
-path="res://.godot/imported/牌四周特效.png-593a3d9da855f539c87be9aeeab85153.ctex"
+path="res://.godot/imported/牌四周特效.png-ad912c98aab41236818dfc5dc9caf956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/card_in_hard/牌四周特效.png"
-dest_files=["res://.godot/imported/牌四周特效.png-593a3d9da855f539c87be9aeeab85153.ctex"]
+source_file="res://asset（素材-美术和音乐）/card_in_hard（游戏本体卡牌）（缺）/牌四周特效.png"
+dest_files=["res://.godot/imported/牌四周特效.png-ad912c98aab41236818dfc5dc9caf956.ctex"]
 
 [params]
 

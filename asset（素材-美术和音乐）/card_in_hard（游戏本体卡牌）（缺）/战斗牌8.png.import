@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hrfl0uu4g70u"
-path="res://.godot/imported/战斗牌8.png-c4679f101263346b977e688f8ad61fa1.ctex"
+path="res://.godot/imported/战斗牌8.png-960a699e3b669095d75cb2199ef6d7ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/card_in_hard/战斗牌8.png"
-dest_files=["res://.godot/imported/战斗牌8.png-c4679f101263346b977e688f8ad61fa1.ctex"]
+source_file="res://asset（素材-美术和音乐）/card_in_hard（游戏本体卡牌）（缺）/战斗牌8.png"
+dest_files=["res://.godot/imported/战斗牌8.png-960a699e3b669095d75cb2199ef6d7ce.ctex"]
 
 [params]
 

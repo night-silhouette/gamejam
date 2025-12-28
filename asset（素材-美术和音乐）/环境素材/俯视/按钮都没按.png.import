@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b764e5r1u7ov8"
-path="res://.godot/imported/按钮都没按.png-50b1effce19032f1a31b475b8e15a397.ctex"
+path="res://.godot/imported/按钮都没按.png-92fa2cc9641f86d527caa806aaf0cb7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/按钮都没按.png"
-dest_files=["res://.godot/imported/按钮都没按.png-50b1effce19032f1a31b475b8e15a397.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/按钮都没按.png"
+dest_files=["res://.godot/imported/按钮都没按.png-92fa2cc9641f86d527caa806aaf0cb7a.ctex"]
 
 [params]
 

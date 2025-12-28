@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwx7qrdbeui3t"
-path="res://.godot/imported/查看.png-0a8bc671a027c4fc4e2e60d31b91d767.ctex"
+path="res://.godot/imported/查看.png-ab78064963b4420857088d2dfb8bc6b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/侧式/查看.png"
-dest_files=["res://.godot/imported/查看.png-0a8bc671a027c4fc4e2e60d31b91d767.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/侧式/查看.png"
+dest_files=["res://.godot/imported/查看.png-ab78064963b4420857088d2dfb8bc6b3.ctex"]
 
 [params]
 

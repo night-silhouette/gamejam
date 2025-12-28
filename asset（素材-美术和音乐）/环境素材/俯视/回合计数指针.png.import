@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cky4oafay08rw"
-path="res://.godot/imported/回合计数指针.png-528e4d04328d17aed7131744b94c743d.ctex"
+path="res://.godot/imported/回合计数指针.png-73397f8bf9c5b4b842fff1c7efaf708e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/环境素材/俯视/回合计数指针.png"
-dest_files=["res://.godot/imported/回合计数指针.png-528e4d04328d17aed7131744b94c743d.ctex"]
+source_file="res://asset（素材-美术和音乐）/环境素材/俯视/回合计数指针.png"
+dest_files=["res://.godot/imported/回合计数指针.png-73397f8bf9c5b4b842fff1c7efaf708e.ctex"]
 
 [params]
 
