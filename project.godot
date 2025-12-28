@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gamejam"
-run/main_scene="uid://dw723fqsol7l2"
+run/main_scene="uid://4m72jvqp8v3b"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/fullsize=false
@@ -20,7 +20,9 @@ boot_splash/image="uid://c8u0hmpbj3di"
 
 [autoload]
 
-WebRequest="*res://client_web_request/WebRequest.gd"
+Util="*res://util/util.gd"
+ClientWebRequest="*res://client_web_request/Client_web_request.gd"
+Servers="*res://servers/servers.gd"
 
 [display]
 
