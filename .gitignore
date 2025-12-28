@@ -2,3 +2,4 @@
 .godot/
 /android/
 Bin/
+.DS_Store
