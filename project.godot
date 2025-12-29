@@ -19,9 +19,9 @@ boot_splash/use_filter=false
 
 [autoload]
 
-Util="*res://util/util.gd"
-ClientWebRequest="*res://client_web_request/Client_web_request.gd"
-Servers="*res://servers/servers.gd"
+Util="*res://单例/util/util.gd"
+ClientWebRequest="*res://单例/client_web_request/Client_web_request.gd"
+Servers="*res://单例/servers/servers.gd"
 
 [display]
 
