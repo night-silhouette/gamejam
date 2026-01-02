@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="card_texture_source" load_steps=42 format=3 uid="uid://h1ua305010sf"]
+[gd_resource type="Resource" script_class="card_texture_source" load_steps=43 format=3 uid="uid://h1ua305010sf"]
 
 [ext_resource type="Script" uid="uid://br3drgv6q2ci5" path="res://source/card_texture_source/card_texture_source.gd" id="1_o4h8q"]
 [ext_resource type="Texture2D" uid="uid://cbxa2h736dgbo" path="res://asset（素材-美术和音乐）/card_in_hard（游戏本体卡牌）（缺）/子卡_战斗牌1.png" id="1_xf2kk"]
@@ -41,7 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://bi88k3j5tklt6" path="res://asset（素材-美术和音乐）/DLC（附加内容）/新母卡/新母卡法术卡2.png" id="38_bxtp2"]
 [ext_resource type="Texture2D" uid="uid://cro0bpo7gq67f" path="res://asset（素材-美术和音乐）/DLC（附加内容）/新母卡/新母卡法术卡3.png" id="39_6lhyu"]
 [ext_resource type="Texture2D" uid="uid://c8uuaqlfxcqn4" path="res://asset（素材-美术和音乐）/DLC（附加内容）/新母卡/新母卡法术卡4.png" id="40_1vwka"]
+[ext_resource type="Texture2D" uid="uid://dmvardqmnwxvc" path="res://asset（素材-美术和音乐）/DLC（附加内容）/新母卡/新母卡战斗卡4.png" id="41_cpqai"]
 
 [resource]
 script = ExtResource("1_o4h8q")
-card_texture_list = Array[Texture]([ExtResource("1_xf2kk"), ExtResource("2_cpqai"), ExtResource("3_kdimp"), ExtResource("4_603lr"), ExtResource("5_1if1l"), ExtResource("6_kfm4s"), ExtResource("7_kqi0o"), ExtResource("8_ef2tn"), ExtResource("9_6yi28"), ExtResource("10_jlvcj"), ExtResource("11_gw0r4"), ExtResource("12_1j0l8"), ExtResource("13_vwtmt"), ExtResource("14_fd7o2"), ExtResource("15_f6yig"), ExtResource("16_fip36"), ExtResource("17_8h063"), ExtResource("18_d7v1m"), ExtResource("19_mn47n"), ExtResource("20_qvuci"), ExtResource("21_3ogtc"), ExtResource("22_b2bp5"), ExtResource("23_u3xt4"), ExtResource("24_3tpgb"), ExtResource("25_2leof"), ExtResource("26_u87r7"), ExtResource("27_34r1p"), ExtResource("28_l1tdg"), ExtResource("29_b0pi5"), ExtResource("30_vxi2k"), ExtResource("31_c3m0v"), ExtResource("32_vvlpg"), ExtResource("33_mlvpt"), ExtResource("34_kupba"), ExtResource("35_ulw7r"), ExtResource("36_4oofx"), ExtResource("37_8v38d"), ExtResource("38_bxtp2"), ExtResource("39_6lhyu"), ExtResource("40_1vwka")])
+card_texture_list = Array[Texture]([ExtResource("1_xf2kk"), ExtResource("2_cpqai"), ExtResource("3_kdimp"), ExtResource("4_603lr"), ExtResource("5_1if1l"), ExtResource("6_kfm4s"), ExtResource("7_kqi0o"), ExtResource("8_ef2tn"), ExtResource("9_6yi28"), ExtResource("10_jlvcj"), ExtResource("11_gw0r4"), ExtResource("12_1j0l8"), ExtResource("13_vwtmt"), ExtResource("14_fd7o2"), ExtResource("15_f6yig"), ExtResource("16_fip36"), ExtResource("17_8h063"), ExtResource("18_d7v1m"), ExtResource("19_mn47n"), ExtResource("20_qvuci"), ExtResource("21_3ogtc"), ExtResource("22_b2bp5"), ExtResource("23_u3xt4"), ExtResource("24_3tpgb"), ExtResource("25_2leof"), ExtResource("26_u87r7"), ExtResource("27_34r1p"), ExtResource("28_l1tdg"), ExtResource("29_b0pi5"), ExtResource("30_vxi2k"), ExtResource("31_c3m0v"), ExtResource("32_vvlpg"), ExtResource("33_mlvpt"), ExtResource("34_kupba"), ExtResource("35_ulw7r"), ExtResource("36_4oofx"), ExtResource("37_8v38d"), ExtResource("38_bxtp2"), ExtResource("39_6lhyu"), ExtResource("40_1vwka"), ExtResource("41_cpqai")])
