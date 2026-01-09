@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5jghvjdypfe7"]
+
+[ext_resource type="Texture2D" uid="uid://cgfj0phqir8lw" path="res://asset（素材-美术和音乐）/菜单/稻草人.png" id="1_vf881"]
+[ext_resource type="Texture2D" uid="uid://dukhkri7764q6" path="res://asset（素材-美术和音乐）/菜单/main.jpg" id="2_u0u8m"]
+[ext_resource type="Texture2D" uid="uid://bg6mbcbi5r2fe" path="res://asset（素材-美术和音乐）/菜单/小标志.png" id="3_o50ue"]
+
+[node name="main" type="Node2D"]
+
+[node name="背景层" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="背景层"]
+z_index = -6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="动画层" type="CanvasLayer" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="动画层"]
+z_index = 5
+position = Vector2(576, 324)
+scale = Vector2(0.2, 0.2)
+metadata/_edit_lock_ = true
+
+[node name="稻草人" type="Sprite2D" parent="动画层/CanvasGroup"]
+position = Vector2(2276.3748, 1170.9929)
+scale = Vector2(0.8936926, 0.92374194)
+texture = ExtResource("1_vf881")
+
+[node name="TextureRect" type="TextureRect" parent="动画层/CanvasGroup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1664.9998
+offset_top = -1109.9999
+offset_right = 1664.9998
+offset_bottom = 1109.9999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u0u8m")
+metadata/_edit_lock_ = true
+
+[node name="小标志" type="Sprite2D" parent="动画层/CanvasGroup"]
+position = Vector2(1074.9999, -1095)
+rotation = 0.26350194
+scale = Vector2(0.71653056, 0.69230723)
+texture = ExtResource("3_o50ue")
